@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    What Is SQL Injection Attack (SQLi) / How SQL Injection Works - SQL Injection - Part 1 - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/03/14/what-is-sql-injection-attack-sqli-how.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>What Is SQL Injection Attack (SQLi) / How SQL Injection Works - SQL Injection - Part 1</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on March 14, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   13 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-q53N9uABJ_s/WMgjunqp4rI/AAAAAAAAA78/ygyUhXsfgPk-QCJspRF3npNKWMQt8PB0wCLcB/s1600/sql-injection-example-2016-h8oapmul.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="336" src="https://2.bp.blogspot.com/-q53N9uABJ_s/WMgjunqp4rI/AAAAAAAAA78/ygyUhXsfgPk-QCJspRF3npNKWMQt8PB0wCLcB/s640/sql-injection-example-2016-h8oapmul.jpg" width="640" /></a></div><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Today, We Will Discuss About SQL Injection Attack (also known as SQLi attack). And How SQL injection works.<br /><br />so, let's start our discuss,<br /><br /><br />first,<br /><br /><h3 style="text-align: left;"><span style="font-size: large;">Q 1. What Is SQL Injection Attack?</span></h3><br />Ans . SQL injection is one type of vulnerability in web server. In Which, Attacker Can Insert<br /><br />different type of SQL statements, syntax and commands (also commonly refers to as a malicious<br /><br />payload.) and can also execute that statements on server.<br /><br />With This Attack, A Attacker can control a web application's database server or you can say<br /><br />Relational Database Management System. That's why, this is very dangerous vulnerability,<br /><br />One Of The Oldest, And Easy To Exploit Vulnerability (Because Many Types Of Injections<br /><br />Frameworks and scripts are already developed by many hackers and also available on internet , free<br />- of - cost).<br /><br />By Using This Vulnerability, Any Attacker Can Do Many Things But Some Of Them Given Below,<br /><br /><br /><div style="text-align: left;"></div><ul style="text-align: left;"><li>Get Controls Of Server,</li></ul><ul style="text-align: left;"><li>Get Access To Database,</li></ul><ul style="text-align: left;"><li>Bypass Login Authentication Mechanism,</li></ul><ul style="text-align: left;"><li>Retrieve Sensitive Data From Database,</li></ul><ul style="text-align: left;"><li>Adding, Modifying and Deleting Contents in database,</li></ul><ul style="text-align: left;"><li>And Many More Things.</li></ul><br /><br /><br /><br />Now, Our Second Question Is<br /><h3 style="text-align: left;"><span style="font-size: large;"><br /></span><span style="font-size: large;">Q 2. How SQL Injections Works?</span></h3><br />Ans.<br /><br />In Order To Insert Malicious SQL Query Statements, an attacker must needs to find an input with<br /><br />in web application or in html page that is included inside of an SQL query.<br /><br /><br />For A Successful Attack, an attacker need to insert malicious codes in a input place from where,<br /><br />vulnerable site takes input directly, and includes them within an SQL statement.<br /><br />and<br /><br />After Successful sql injection, an attacker can easily insert a payload that will do attacker work<br /><br />more easy. <br /><br />now,<br /><br />let me show you some practical codes examples<br /><br /><h3 style="text-align: left;"><span style="font-size: large;">Code 1.</span></h3><br />Simple authentications codes.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #333333;">#</span> Codes <span style="color: #008800; font-weight: bold;">Start</span> <span style="color: #008800; font-weight: bold;">From</span> Here<br /><span style="color: #333333;">#</span><br /><span style="color: #333333;">#</span> Define POST variables<br /><span style="color: #333333;">#</span><br /><span style="color: #333333;">#</span> THis <span style="color: #008800; font-weight: bold;">Is</span> <span style="color: #008800; font-weight: bold;">For</span> Username<br />uname <span style="color: #333333;">=</span> request.POST[<span style="background-color: #fff0f0;">'username'</span>]<br /><br /><span style="color: #333333;">#</span> This <span style="color: #008800; font-weight: bold;">Is</span> <span style="color: #008800; font-weight: bold;">For</span> Password<br />passwd <span style="color: #333333;">=</span> request.POST[<span style="background-color: #fff0f0;">'password'</span>]<br /><br /><span style="color: #333333;">#</span> <span style="color: #008800; font-weight: bold;">SQL</span> query vulnerable <span style="color: #008800; font-weight: bold;">to</span> <span style="color: #008800; font-weight: bold;">SQL</span> Injection attack<br /><span style="color: #008800; font-weight: bold;">sql</span> <span style="color: #333333;">=</span> <span style="background-color: #ffaaaa; color: red;">“</span><span style="color: #008800; font-weight: bold;">SELECT</span> id <span style="color: #008800; font-weight: bold;">FROM</span> users <span style="color: #008800; font-weight: bold;">WHERE</span> username<span style="color: #333333;">=</span><span style="background-color: #ffaaaa; color: red;">’”</span> <span style="color: #333333;">+</span> uname <span style="color: #333333;">+</span> <span style="background-color: #ffaaaa; color: red;">“’</span> <span style="color: #008800; font-weight: bold;">AND</span> password<span style="color: #333333;">=</span><span style="background-color: #ffaaaa; color: red;">’”</span> <span style="color: #333333;">+</span> passwd <span style="color: #333333;">+</span> <span style="background-color: #ffaaaa; color: red;">“’”</span><br /><br /><span style="color: #333333;">#</span> <span style="color: #008800; font-weight: bold;">Execute</span> the <span style="color: #008800; font-weight: bold;">SQL</span> <span style="color: #008800; font-weight: bold;">statement</span> <span style="color: #008800; font-weight: bold;">With</span> SQLi Codes<br /><span style="color: #008800; font-weight: bold;">database</span>.<span style="color: #008800; font-weight: bold;">execute</span>(<span style="color: #008800; font-weight: bold;">sql</span>)<br /><br /><span style="color: #333333;">#</span> Code Ends HEre<br /><span style="color: #333333;">#</span><br /><span style="color: #333333;">#</span><br /></pre></div><br /><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">The above example is a vulnerable example.</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">&nbsp;because&nbsp;</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">an attacker could submit malicious input in such a way&nbsp;</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">that&nbsp;</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">would alter the SQL statement being executed by the database server.</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">A simple example of an SQL Injection payload could be something&nbsp;</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">as simple as&nbsp;</div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;"><br /></div><div style="background-color: white; box-sizing: border-box; color: #333333; font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; margin-bottom: 10px; outline: 0px !important; text-align: justify;">setting the password field to&nbsp;<code style="background-color: #f9f2f4; border-radius: 4px; box-sizing: border-box; color: #c7254e; font-family: Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; outline: 0px !important; padding: 2px 4px;">password’ OR 1=1</code>.</div><br /><div style="background-color: white; box-sizing: border-box; font-family: &quot;open sans&quot;, &quot;helvetica neue&quot;, helvetica, arial, sans-serif; margin-bottom: 10px; outline: 0px; text-align: justify;"><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;">This would result in the following SQL query being run against the database server.</span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span><!-- HTML generated using hilite.me --></div><div style="background: rgb(255, 255, 255); border: solid gray; color: #333333; font-size: 14px; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">SELECT</span> id <span style="color: #008800; font-weight: bold;">FROM</span> users <span style="color: #008800; font-weight: bold;">WHERE</span> username<span style="color: #333333;">=</span><span style="background-color: #ffaaaa; color: red;">’</span>username<span style="background-color: #ffaaaa; color: red;">’</span> <span style="color: #008800; font-weight: bold;">AND</span> password<span style="color: #333333;">=</span><span style="background-color: #ffaaaa; color: red;">’</span>password<span style="background-color: #ffaaaa; color: red;">’</span> <span style="color: #008800; font-weight: bold;">OR</span> <span style="color: #0000dd; font-weight: bold;">1</span><span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">1</span><span style="background-color: #ffaaaa; color: red;">’</span><br /></pre></div><div style="color: #333333;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px;"><br /></span><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px;"><br /></span><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px;"><br /></span><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 14px;"><br /></span></div><h3><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: large;">Q 3. Tools For SQL Injection Attacks?</span></h3><br /><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;">Ans.</span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;">Friends, Here I Am Sharing Some Tools Name And Download Links But&nbsp;</span></div><div style="color: #333333; font-size: 14px;"><span style="font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><br /></span></div><div style="font-size: 14px;"></div><h4><span style="color: red; font-family: &quot;open sans&quot; , &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif;"><u>Note : I Will Not Take Any Type Of Responsibility Of Any Type Of illegal Activity.</u></span></h4><br /><br /><div style="color: #333333; font-size: 14px;"></div><br /><ol><li><a href="https://github.com/sqlmapproject/sqlmap" target="_blank">SQLMAP</a></li></ol><ol><li><a href="http://sqlninja.sourceforge.net/" target="_blank">SQLNINJA</a></li></ol><ol><li><a href="http://sqlsus.sourceforge.net/" target="_blank">SQLSUS</a></li></ol><br /></div><br /><br />So, Friends, I think this is Enough For Today,<br /><br />In My Next Tutorial, You Will See More Deep Details About SQL Injections.<br /><br /><br />written by ssb<br /><br /><div style="background-color: white; border: 0px; box-sizing: border-box; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="border: 0px; box-sizing: border-box; font-family: inherit; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">For More Update, Visit Our Regularly.&nbsp;</span><br style="box-sizing: border-box; margin: 0px; padding: 0px;" /><span style="border: 0px; box-sizing: border-box; font-family: inherit; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="border: 0px; box-sizing: border-box; font-family: &quot;cherry cream soda&quot;; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">And Subscribe Our Blog,&nbsp;</span></span></div><span style="background-color: white; border: 0px; box-sizing: border-box; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"></span><br style="background-color: white; box-sizing: border-box; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; margin: 0px; padding: 0px;" /><div style="background-color: white; border: 0px; box-sizing: border-box; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-stretch: inherit; font-variant-numeric: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="border: 0px; box-sizing: border-box; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">Follow Us and share it.</span><br style="box-sizing: border-box; margin: 0px; padding: 0px;" /><span style="border: 0px; box-sizing: border-box; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">For Any Type of Suggestion Or Help</span><br style="box-sizing: border-box; margin: 0px; padding: 0px;" /><span style="border: 0px; box-sizing: border-box; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="border: 0px; box-sizing: border-box; font-family: inherit; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">Contact me:</span><br style="box-sizing: border-box; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; margin: 0px; padding: 0px;" /><span style="border: 0px; box-sizing: border-box; font-family: inherit; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">S.S.B</span><br style="box-sizing: border-box; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; margin: 0px; padding: 0px;" /><span style="border: 0px; box-sizing: border-box; font-family: inherit; font-size: 14.85px; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; vertical-align: baseline;">surajsinghbisht054@gmail.com</span></span></div></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/03/14/how-to-create-server-port-banner.html" data-toggle="tooltip" data-placement="top" title="Create Server Banner Grabber Using Python Socket">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/03/15/10-most-amazing-hacking-attacks-by.html" data-toggle="tooltip" data-placement="top" title="10-most-amazing-hacking-attacks-by-anonymous-hackers-group">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

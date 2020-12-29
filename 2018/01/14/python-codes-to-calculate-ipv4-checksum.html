@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    python codes to calculate IPv4 checksum  - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,Today, In this tutorial I am going to show you how we can calculate IPv4 packet checksum in pythonIntroductionCalculating IPv4 checksum is ve...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2018/01/14/python-codes-to-calculate-ipv4-checksum.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>python codes to calculate IPv4 checksum </h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 14, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   3 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-Ub2vYa1s7rQ/WKQtJllKsgI/AAAAAAAAAwM/XqstcEWrjZ0L3X2nz0CYYM6ezu03JZf0ACPcBGAYYCw/s1600/ipv6_header.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="457" data-original-width="600" height="486" src="https://1.bp.blogspot.com/-Ub2vYa1s7rQ/WKQtJllKsgI/AAAAAAAAAwM/XqstcEWrjZ0L3X2nz0CYYM6ezu03JZf0ACPcBGAYYCw/s640/ipv6_header.png" width="640" /></a></div><br /><br /><h3 style="text-align: left;">Today, In this tutorial I am going to show you how we can calculate IPv4 packet checksum in python</h3><br /><h4 style="text-align: center;">Introduction</h4><br />Calculating IPv4 checksum is very hard and difficult concept for many guys because Networking concept is very big and complex. Hence, In networking protocols packets concept, the IPv4 checksum is an important topic to understand Because IPv4 checksum is One type of the hash value of complete IPv4 packet that verifies the completeness and status of IP checksum. During a TCP&nbsp; communication, Client Always sends IP checksum values into the IP packet so that the packet receiving server application can analyze the packet value and recalculate the checksum to verify the status of the packet.<br />IP checksum helps server and client machine to detect corrupt packets.<br /><br /><h4 style="text-align: center;">How it's going to work?</h4><br />Well, I am not going to make this tutorial lengthy.<br /><br />Check Below Links To Understand The Theory Behind Calculating Checksum and Etc.<br /><br /><br /><a href="http://www.bitforestinfo.com/2018/01/calculate-ipv4-internet-protocol-packet.html" target="_blank">Calculate IPv4 Packet Checksum Theory</a><br /><br /><h4 style="text-align: center;">Example Codes</h4><br />Here, is my python codes for calculating TCP packet checksum.<br /><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #bc7a00;">#!/usr/bin/python</span><br />import socket<br />import <span style="color: green; font-weight: bold;">struct</span><br />import binascii<br /><br /><br /><br /><br />class IPPacket<span style="color: #666666;">:</span><br /><br /><span style="color: #bc7a00;">###################################################</span><br /><span style="color: #bc7a00;">#            &lt;---Code skipped --&gt;                 #</span><br /><span style="color: #bc7a00;">###################################################</span><br /><br /><br />    def chksum(self, msg)<span style="color: #666666;">:</span><br />        s <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>       <span style="border: 1px solid #FF0000;">#</span> Binary Sum<br /><br />        <span style="border: 1px solid #FF0000;">#</span> loop taking <span style="color: #666666;">2</span> characters at a time<br />        <span style="color: green; font-weight: bold;">for</span> i in range(<span style="color: #666666;">0</span>, len(msg), <span style="color: #666666;">2</span>)<span style="color: #666666;">:</span><br />            <span style="color: green; font-weight: bold;">if</span> (i<span style="color: #666666;">+1</span>) <span style="color: #666666;">&lt;</span> len(msg)<span style="color: #666666;">:</span><br />                a <span style="color: #666666;">=</span> ord(msg[i]) <br />                b <span style="color: #666666;">=</span> ord(msg[i<span style="color: #666666;">+1</span>])<br />                s <span style="color: #666666;">=</span> s <span style="color: #666666;">+</span> (a<span style="color: #666666;">+</span>(b <span style="color: #666666;">&lt;&lt;</span> <span style="color: #666666;">8</span>))<br />            elif (i<span style="color: #666666;">+1</span>)<span style="color: #666666;">==</span>len(msg)<span style="color: #666666;">:</span><br />                s <span style="color: #666666;">+=</span> ord(msg[i])<br />            <span style="color: #a0a000;">else:</span><br />                raise <span style="color: #ba2121;">"Something Wrong here"</span><br /><br /><br />        <span style="border: 1px solid #FF0000;">#</span> One<span style="border: 1px solid #FF0000;">'</span>s Complement<br />        s <span style="color: #666666;">=</span> s <span style="color: #666666;">+</span> (s <span style="color: #666666;">&gt;&gt;</span> <span style="color: #666666;">16</span>)<br />        s <span style="color: #666666;">=</span> <span style="color: #666666;">~</span>s <span style="color: #666666;">&amp;</span> <span style="color: #666666;">0xffff</span><br /><br />        <span style="color: green; font-weight: bold;">return</span> s<br /><br /><br /><br /><br /><span style="color: #bc7a00;">###################################################</span><br /><span style="color: #bc7a00;">#            &lt;---Code skipped --&gt;                 #</span><br /><span style="color: #bc7a00;">###################################################</span><br /></pre></div><br /><br />For Complete Codes Of This Script. Check Below Link<br /><br /><a href="http://www.bitforestinfo.com/2017/12/code-to-create-ipv4-packet-header-in-python.html">Code To Create IPv4 Packet In Python</a><br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB<br /><div dir="ltr" style="text-align: left;" trbidi="on"><br /></div></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2018/01/14/calculate-ipv4-internet-protocol-packet.html" data-toggle="tooltip" data-placement="top" title="Calculate IPv4 (Internet Protocol) Packet Checksum? - Theory">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2018/01/16/program-to-find-day-from-given-date-in-in-cpp.html" data-toggle="tooltip" data-placement="top" title="Program To Find The Day From Given Date In C++ | C++ Program ">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

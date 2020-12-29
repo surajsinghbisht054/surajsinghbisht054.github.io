@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Automatic Script To Install OpenCV in Ubuntu Or Debian - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Hacker,Today, I am going to share with an automatic script that can help you in install python opencv easily. In the previous tutorial, I wrote how y...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/11/30/automatic-script-to-install-opencv-in.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Automatic Script To Install OpenCV in Ubuntu Or Debian</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on November 30, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   4 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Hacker,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-tFMSesERCdE/Wh98jbMzeFI/AAAAAAAABgI/i7n71NDafLYA0qICZueGcKObmKmQpC4MQCPcBGAYYCw/s1600/1-main.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="349" data-original-width="356" src="https://1.bp.blogspot.com/-tFMSesERCdE/Wh98jbMzeFI/AAAAAAAABgI/i7n71NDafLYA0qICZueGcKObmKmQpC4MQCPcBGAYYCw/s1600/1-main.png" /></a></div><br /><br />Today, I am going to share with an automatic script that can help you in install python opencv easily. In the previous<a href="http://www.bitforestinfo.com/2017/11/how-to-install-python-opencv-in-ubuntu.html"> tutorial</a>, I wrote how you can install python OpenCV using step by step command. but because of many commands, that process was very time-consuming. so today, I googled the easiest way to install python OpenCV without writing command in terminal.<br /><br /><br />here it is the bash script.<br /><br /><h4 style="text-align: left;">Install_OpenCV.sh</h4><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Github Page : http://milq.github.io/install-opencv-ubuntu-debian</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">######################################</span><br /><span style="color: #408080; font-style: italic;"># INSTALL OPENCV ON UBUNTU OR DEBIAN #</span><br /><span style="color: #408080; font-style: italic;">######################################</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># |         THIS SCRIPT IS TESTED CORRECTLY ON         |</span><br /><span style="color: #408080; font-style: italic;"># |----------------------------------------------------|</span><br /><span style="color: #408080; font-style: italic;"># | OS             | OpenCV       | Test | Last test   |</span><br /><span style="color: #408080; font-style: italic;"># |----------------|--------------|------|-------------|</span><br /><span style="color: #408080; font-style: italic;"># | Ubuntu 16.04.2 | OpenCV 3.2.0 | OK   | 20 May 2017 |</span><br /><span style="color: #408080; font-style: italic;"># | Debian 8.8     | OpenCV 3.2.0 | OK   | 20 May 2017 |</span><br /><span style="color: #408080; font-style: italic;"># | Debian 9.0     | OpenCV 3.2.0 | OK   | 25 Jun 2017 |</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># 1. KEEP UBUNTU OR DEBIAN UP TO DATE</span><br /><br />sudo apt-get -y update<br />sudo apt-get -y upgrade<br />sudo apt-get -y dist-upgrade<br />sudo apt-get -y autoremove<br /><br /><br /><span style="color: #408080; font-style: italic;"># 2. INSTALL THE DEPENDENCIES</span><br /><br /><span style="color: #408080; font-style: italic;"># Build tools:</span><br />sudo apt-get install -y build-essential cmake<br /><br /><span style="color: #408080; font-style: italic;"># GUI (if you want to use GTK instead of Qt, replace 'qt5-default' with 'libgtkglext1-dev' and remove '-DWITH_QT=ON' option in CMake):</span><br />sudo apt-get install -y qt5-default libvtk6-dev<br /><br /><span style="color: #408080; font-style: italic;"># Media I/O:</span><br />sudo apt-get install -y zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev libopenexr-dev libgdal-dev<br /><br /><span style="color: #408080; font-style: italic;"># Video I/O:</span><br />sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev<br /><br /><span style="color: #408080; font-style: italic;"># Parallelism and linear algebra libraries:</span><br />sudo apt-get install -y libtbb-dev libeigen3-dev<br /><br /><span style="color: #408080; font-style: italic;"># Python:</span><br />sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy<br /><br /><span style="color: #408080; font-style: italic;"># Java:</span><br /><span style="color: #408080; font-style: italic;">#sudo apt-get install -y ant default-jdk</span><br /><br /><span style="color: #408080; font-style: italic;"># Documentation:</span><br />sudo apt-get install -y doxygen<br /><br /><br /><span style="color: #408080; font-style: italic;"># 3. INSTALL THE LIBRARY (YOU CAN CHANGE '3.2.0' FOR THE LAST STABLE VERSION)</span><br /><br />sudo apt-get install -y unzip wget<br />wget https://github.com/opencv/opencv/archive/3.2.0.zip<br />unzip 3.2.0.zip<br />rm 3.2.0.zip<br />mv opencv-3.2.0 OpenCV<br /><span style="color: green;">cd </span>OpenCV<br />mkdir build<br /><span style="color: green;">cd </span>build<br />cmake -DWITH_QT<span style="color: #666666;">=</span>ON -DWITH_OPENGL<span style="color: #666666;">=</span>ON -DFORCE_VTK<span style="color: #666666;">=</span>ON -DWITH_TBB<span style="color: #666666;">=</span>ON -DWITH_GDAL<span style="color: #666666;">=</span>ON -DWITH_XINE<span style="color: #666666;">=</span>ON -DBUILD_EXAMPLES<span style="color: #666666;">=</span>ON -DENABLE_PRECOMPILED_HEADERS<span style="color: #666666;">=</span>OFF ..<br />make -j4<br />sudo make install<br />sudo ldconfig<br /></pre></div><br /><br />To Run This Script, Just Copy these Codes in a file with extension .sh and then open a terminal and Type :<br /><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">sudo bash path/to/script.sh<br /></pre></div><br /><br />I hope, this script will help you.<br /><br /><br />Have a nice day.<br /><br /><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/11/30/how-to-install-python-opencv-in-ubuntu.html" data-toggle="tooltip" data-placement="top" title="How to install Python OpenCV in Ubuntu">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/12/01/cpu-memory-management-memory-device.html" data-toggle="tooltip" data-placement="top" title="Buffer overflow Exploitation tutorial - CPU Memory Management - Memory Device Introduction - Part 1">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

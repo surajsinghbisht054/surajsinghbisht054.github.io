@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How to create Simple Wifi Access Point Finder Using Python And Scapy  | Python Scapy Tutorial  - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,As We already Know, In Today&#39;s Digital Life Wireless Technology Spreading Their Range Very Rapidly And Now, Wi-Fi Networks Are Really Playing...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/06/23/how-to-create-wifi-sniffer-using-python-and-scapy.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How to create Simple Wifi Access Point Finder Using Python And Scapy  | Python Scapy Tutorial </h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on June 23, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   13 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-dspUmttlxb0/WW3Dse6SLQI/AAAAAAAABOo/USQrvHjgtSI85IvDlRWFNXPgQcC31Y1vACEwYBhgL/s1600/Wireless-Router.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1032" data-original-width="1032" height="640" src="https://3.bp.blogspot.com/-dspUmttlxb0/WW3Dse6SLQI/AAAAAAAABOo/USQrvHjgtSI85IvDlRWFNXPgQcC31Y1vACEwYBhgL/s640/Wireless-Router.png" width="640" /></a></div><br /><br />As We already Know, In Today's Digital Life Wireless Technology Spreading Their Range Very Rapidly And Now, Wi-Fi Networks Are Really Playing Big Roles In Providing Fast And Reliable Network Connections To Their Users and &nbsp;Yes, That's Why Now, I Am Focusing My Blog Tutorials On Wireless Related Python Tools. In Other Words, Now I Also Wants To Show You Python programming Language Power In Wireless Technology Field And as A Beginning Today, I am Going To Show You How To Find Available Wireless Access Points (AP) Using Python And Scapy.<br /><br />Now, Let Me First Introduce Python Scapy Module.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAdfYHnEkT5va5-hyh00iCZgCPcBGAYYCw/s1600/python.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="300" data-original-width="700" height="274" src="https://3.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAdfYHnEkT5va5-hyh00iCZgCPcBGAYYCw/s640/python.png" width="640" /></a></div><br /><h4 style="text-align: center;">Python Scapy Module Introduction</h4>Python Scapy Module Is A Very Useful Module That's Provides Us Capabilities To Encode And Decode Various Types of Packets Belongs To Different Types of Protocol, Various Types Of Packet Sniffing, Various Types Of Packet Capturing And Receiving And Much More. In Simple Word, the Scapy module can be used to handle different types of Network Task like Scanning, Packet Capturing, Sniffing, Different Types of Network Attacks and much more.<br /><br />And In My Opinion, If You Want To Be A Intelligent Network Expert Then Don't Underestimate The Possibilities Of Python Scapy Module.<br /><br /><br /><br /><br /><h4 style="text-align: center;">Now, Let's Focus On Our Wireless Sniffing Codes.</h4>In These Codes, First With The Help of Scapy Module, I Will try To Capture All Packets Available On Air Then Again With The Help Of Scapy Module I Will Also Extract Or Decode Those Frames To Find Available Access Point. Not Understanding?? Hmm ok Let me explain you in more simple words, basically, almost all wireless device regularly sends beacon frames packet On Air To show their presence to their client. That's why Wireless clients easily find available Access Point Available in their network range.<br /><br />Beacon Frames Basically A Non-Encrypted Frames Contains Various Various Types Of Access Point Information like Access Point Name, Access Point Channel Informations, Security Encryption Types And Much More.<br /><br /><h4 style="text-align: center;">Beacon Packet Format</h4><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-3S98Zu2NYKc/WjOWJIFBUjI/AAAAAAAABl8/i06E3YkXD7MFyCpeKTcJu2XylAkYTV8_QCLcBGAs/s1600/ibeacon-packet.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="349" data-original-width="600" height="372" src="https://2.bp.blogspot.com/-3S98Zu2NYKc/WjOWJIFBUjI/AAAAAAAABl8/i06E3YkXD7MFyCpeKTcJu2XylAkYTV8_QCLcBGAs/s640/ibeacon-packet.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div><br />As you can see in above image, it is a beacon frame format. For more information, i will suggest you use google.<br /><br />Now, let's move ahead to codes.<br /><br /><br />Ohh, I Forget To Mention That To Run These Codes We Also Need Aircrack-ng Suite And Monitor Mode Supported Wifi Card Because To Make Our Script Successful We Need Monitor Mode And For Monitor Mode, We Need to be Supported Wifi Card And Airmon-ng Suite Or You Can Also Use Built-in Command Line Tool Called <i>iwconfig</i>. <a href="http://www.bitforestinfo.com/2017/06/2-easiest-way-to-enable-wireless-lan-monitor-mode-in-ubuntu-or-linux-using-airmon-ng.html" target="_blank">Click here</a><br /><br /><br />Now, let's Again Focus On Our Main Topic. In Simple Words, Here Our main goal is to just capture available beacon frame floating on air and after capturing we will try to extract access point information who created and sent the packet on air. basically from beacon frames, we will just try to extract Access point ssid and bssid. SSID means AP Name And BSSID means Access Point MAC Address. Now, Let Me Show You Quickly My Codes.<br /><br /><br /><h4 style="text-align: left;">Get_Wifi_AP.py</h4><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">#!/usr/bin/env python</span><br /><br /><br /><span style="color: #888888;"># import scapy module</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">scapy.all</span> <span style="color: #008800; font-weight: bold;">as</span> <span style="color: #0e84b5; font-weight: bold;">scapy</span><br /><br /><br /><span style="color: #888888;"># Extracted Packet Format </span><br />Pkt_Info <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"""</span><br /><span style="background-color: #fff0f0;">---------------[ Packet Captured ]-----------------------</span><br /><span style="background-color: #fff0f0;"> Subtype  : {}</span><br /><span style="background-color: #fff0f0;"> Address 1  : {}</span><br /><span style="background-color: #fff0f0;"> Address 2 : {} [BSSID]</span><br /><span style="background-color: #fff0f0;"> Address 3  : {}</span><br /><span style="background-color: #fff0f0;"> Address 4 : {}</span><br /><span style="background-color: #fff0f0;"> AP  : {} [SSID]</span><br /><br /><span style="background-color: #fff0f0;">"""</span><br /><br /><span style="color: #888888;"># Founded Access Point List</span><br />ap_list <span style="color: #333333;">=</span> []<br /><br /><span style="color: #888888;"># For Extracting Available Access Points</span><br /><span style="color: #008800; font-weight: bold;">def</span> <span style="color: #0066bb; font-weight: bold;">PacketHandler</span>(pkt) :<br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># pkt.haslayer(scapy.Dot11Elt)</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;">#  This Situation Help Us To Filter Dot11Elt Traffic From</span><br /> <span style="color: #888888;">#  Various Types Of Packets</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># pkt.type == 0 </span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># This Filter Help Us To Filter Management Frame From Packet</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># pkt.subtype == 8 </span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># This Filter Help Us To Filter Becon From From Captured Packets</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #008800; font-weight: bold;">if</span> pkt<span style="color: #333333;">.</span>haslayer(scapy<span style="color: #333333;">.</span>Dot11Elt) <span style="color: black; font-weight: bold;">and</span> pkt<span style="color: #333333;">.</span>type <span style="color: #333333;">==</span> <span style="color: #0000dd; font-weight: bold;">0</span> <span style="color: black; font-weight: bold;">and</span> pkt<span style="color: #333333;">.</span>subtype <span style="color: #333333;">==</span> <span style="color: #0000dd; font-weight: bold;">8</span> :<br />  <span style="color: #888888;"># </span><br />  <span style="color: #888888;"># This Function Will Verify Not To Print Same Access Point Again And Again</span><br />  <span style="color: #888888;">#</span><br />  <span style="color: #008800; font-weight: bold;">if</span> pkt<span style="color: #333333;">.</span>addr2 <span style="color: black; font-weight: bold;">not</span> <span style="color: black; font-weight: bold;">in</span> ap_list:<br />   <span style="color: #888888;">#</span><br />   <span style="color: #888888;"># Append Access Point</span><br />   <span style="color: #888888;">#</span><br />   ap_list<span style="color: #333333;">.</span>append(pkt<span style="color: #333333;">.</span>addr2)<br />   <span style="color: #888888;">#</span><br />   <span style="color: #888888;"># Print Packet Informations</span><br />   <span style="color: #888888;">#</span><br />    <span style="color: #008800; font-weight: bold;">print</span> Pkt_Info<span style="color: #333333;">.</span>format(pkt<span style="color: #333333;">.</span>subtype,pkt<span style="color: #333333;">.</span>addr1, pkt<span style="color: #333333;">.</span>addr2, pkt<span style="color: #333333;">.</span>addr3, pkt<span style="color: #333333;">.</span>addr4, pkt<span style="color: #333333;">.</span>info)<br /> <br /><span style="color: #888888;"># Main Trigger</span><br /><span style="color: #008800; font-weight: bold;">if</span> __name__<span style="color: #333333;">==</span><span style="background-color: #fff0f0;">"__main__"</span>:<br /><br /> <span style="color: #888888;"># Previous Function Trigger</span><br /> <span style="color: #888888;">#</span><br /> <span style="color: #888888;"># here, iface="mon0" for Interface with monitor mode enable</span><br /> <span style="color: #888888;"># </span><br /> scapy<span style="color: #333333;">.</span>sniff(iface<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"mon0"</span>, prn <span style="color: #333333;">=</span> PacketHandler, timeout<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">300</span>)<br /></pre></td></tr></tbody></table></div><br />&nbsp;Now, Let me explain you in simple words what exactly happing over their.<br /><br />As You See In Above Codes,<br /><br /><h4 style="text-align: center;">Explaination</h4><br />1. In First Line, <b>Import Scapy Module</b><br /><br />2. Then I wrote<span style="color: #008800;"><b>&nbsp;</b></span><span style="background-color: white;">&nbsp;</span><span style="color: #0066bb; font-weight: bold;">PacketHandler</span><span style="background-color: white;">(pkt) &nbsp;Function. basically here this function is for Extracting various information from packets.</span><br /><span style="background-color: white;"><br /></span><span style="background-color: white;">3. In PacketHandler function, I wrote a condition instruction that starts like&nbsp;</span><span style="background-color: white;">pkt</span><span style="color: #333333;">.</span><span style="background-color: white;">haslayer(scapy</span><span style="color: #333333;">.</span><span style="background-color: white;">Dot11Elt). Actually, This condition is only for verify that we have captured a valid beacon frame. basically, pkt.haslayer(scapy.Dot11Elt)&nbsp; is to verifying that the captured packet contains a&nbsp; Dot11Elt frame layer,&nbsp;</span><span style="background-color: white;">&nbsp;pkt</span><span style="color: #333333;">.</span><span style="background-color: white;">type </span><span style="color: #333333;">==</span><span style="background-color: white;"> </span><span style="color: #0000dd; font-weight: bold;">0 </span><span style="background-color: white;">&nbsp;to verify Management Frames And</span><span style="background-color: white;">&nbsp;pkt</span><span style="color: #333333;">.</span><span style="background-color: white;">subtype </span><span style="color: #333333;">==</span><span style="background-color: white;"> </span><span style="color: #0000dd; font-weight: bold;">8</span><span style="background-color: white;">&nbsp; to verify Beacon Frames. If packet passed all condition and it is a valid beacon frame.</span><br /><span style="background-color: white;"><br /></span><span style="background-color: white;">4. Now, After capturing a valid beacon packet, our next work is to extract it. and here, scapy provides its powerful facilities. In Simple Words, With Scapy module we don't need to worry about binary level packet creating, managing and extracting.&nbsp;</span><span style="background-color: white;">Thanks To Scapy Module That Help Us To Do Our Work Very Easily And Fastly. Basically, Scapy provides us pythonic like function and class to play with binary packets.</span><br /><span style="background-color: white;"><br /></span><span style="background-color: white;">For Example :</span><br /><pre style="background-color: white; line-height: 16.25px;"><br /></pre><pre style="background-color: white; line-height: 16.25px;"><ul style="text-align: left;"><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">subtype,</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Sub Type From packet</span></li><br /></ul><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">addr1,&nbsp;</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Address 1 Field From Packet</span></li><br /></ul><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">addr2,&nbsp;</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Address 2 Field From packet</span></li><br /></ul><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">addr3,</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Address 3 Field From packet</span></li><br /></ul><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">addr4,&nbsp;</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Address 4 Field From packet</span></li><br /></ul><br /><li>pkt<span style="color: #333333; white-space: normal;">.</span><span style="white-space: normal;">info</span></li><br /><ul><br /><li><span style="white-space: normal;">Extract Packet Information Field From packet</span></li><br /></ul><br /></ul><br /></pre><span style="background-color: white;"><br /></span><span style="background-color: white;">5. In The End,&nbsp;</span><span style="background-color: white;">scapy</span><span style="color: #333333;">.</span><span style="background-color: white;">sniff(iface</span><span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"mon0"</span><span style="background-color: white;">, prn </span><span style="color: #333333;">=</span><span style="background-color: white;"> PacketHandler, timeout</span><span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">300</span><span style="background-color: white;">) function provides the facility to capture on-air packets automatically and send all packets to PacketHandler Function.</span><br /><span style="background-color: white;"><br /></span><span style="background-color: white;">Wow, Scapy is really very amazing module.</span><br /><span style="background-color: white;"><br /></span><span style="background-color: white;">I hope now you all got it.</span><br /><br /><br />Now, it's time to run these Codes, but first, we need to enable Monitor Mode.<br /><br />Just Follow Below Setups To Enable Monitor Mode through the airmon-ng suite.<br /><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #cccccc;">sudo</span> <span style="color: #cccccc;">airmon</span><span style="color: #3399cc;">-</span><span style="color: #cccccc;">ng</span></pre></div><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #cccccc;">sudo</span> <span style="color: #cccccc;">airmon</span><span style="color: #3399cc;">-</span><span style="color: #cccccc;">ng start [Interface]</span></pre><pre style="line-height: 125%; margin: 0;"></pre></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-Av997doInK8/WU1EYnDhrvI/AAAAAAAABNg/dm2EKlJIAggWiOa0Ha-GkGGxO3owF3cQgCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-06-23%2B22-06-14.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="358" src="https://2.bp.blogspot.com/-Av997doInK8/WU1EYnDhrvI/AAAAAAAABNg/dm2EKlJIAggWiOa0Ha-GkGGxO3owF3cQgCLcBGAs/s640/Screenshot%2Bfrom%2B2017-06-23%2B22-06-14.png" width="640" /></a></div><br />Ohh yes,<br /><br />Now To Run Our Sniffing Code Just Type Below Commands<br /><br /><div style="background: rgb(0, 0, 0); border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 16.25px;"><span style="color: #cccccc;">sudo python Get_Wifi_AP.py</span></pre></div><br />If you like these codes and wants to practice it on your system then you can latest updated codes from my GitHub repo.<br /><br />To Download Raw Script <a href="https://github.com/surajsinghbisht054/wireless_scripts/blob/master/getwifiinfo.py" target="_blank">Click Here</a><br /><br /><br /><br />After Running this script you have to wait for few moments to find an available access point.<br /><br />Done!<br /><br />I hope you enjoy this tutorial.<br />Comment your feedback below.<br /><br />Thanks For Reading<br />Have A Nice Day</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/06/22/how-to-create-colour-changing-wall-app-in-python.html" data-toggle="tooltip" data-placement="top" title="how to create colour changing wall app using python and tkinter">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/06/25/2-easiest-way-to-enable-wireless-lan-monitor-mode-in-ubuntu-or-linux-using-airmon-ng.html" data-toggle="tooltip" data-placement="top" title="2 Easiest Way To Enable Monitor Mode in Kali Linux | Airmon-ng | Iwconfig">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>
