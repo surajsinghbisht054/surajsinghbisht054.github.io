@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Subroutine Example Of Assembly Language NASM - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hi friends,Welcome Again To my blog. Friends, Today I am going to Share Another Example Piece of Code of Assembly Language Where, I Tried To Demonstrate Sub ...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2018/12/20/subroutine-example-of-assembly-language.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Subroutine Example Of Assembly Language NASM</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on December 20, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   4 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hi friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-glFRupjucQo/XBquKKcJgXI/AAAAAAAACpk/YE4ucaqCMKcn3jxxp5P-bkEei9fdGqMMQCPcBGAYYCw/s1600/Assembly-language-vs-high-level-lanuage.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="755" data-original-width="1133" height="426" src="https://4.bp.blogspot.com/-glFRupjucQo/XBquKKcJgXI/AAAAAAAACpk/YE4ucaqCMKcn3jxxp5P-bkEei9fdGqMMQCPcBGAYYCw/s640/Assembly-language-vs-high-level-lanuage.jpg" width="640" /></a></div><br /><br />Welcome Again To my blog. Friends, Today I am going to Share Another Example Piece of Code of Assembly Language Where, I Tried To Demonstrate Sub Routine Concept Available In Assembly Language.<br /><br />In Simple Words, Sub Routines Are Like Simple Series of Command, also known as Procedure Oriented Program, where User Can Jump Or Call These Routine.<br /><br />First if You Are New, And Don't Know The Basic Then, Please Follow Below Provides Blog Post First.<br /><div style="text-align: left;"><a href="http://www.bitforestinfo.com/2018/12/assembly-hello-world-program.html"><br /></a></div><ul style="text-align: left;"><li><a href="http://www.bitforestinfo.com/2018/12/assembly-hello-world-program.html">Hello World in Assembly</a></li><li><a href="http://www.bitforestinfo.com/2018/12/find-string-length-program-in-assembly.html">Find String Length Functionality in Assembly Language</a></li></ul><br /><h3 style="text-align: center;">Subroutine Example of Assembly Language.</h3>Actually, These Codes Are Super Easy To Understand, And I Also had Used Lots of Comments To Make It more Easy To Understand. If You Don't Know, how To Compile Then, As I Already Told You Check Above Provide Links First. Then, Come Here.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">;<br />; Subroutine Example<br />; author : suraj singh bisht<br />; Email  : surajsinghbisht054@gmail.com<br />;<br />;<br /><br />; Declearing Routines<br />; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br />;           String Length Finding Subroutine<br />; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br />_findlength:<br /> ; Input :<br /> ; EAX = Memory Address of String<br /> ; Return :<br /> ; EAX = length of String<br /><br />; Routine To Save Register Into Stack<br />_saveresiters: ; Routine To Save Registers Into The Stack [Because ]<br />  ; it's necessary in Return Subroutine to process further routine without error<br /> push ecx ; push ecx value into stack Why? [Just To Demonstrate Stack PUSH/POP]<br /> push edx ; push edx value tnto stack<br /> mov edx, 0 ; Set EDX = 0<br /><br />; Iterate Routine<br />_iterate:<br /> sub byte [eax], 0 ; If EAX==0 Then Set Zero Flag To 1 Else Zero flag To 0<br /> jz _return  ; Follow Return, if Zero flag is 1 Else pass<br /> inc eax   ; Increase EAX = EAX+1 Memory Address<br /> inc edx   ; Increase Routine Iteration Num<br /> jmp _iterate  ; Repeat<br /><br />; Return Routine<br />_return:<br /> mov eax, edx  ; Set Return Value EAX= EDX<br /> pop edx   ; POP EDX value<br /> pop ecx   ; POP ECX<br /> ret   ; ret<br /><br />; Exit Routine<br />_exit:<br /> mov eax, 1 ; invoke SYS_EXIT<br /> mov ebx, 0 ; set Return Value 0<br /> int 80h  ; kernel interpt<br /><br /><br />; section bss<br />SECTION .bss<br /><br />; section data<br />SECTION .data<br /> string   db "Hello! I'm Suraj Singh", 0AH  ; Decleare String<br /><br />; section text<br />SECTION .text<br /> global _start ; Routine Trigger<br /><br /><br />; Start Routine<br />_start:<br /> ; First, Find The Length of String<br /> mov eax, string  ; EAX= String<br /> mov ebx, 0  ; EBX = 0<br /><br /> call _findlength ; follow subroutine<br /><br /> mov edx, eax  ; Save Return Value To EDX<br /> mov eax, 4  ; invoke SYS_WRITE<br /> mov ebx, 1  ; STDOUT<br /> mov ecx, string  ; ECX= String memory Address<br /><br /> int 80h   ; kernel Interpt<br /><br /> jmp _exit  ; Exit Routine<br /></pre></div><br />Pay Attention To Comment, And You will feel, It's Really Very Easy To Understand.<br />I Hope You Learnt Something New.<br /><br /><br /><a href="https://github.com/surajsinghbisht054/ConquerAssembly">Please Check Github For Latest Error Free Examples Codes. Click here</a></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2018/12/20/find-string-length-program-in-assembly.html" data-toggle="tooltip" data-placement="top" title="Find String Length Program In Assembly Language ">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2018/12/20/example-collection-of-assembly-language.html" data-toggle="tooltip" data-placement="top" title="Example Collection of Assembly Language Sub Routine">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>
