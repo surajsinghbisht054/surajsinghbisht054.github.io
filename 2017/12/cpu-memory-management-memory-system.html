@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Buffer overflow Exploitation tutorial - CPU Memory Management - Memory System  - Part 2 - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Hackers,As I already said in previous post,&amp;nbsp; &quot;I am writing this tutorial series to teach you how you can write exploits on your own&quot; and to writ...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/12/cpu-memory-management-memory-system.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Buffer overflow Exploitation tutorial - CPU Memory Management - Memory System  - Part 2</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on December 01, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   5 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Hackers,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-LsFH1DhBYFA/WiEUu3RFsAI/AAAAAAAABhQ/ZuEqriYCoJQ8VI-8KGcR0o_wCapsPoIEwCPcBGAYYCw/s1600/1200px-Memory_module_DDRAM_20-03-2006.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1200" src="https://1.bp.blogspot.com/-LsFH1DhBYFA/WiEUu3RFsAI/AAAAAAAABhQ/ZuEqriYCoJQ8VI-8KGcR0o_wCapsPoIEwCPcBGAYYCw/s1600/1200px-Memory_module_DDRAM_20-03-2006.jpg" /></a></div><br /><br />As I already said in previous post,&nbsp; "I am writing this tutorial series to teach you how you can write exploits on your own" and to write exploits on your own you need sharp knowledge of memory management. So, Let's Start Our Today's Tutorials.<br /><br /><br />Well, In Computer architecture, There are various types of Memories responsible for doing many types of different works. but here, i am going to describe only some important point because i don't want to make you confuse.<br /><br />So, let's Start<br /><br /><h3 style="text-align: left;">Types Of Storage Locations In Computer System</h3><br /><h4 style="text-align: left;">1. Primary Storage. (check previous part for detailed Information)<br />2. Secondary Storage. (check previous part for detailed Information)<br />3. CPU Registers.</h4><u><br /></u> <b><u>Primary Storage.</u></b><br /><b><br /></b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Primary Storage is also known as Internal Storage. These Types Of Storage is Needed all the time so they are located inside the CPU (Connected With Motherboard Directly). Examples are RAM and ROM.<br /><u><br /></u> <b><u>Secondary Storage.</u></b><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Secondary Storage is also known as External Storage. These types of storage is located outside the CPU but connected to CPU. Example : Hard disk.<br /><br /><b><br /></b> <b><u>CPU Registers :&nbsp;</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;For processing and performing any functions in CPU (Central Processing Unit). CPU also need memories. Hence, CPU has its own local memories to store instruction and data. these local memories are known as CPU Registers. In simple words,&nbsp; CPU also have its own local memory in the form of CPU Registers.<br /><b><u><br /></u></b> <b><u>Cache Memory :&nbsp;</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cache Memory is a very high speed memory located between the CPU and Main memory. In simple words, Cache memories are very high speed memories which is placed between the processor and main memory. Now, a question arise in our mind why? why cache memories play a role of intermediate between processor and main memory.<br />Well the reason is, CPU registers are very high speed compared to main memory. So, moving instruction or data between CPU registers and main memory directly effects on CPU performance. To solving this problem, a very high speed memory called cache memory is placed between processor and main memory.<br /><br /><br /><br /><br /><h4 style="text-align: left;"><b><u>Storage Capacity System.</u></b></h4><br />In Computer architecture, Storage Capacity is the amount of data that can be stored in storage units. these storage units can be referred as bytes. hmm, let's dirty our handy with storage capacity systems details.<br /><b><u><br /></u></b> <b><u>Bit (Binary Digits) :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A binary digit (possible values 0 or 1) representing a passive or an active state of a component in computer circuit board.<br /><b><u><br /></u></b> <b><u>Nibble&nbsp; :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A Group of Four bit is called nibble.<br /><br /><b><u>Byte :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A group of eight bit is called bytes. (Smallest Unit Represent any Character Or Data)<br /><br /><b><u>Kilobytes :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;A group of 1024 Bytes is called One KiloByte.<br /><br /><b><u>Megabytes</u></b> :<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1024 kilobytes refer as One megabytes.<br /><br /><h4 style="text-align: left;"><br />Three Parameters for Performances In Computer Architecture.</h4><b><u>Access Time :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Access time is referred as the time required to locate and retrieve record from Devices.<br /><b><u><br /></u></b> <b><u>Memory Cycle Time :&nbsp;</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Access Time&nbsp;+ Gap of time in accessing another intruction.<br /><b><u><br /></u></b> <b><u>Access Rate :</u></b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Time required to access any particular storage unit block in drive.<br /><br /><br /><h3 style="text-align: left;"><br />Memory Hierarchy</h3><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-JLm2ozyDSbA/WiFio5LUX9I/AAAAAAAABho/pi2jIHcJqYsE4JwNBQ7p2qBsvY8Yj_-LACLcBGAs/s1600/memory_hierarchy.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="476" data-original-width="888" height="342" src="https://4.bp.blogspot.com/-JLm2ozyDSbA/WiFio5LUX9I/AAAAAAAABho/pi2jIHcJqYsE4JwNBQ7p2qBsvY8Yj_-LACLcBGAs/s640/memory_hierarchy.png" width="640" /></a></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div><div style="text-align: left;">As The hirarchy going down, the following occur</div><b>1. Increasing Access Time</b><br /><b>2. Increasing Capacity</b><br /><b>3. Decreasing Cost Per Bit</b><br /><br /><br /><br />So, Friends This Tutorial Ends Here.<br />I Hope You Enjoyed it.<br /><br /><a href="http://www.bitforestinfo.com/2017/12/buffer-overflow-exploitation-tutorial-what-is-registers-types-of-registers-cpu-memory-management-organistaion.html" target="_blank">Click Here For Next Part</a><br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SSB<br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/12/cpu-memory-management-memory-device.html" data-toggle="tooltip" data-placement="top" title="Buffer overflow Exploitation tutorial - CPU Memory Management - Memory Device Introduction - Part 1">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/12/buffer-overflow-exploitation-tutorial-what-is-registers-types-of-registers-cpu-memory-management-organistaion.html" data-toggle="tooltip" data-placement="top" title="Buffer overflow Exploitation tutorial - CPU Memory Management/Registers/Flags/Segments - CPU Organisation - Part 3">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

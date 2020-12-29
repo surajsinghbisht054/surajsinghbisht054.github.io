@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Simple Calculate Argument Program In Assembly Language - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,Welcome Again To My Blog. I hope You all are Enjoying Series of Assembly Tutorials. So, Today Again I am going To share another mind blowing Ex...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2018/12/simple-calculate-argument-program-in.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Simple Calculate Argument Program In Assembly Language</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on December 28, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   8 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-BVwMt95kPJ4/WjLAK-nufQI/AAAAAAAABlc/jy6ld_DzilMdZih36_xyFUUBS9R9S2tCwCPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-12-14%2B23-25-07.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="702" data-original-width="1251" height="358" src="https://2.bp.blogspot.com/-BVwMt95kPJ4/WjLAK-nufQI/AAAAAAAABlc/jy6ld_DzilMdZih36_xyFUUBS9R9S2tCwCPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-12-14%2B23-25-07.png" width="640" /></a></div><br /><br />Welcome  Again To My Blog. I hope You all are Enjoying Series  of Assembly Tutorials. So, Today Again I am going To  share another mind blowing Example Of assembly codes in which program takes integer as command line argument, perform calculation after converting ascii into integer and again, To Print Convert into ASCII.<br /><br />I hope, you will enjoy it. and yes! you can also download my all assembly codes from my Github Repo. Github Repo Link Given At Last, Of This Post.<br /><br />By The Way, If you Are new And Don't Know How To Start, Compile Or Run?<br />Then, Don't Follow up Our Previous Blog post. Here, it's The List.<br /><br />1.<a href="http://www.bitforestinfo.com/2018/12/assembly-hello-world-program.html"> Hello World In Assembly</a><br />2. <a href="http://www.bitforestinfo.com/2018/12/find-string-length-program-in-assembly.html">Find String Length In Assembly Language</a><br />3. <a href="http://www.bitforestinfo.com/2018/12/subroutine-example-of-assembly-language.html">Subroutine Demo In Assembly language</a><br />4. <a href="http://www.bitforestinfo.com/2018/12/example-collection-of-assembly-language.html">Some Subroutine Functionality Example</a><br />5. <a href="http://www.bitforestinfo.com/2018/12/assembly-user-input-example-script.html">User Input Example In Assembly Language</a><br />6. <a href="http://www.bitforestinfo.com/2018/12/variable-decleration-in-assembly.html">Variable Decleration/Include function In Assembly</a><br />7.&nbsp;<a href="http://www.bitforestinfo.com/2018/12/convert-integer-into-ascii-assembly.html">Convert Integer Into ASCII in Assembly Language</a> <br />8. <a href="http://www.bitforestinfo.com/2018/12/arthematic-function-in-assembly-language.html">Arthematic Functions In Assembly Language</a><br /><br /><br /><h3 style="text-align: center;">Simple Calculate Argument Program In Assembly</h3><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">;<br />;       Number Calculating Example<br />;<br />; author : suraj singh bisht<br />; Email  : surajsinghbisht054@gmail.com<br />; <br />; Program Will Take Numbers To Calculate From Command Line argument<br />;<br />%include 'DigitPrinter_without_start.asm'<br />; ====================================================<br />;              [ Includable File]<br />; Functions:<br />;       _strlen<br />;       _exit<br />;       _print<br />;       _printline<br />;<br />;<br />;              [ Includable File]<br />; Functions:<br />;       _printsingle<br />;       _printdigit<br />;<br />;<br />; Function:<br />; _asciitointeger<br />;<br />; ====================================================<br />; Don't forget to add this into .bss section<br />;  digitprintersave resb 255;<br /><br /><br />; ASCII to Integer Converting Subroutine<br />_asciitointeger:<br /> ; Input<br /> ; EAX = Address of ASCII number<br /> ; Output<br /> ; EAX = Number<br /><br /> push ebx ; Save Registers<br /> push ecx<br /> push edx<br /><br /> ; make sure all registers are empty<br /> xor ecx, ecx ; SET ecx = 0 [Take keep numbers ]<br /> xor ebx, ebx ; Set EBX = 0 [To Take Small Bytes From ASCII Array]<br /> xor edx, edx ; Set EDX = 0 [Keep Record of Iteration]<br /> mov esi, eax ; ESI = EAX<br /> xor eax, eax ; EAX = 0; From now EAX will store digit<br /> mov ecx, 10 ; Multiplication Digit<br /><br />; iterate Subroutine<br />_iterateasciitointeger:<br /> xor ebx, ebx    ; EBX = 0<br /> mov bl, [esi]                   ; Load Byte<br /><br /> ;cmp bl, 0;   ; Compare Byte of EBX and Zero<br /> ;je _returnasciitointeger ; Return Routine<br /><br /> cmp bl, 48            ; compare ebx register's lower half value against ascii value 48 (char value 0)<br />     jl _returnasciitointeger ; Return Routine<br /><br /> cmp bl, 57   ; compare if ebx is greater than<br /> jg _returnasciitointeger ; Return Routine<br /><br /><br /><br /> mul ecx    ; Multiply EAX*ECX<br />        sub bl, 48                      ; Subtract ASCII Code Increased<br />        add eax, ebx                    ; EAX = EAX + EBX<br />        inc esi                         ; Increase Routine<br />        jmp _iterateasciitointeger      ; Repeat<br /><br />_returnasciitointeger:<br /> ;mov eax, 20 ; Just Checking<br /> pop edx  ; pop save registers<br /> pop ecx<br /> pop ebx<br /> ret<br /><br /><br /><br /><br />; Sub Routine To Iterate Argument<br />_calculateargument:<br /> ; Bascially, Number Of Argument And Address of Argument String, Already Comes Into The Stack<br /> ; [Because Operating Pass This And other types of data also as Environment.]<br /> ; So, We Just Need To Extract Data From Stack<br /> ;<br /><br /> ; Get Stack Pointer Address<br /> mov eax, esp   ; EAX = ESP<br /><br /> ; Increase Memory Address<br /> add eax, 4   ; Increase EAX<br /><br /> ; Get Number of Argument<br /> mov ebx, [eax]   ; EBX = Number of Argument<br /><br /> ; Set Pointer To Arguments Start Address<br /> add eax, 8   ; Arguments<br /><br /> ; Now, WE Have EBX = Numbers of Arguments<br /> ; and EAX = [arg1, arg2, arg3] (all arg1-3 are addresses of real data)<br /> push eax    ; Address of Stack<br /> push ebx    ; Number of argument<br /> push ecx   ; Save Values of Registers <br /> push edx   ; Save Values of Registers<br /> xor edx,edx<br /> xor ecx, ecx   ; ECX = 0<br /> inc ecx    ; Than Increase +1<br /><br />; Sub routine To Iterate Arguments<br />_iterateargument:<br /> ; Now, From Here<br /> ; EAX = Address of Argument Address Into Stack<br /> ; EBX = Total Number of Argument<br /> ; ECX = Number of Arguments Processed<br /> ;<br /> cmp ecx, ebx   ; compare number of arguments with iteration routine<br /><br /> ; Jump if No Arguments Left<br /> je _calculateargumentReturn ; Jump if Equal Then Call _calculateargumentReturn<br /><br /> push eax   ; Save Value Into Stack <br /> push ebx   ; Save Value Into Stack<br /> mov eax, [eax]   ; EAX = Load Argument Address<br /> mov esi, eax   ;<br /> ;<br /> ; Here, Our Iterated Argument Value Address is Available At EAX<br /> ;<br /> ;call _printline   ; Print Argument<br /><br /> mov eax, newline  ; Load '\n'<br /> call _print   ; print '\n'<br /><br /> mov eax, string0  ; Load String<br /> call _print   ; print string<br /><br /> mov eax, esi   ; EAX = ESI<br /> call _asciitointeger  ; Call ASCII to Integer Conversion Subroutine<br /> add edx, eax   ; Add to EDX<br /><br /> ; Check If Conversion Successful<br /> call _printdigit  ; Print Digit Subroutine<br /><br /> ; Futher Process<br /> pop ebx    ; <br /> pop eax    ; POP EAX Saved Value<br /> add eax, 4   ; Point To next Argument address into stack<br /> inc ecx    ; Increase Number of Argument Process Register Value<br /> jmp _iterateargument  ; Repeat<br /><br /><br />_calculateargumentReturn:<br /> mov eax, newline  ; Load '\n'<br /> call _print   ; print '\n'<br /><br /> mov eax, string1  ; Load String<br /> call _print   ; Print String<br /><br /> mov eax, edx   ; EAX = EBX<br /> call _printdigit  ; Print Digit On Screen<br /><br /> mov eax, newline  ; Load '\n'<br /> call _print   ; print '\n'<br /><br /> pop edx    ; POP saved values<br /> pop ecx    ; POP saved value<br /> pop ebx    ; Retrive Registers Values<br /> pop eax    ; Pop Saved Values<br /> ret<br /><br /><br />; section .bss<br />SECTION .bss<br /> argumentsum resb 200 ; Save Here Sum<br />  digitprintersave resb 255;<br /><br />; section .data<br />SECTION .data<br /> string0  db "[+] Your Inserted Argument Number : ", 0h ; String Decleare<br /> string1  db "[+] Your All Arguments SUM        : ", 0h ; String Decleare<br /> newline  db " ",0Ah,0h ; New line<br /><br />; section .text<br />SECTION .text<br /> global _start  ; GCC linker Requirement<br /><br />; Trigger<br />_start:<br /> call _calculateargument ; call iterateargument subroutine<br /> jmp _exit  ; jmp routine<br /></pre></div><br /><br /><br /><a href="https://github.com/surajsinghbisht054/ConquerAssembly">Please Check Github For Latest Error Free Examples Codes. Click here</a></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2018/12/arthematic-function-in-assembly-language.html" data-toggle="tooltip" data-placement="top" title="Arthematic Function In Assembly Language">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2018/12/create-simple-division-program-in.html" data-toggle="tooltip" data-placement="top" title="Create Simple Division Program In Assembly Language">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

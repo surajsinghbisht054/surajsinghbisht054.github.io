@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How To Create Number To String Converter Using Python language - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="hello friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Today, I Am Showing About How We Can Create Number to...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/01/how-to-create-number-to-string.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How To Create Number To String Converter Using Python language</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 14, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   8 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">hello friends,<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Today, I Am Showing About How We Can Create Number to String Converter Using Python Language. So, Here I Created Python Script for Converting digits to Indian Rupees.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-xHNuZCfLaeQ/WHUt6dpp4MI/AAAAAAAAAr4/ZeoaP3YOsTAAssWKits47wWX3t3BB5i9gCLcB/s1600/th.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="https://3.bp.blogspot.com/-xHNuZCfLaeQ/WHUt6dpp4MI/AAAAAAAAAr4/ZeoaP3YOsTAAssWKits47wWX3t3BB5i9gCLcB/s400/th.jpg" width="400" /></a></div><br /><br />let's Start<br /><br />here, it is example.<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">  1<br />  2<br />  3<br />  4<br />  5<br />  6<br />  7<br />  8<br />  9<br /> 10<br /> 11<br /> 12<br /> 13<br /> 14<br /> 15<br /> 16<br /> 17<br /> 18<br /> 19<br /> 20<br /> 21<br /> 22<br /> 23<br /> 24<br /> 25<br /> 26<br /> 27<br /> 28<br /> 29<br /> 30<br /> 31<br /> 32<br /> 33<br /> 34<br /> 35<br /> 36<br /> 37<br /> 38<br /> 39<br /> 40<br /> 41<br /> 42<br /> 43<br /> 44<br /> 45<br /> 46<br /> 47<br /> 48<br /> 49<br /> 50<br /> 51<br /> 52<br /> 53<br /> 54<br /> 55<br /> 56<br /> 57<br /> 58<br /> 59<br /> 60<br /> 61<br /> 62<br /> 63<br /> 64<br /> 65<br /> 66<br /> 67<br /> 68<br /> 69<br /> 70<br /> 71<br /> 72<br /> 73<br /> 74<br /> 75<br /> 76<br /> 77<br /> 78<br /> 79<br /> 80<br /> 81<br /> 82<br /> 83<br /> 84<br /> 85<br /> 86<br /> 87<br /> 88<br /> 89<br /> 90<br /> 91<br /> 92<br /> 93<br /> 94<br /> 95<br /> 96<br /> 97<br /> 98<br /> 99<br />100<br />101<br />102<br />103<br />104<br />105<br />106<br />107<br />108</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #aaaaaa; font-style: italic;"># Configuration For Numbers</span><br />form={<br /><span style="color: #aa5500;">'0'</span>:<span style="color: #aa5500;">''</span>,<br /><span style="color: #aa5500;">'1'</span>:<span style="color: #aa5500;">'One'</span>,<br /><span style="color: #aa5500;">'2'</span>:<span style="color: #aa5500;">'Two'</span>,<br /><span style="color: #aa5500;">'3'</span>:<span style="color: #aa5500;">'Three'</span>,<br /><span style="color: #aa5500;">'4'</span>:<span style="color: #aa5500;">'Four'</span>,<br /><span style="color: #aa5500;">'5'</span>:<span style="color: #aa5500;">'Five'</span>,<br /><span style="color: #aa5500;">'6'</span>:<span style="color: #aa5500;">'Six'</span>,<br /><span style="color: #aa5500;">'7'</span>:<span style="color: #aa5500;">'Seven'</span>,<br /><span style="color: #aa5500;">'8'</span>:<span style="color: #aa5500;">'Eight'</span>,<br /><span style="color: #aa5500;">'9'</span>:<span style="color: #aa5500;">'Nine'</span>,<br /><span style="color: #aa5500;">'10'</span>:<span style="color: #aa5500;">'Ten'</span>,<br /><span style="color: #aa5500;">'11'</span>:<span style="color: #aa5500;">'Eleven'</span>,<br /><span style="color: #aa5500;">'12'</span>:<span style="color: #aa5500;">'Twelve'</span>,<br /><span style="color: #aa5500;">'13'</span>:<span style="color: #aa5500;">'Thirteen'</span>,<br /><span style="color: #aa5500;">'14'</span>:<span style="color: #aa5500;">'Fourteen'</span>,<br /><span style="color: #aa5500;">'15'</span>:<span style="color: #aa5500;">'Fifteen'</span>,<br /><span style="color: #aa5500;">'16'</span>:<span style="color: #aa5500;">'Sixteen'</span>,<br /><span style="color: #aa5500;">'17'</span>:<span style="color: #aa5500;">'Seventeen'</span>,<br /><span style="color: #aa5500;">'18'</span>:<span style="color: #aa5500;">'Eighteen'</span>,<br /><span style="color: #aa5500;">'19'</span>:<span style="color: #aa5500;">'Nineteen'</span>,<br /><span style="color: #aa5500;">'20'</span>:<span style="color: #aa5500;">'Twenty'</span>,<br /><span style="color: #aa5500;">'30'</span>:<span style="color: #aa5500;">'Thirty'</span>,<br /><span style="color: #aa5500;">'40'</span>:<span style="color: #aa5500;">'Fourty'</span>,<br /><span style="color: #aa5500;">'50'</span>:<span style="color: #aa5500;">'Fifty'</span>,<br /><span style="color: #aa5500;">'60'</span>:<span style="color: #aa5500;">'Sixty'</span>,<br /><span style="color: #aa5500;">'70'</span>:<span style="color: #aa5500;">'Seventy'</span>,<br /><span style="color: #aa5500;">'80'</span>:<span style="color: #aa5500;">'Eighty'</span>,<br /><span style="color: #aa5500;">'90'</span>:<span style="color: #aa5500;">'Ninety'</span><br />}<br /><span style="color: #aaaaaa; font-style: italic;"># Positional Values</span><br />val=[<br /><span style="color: #aa5500;">''</span>,<br /><span style="color: #aa5500;">''</span>,<br /><span style="color: #aa5500;">' Thousand, '</span>, <br /><span style="color: #aa5500;">' Lakh, '</span>, <br /><span style="color: #aa5500;">' Crore, '</span>, <br /><span style="color: #aa5500;">' Million, '</span>, <br /><span style="color: #aa5500;">' Billion, '</span>]<br /><br /><span style="color: #aaaaaa; font-style: italic;"># Creating Class</span><br /><span style="color: #0000aa;">class</span> <span style="color: #00aa00; text-decoration: underline;">Number_Convert</span>:<br /> <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">__init__</span>(<span style="color: #00aaaa;">self</span>, num=<span style="color: #00aaaa;">None</span>):<br />  <span style="color: #00aaaa;">self</span>.num=num<br /> <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">convert</span>(<span style="color: #00aaaa;">self</span>):<br />  raw=<span style="color: #00aaaa;">self</span>.cutt()<br />  raw1=<span style="color: #aa5500;">''</span><br />  <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> raw.split(<span style="color: #aa5500;">','</span>):<br />   raw1=raw1+<span style="color: #00aaaa;">self</span>.tranl(i)+<span style="color: #aa5500;">','</span><br /><br />  raw1=raw1.split(<span style="color: #aa5500;">','</span>)<br />  raw1.reverse()<br />  st=[]<br />  <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> <span style="color: #00aaaa;">range</span>(<span style="color: #00aaaa;">len</span>(raw1)):<br />   <span style="color: #0000aa;">if</span> <span style="color: #00aaaa;">len</span>(raw1[i])!=<span style="color: #009999;">0</span>:<br />    data=<span style="color: #00aaaa;">str</span>(raw1[i])+<span style="color: #00aaaa;">str</span>(val[i])<br />    st.append(data)<br />   <span style="color: #0000aa;">else</span>:<br />    <span style="color: #0000aa;">pass</span><br />  st.reverse()<br />  data=<span style="color: #aa5500;">''</span><br />  <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> st:<br />   data=data+i<br />  <span style="color: #0000aa;">return</span> data<br /><br /> <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">cutt</span>(<span style="color: #00aaaa;">self</span>):<br />  data=<span style="color: #00aaaa;">self</span>.num[::-<span style="color: #009999;">1</span>]<br />  k=<span style="color: #009999;">0</span><br />  l=<span style="color: #aa5500;">''</span><br />  <span style="color: #0000aa;">for</span> i <span style="color: #0000aa;">in</span> data:<br />   <span style="color: #0000aa;">if</span> k%<span style="color: #009999;">2</span>==<span style="color: #009999;">1</span> <span style="color: #0000aa;">and</span> k!=<span style="color: #009999;">1</span>:<br />    l=l+<span style="color: #aa5500;">','</span>+i<br />    k=k+<span style="color: #009999;">1</span><br />    <span style="color: #0000aa;">pass</span><br />   <span style="color: #0000aa;">else</span>:<br />    l=l+i<br />    k=k+<span style="color: #009999;">1</span><br />    <span style="color: #0000aa;">pass</span><br />  data=l[::-<span style="color: #009999;">1</span>]<br />  <span style="color: #0000aa;">return</span> data<br /> <span style="color: #0000aa;">def</span> <span style="color: #00aa00;">tranl</span>(<span style="color: #00aaaa;">self</span>, i):<br />  data=i<br />  <span style="color: #0000aa;">if</span> <span style="color: #00aaaa;">int</span>(data)==<span style="color: #009999;">0</span>:<br />   <span style="color: #0000aa;">return</span> <span style="color: #aa5500;">''</span> <br />  <span style="color: #0000aa;">elif</span> <span style="color: #00aaaa;">int</span>(data)&lt;=<span style="color: #009999;">20</span>:<br />   <span style="color: #0000aa;">return</span> form[<span style="color: #00aaaa;">str</span>(<span style="color: #00aaaa;">int</span>(data))]<br />  <span style="color: #0000aa;">elif</span> <span style="color: #00aaaa;">len</span>(data)==<span style="color: #009999;">2</span>:<br />   x=data[<span style="color: #009999;">0</span>]+<span style="color: #aa5500;">'0'</span><br />   y=data[<span style="color: #009999;">1</span>]<br />   rw=form[x]+<span style="color: #aa5500;">'-'</span>+form[y]<br />   <span style="color: #0000aa;">return</span> rw<br />  <span style="color: #0000aa;">elif</span> <span style="color: #00aaaa;">len</span>(data)==<span style="color: #009999;">3</span>:<br />   x=data[<span style="color: #009999;">0</span>]<br />   y=data[<span style="color: #009999;">1</span>]+<span style="color: #aa5500;">'0'</span><br />   z=data[<span style="color: #009999;">2</span>]<br />   <span style="color: #0000aa;">if</span> <span style="color: #00aaaa;">int</span>(x)!=<span style="color: #009999;">0</span>:<br />    hun=<span style="color: #aa5500;">' Hundred And '</span><br />   <span style="color: #0000aa;">else</span>:<br />    hun=<span style="color: #aa5500;">' '</span><br />   rw=form[x]+hun+form[y]+<span style="color: #aa5500;">'-'</span>+form[z]<br />   <span style="color: #0000aa;">return</span> rw<br />  <span style="color: #0000aa;">else</span>:<br />   <span style="color: #0000aa;">return</span> <span style="color: #aa5500;">'Sorry! Not Programmed For This'</span><br /><br /><br /><span style="color: #0000aa;">if</span> __name__==<span style="color: #aa5500;">'__main__'</span>:<br /> <span style="color: #0000aa;">print</span> Number_Convert(<span style="color: #aa5500;">'12345678'</span>).convert()</pre></td></tr></tbody></table></div>This Example is Written By surajsinghbisht054@gmail.com<br /><br /># Output<br />As You Can See, I Entered "12345678" Input in 108 line and i got this output<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">One Crore, Twenty-Three Lakh, Fourty-Five Thousand, Six Hundred And Seventy-Eight<br /></pre></div><br />So, I Shared This Example Only For Showing Python Example.<br />if You Wants to Convert digits to another currency (Other Then Indian rupees)<br />You Can Modify This Python Examples as Your Needs.<br /><br /><div class="separator" style="background-color: white; clear: both; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="color: #222222; font-family: &quot;courier new&quot; , &quot;courier&quot; , &quot;freemono&quot; , monospace; font-size: 13.2px;">Done!</span></div><div style="background-color: white; color: #222222; font-family: &quot;Courier New&quot;, Courier, FreeMono, monospace; font-size: 13.2px; line-height: 25.5px; margin: 0px 0px 24px; outline: none; padding: 0px;"><div style="margin: 0px; outline: none; padding: 0px;"><div style="font-family: &quot;courier new&quot;, courier, freemono, monospace; font-size: 14px; margin: 0px; outline: none; padding: 0px;"><div style="margin: 0px; outline: none; padding: 0px;"><b style="color: #3d596d; font-size: 15px;">Thanks For Support</b></div></div></div><div style="color: #3d596d; font-size: 15px; margin: 0px; outline: none; padding: 0px;"><b style="font-family: inherit;">Please, Feel Free To Leave A Comment</b><span style="font-family: inherit;">&nbsp;</span><b style="font-family: inherit;">If Our Article has Helped You.</b></div></div><div style="background-color: white; color: #222222; font-family: &quot;Courier New&quot;, Courier, FreeMono, monospace; font-size: 15px; line-height: 25.5px; margin: 0px 0px 24px; outline: none; padding: 0px;"><div align="left" style="font-size: medium; margin: 0px 0px 0cm; outline: none; padding: 0px;"><span style="color: #134f5c;">Written By:</span></div><div align="left" style="font-size: medium; margin: 0px 0px 0cm; outline: none; padding: 0px;"><span style="color: #0b5394; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">S.S.B</span></div><div align="left" style="font-size: medium; margin: 0px 0px 0cm; outline: none; padding: 0px;"><span style="color: #0b5394; font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">surajsinghbisht054@gmail.com</span></div></div><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/how-create-python-script-for-sending.html" data-toggle="tooltip" data-placement="top" title="How Create Python Script For Sending SMS Using Way2Sms ">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/01/how-to-create-weather-app-using-python.html" data-toggle="tooltip" data-placement="top" title="How to Create Very Beautiful Weather Showing app Using Python For Windows, Linux and Mac OS  | python web scraping | python gui | python example">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

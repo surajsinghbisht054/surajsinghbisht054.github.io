@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How To Create Automatically Wallpaper Updater (Bing Wallpaper) Using Python - Web Scraping - part 8 - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;This is our eighth part of web scraping tutori...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/01/how-to-create-automatically-wallpaper.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How To Create Automatically Wallpaper Updater (Bing Wallpaper) Using Python - Web Scraping - part 8</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 27, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   9 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Hello Friends,</span><br /><br /><div class="separator" style="background-color: white; clear: both; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; text-align: center;"><a href="https://2.bp.blogspot.com/-obs52hAZL-E/WGD8_x9caLI/AAAAAAAAAhI/FgreOO7QK3Mkk8XRRNwo0cdPzLCOJNZXwCPcB/s1600/pyt.png" imageanchor="1" style="color: #80c2d4; margin-left: 1em; margin-right: 1em; text-decoration: none;"><img border="0" height="226" src="https://2.bp.blogspot.com/-obs52hAZL-E/WGD8_x9caLI/AAAAAAAAAhI/FgreOO7QK3Mkk8XRRNwo0cdPzLCOJNZXwCPcB/s320/pyt.png" style="border: none; position: relative;" width="320" /></a></div><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><h3 style="text-align: left;"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This is our eighth part of web scraping tutorials. and in this tutorial, I am gonna to show you how to create automatically wallpaper changer program using python . but if you are new visitor then first check our index or For seventh Part&nbsp;<a href="http://bitforestinfo.blogspot.com/2017/01/how-to-create-file-downloader-using.html" style="color: #80c2d4; text-decoration: none;" target="_blank">Click Here</a>.&nbsp;</span></h3><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><br /></span><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"></span><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">So,&nbsp;</span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Let's Talk About Today's Topic.</span><br /><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Friends, Here We will try to create python script that can download wallpaper from bingwallpaper.com.</span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">and</span><br /><span style="color: #737373; font-family: &quot;cherry cream soda&quot;;"><span style="background-color: white; font-size: 14.85px;">if you want &nbsp;to use this example &nbsp;for daily purpose then i will suggest you to visit this project.</span></span><br /><br /><a href="https://github.com/UtkarshGpta/bing-desktop-wallpaper-changer">https://github.com/UtkarshGpta/bing-desktop-wallpaper-changer</a>&nbsp;because this project is really good for daily purpose automation.<br /><br />In this script,<br /><br />first we will download bing wallpaper xml archive. why?<br /><br />because bingwallpaper.com provides an xml services and we will use this for images url link and other related data of image.<br /><br />and another big reason is, xml are easy to scrap.<br /><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" />after getting images downloading url link.<br /><br />we will download images from that link and save on local directory.<br /><br />now, our other next step is to set that image, our desktop wallpaper. and here, for this purpose, we will use linux built-in tool.<br /><br />&nbsp;I know, this example also looks very difficult. but don't worry, friends i know you can do it.<br /><br /><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Here, I am Sharing My Demo Codes But If You Want More Better Example Then, You Can Modify these codes yourself or Download This Script From My GitHub repository (link given at the end of these codes ).</span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><br /></span><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"></span><h3 style="text-align: left;"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">1. wallpaper_updater/main.py</span></h3><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><br /></span><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61<br />62<br />63<br />64<br />65<br />66<br />67<br />68<br />69<br />70</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;">#!/usr/bin/python</span><br /><span style="color: #008800; font-style: italic;"># -*- coding: utf-8 -*-</span><br /><span style="color: #008800; font-style: italic;">#</span><br /><span style="color: #008800; font-style: italic;"># Written By:</span><br /><span style="color: #008800; font-style: italic;">#  S.S.B</span><br /><span style="color: #008800; font-style: italic;">#  surajsinghbisht054@gmail.com</span><br /><span style="color: #008800; font-style: italic;">#  bitforestinfo.blogspot.com</span><br /><span style="color: #008800; font-style: italic;">#</span><br /><span style="color: #008800; font-style: italic;"># </span><br /><span style="color: #008800; font-style: italic;"># Import Module</span><br /><span style="color: navy; font-weight: bold;">import</span> re<br /><span style="color: navy; font-weight: bold;">import</span> urllib2<br /><span style="color: navy; font-weight: bold;">import</span> os<br /><br /><span style="color: #008800; font-style: italic;"># Latest Homepage xml Url</span><br />xml_url = <span style="color: blue;">'http://www.bing.com/HPImageArchive.aspx?format=xml&amp;idx=0&amp;n=2&amp;mkt=en-us'</span><br /><br /><span style="color: #008800; font-style: italic;"># Fucntion For Extracting Image Url and Image Details From xml</span><br /><span style="color: navy; font-weight: bold;">def</span> get_image_details(xml):<br /> <span style="color: #008800; font-style: italic;"># Url and Details Pattern</span><br /> image_url_pattern = <span style="color: blue;">'&lt;url&gt;(.*?)&lt;/url&gt;.+&lt;copyright&gt;(.*?)&lt;/copyright&gt;'</span><br /> <br /> <span style="color: #008800; font-style: italic;"># search patterns </span><br /> (img_url, img_detail) = re.search(image_url_pattern, xml).groups(<span style="color: blue;">1</span>)<br /><br /> <span style="color: #008800; font-style: italic;"># Complete Url</span><br /> bing = <span style="color: blue;">'http://www.bing.com'</span>+img_url<br /> <span style="color: navy; font-weight: bold;">return</span> (bing, img_detail)<br /><br /><span style="color: #008800; font-style: italic;"># Function for Downloading Image</span><br /><span style="color: navy; font-weight: bold;">def</span> download_image(url):<br /> <span style="color: #008800; font-style: italic;"># Choose Image Name</span><br /> filename = url.split(<span style="color: blue;">'/'</span>)[-<span style="color: blue;">1</span>]<br /> img_file = open(filename, <span style="color: blue;">'wb'</span>)<br /> <span style="color: #008800; font-style: italic;"># Download Image</span><br /> img_file.write(urllib2.urlopen(url).read())<br /> <span style="color: #008800; font-style: italic;"># Save Image</span><br /> img_file.close()<br /><br /> <span style="color: #008800; font-style: italic;"># return Image Name</span><br /> <span style="color: navy; font-weight: bold;">return</span> filename<br /><br /><span style="color: #008800; font-style: italic;"># Function For Changing Wallpaper Automatically</span><br /><span style="color: navy; font-weight: bold;">def</span> change_wallpaper(filename):<br /> <span style="color: #008800; font-style: italic;"># Get Absolute Path Of Image</span><br /> path = os.path.join(os.path.realpath(<span style="color: blue;">'.'</span>),filename)<br /> <span style="color: #008800; font-style: italic;"># Command For Changing Wallpaper</span><br /> cmd = <span style="color: blue;">'gsettings set org.gnome.desktop.background picture-uri "file:///{}"'</span>.format(path)<br /> os.system(cmd)<br /> <span style="color: navy; font-weight: bold;">return</span><br /> <br /><span style="color: #008800; font-style: italic;"># Main Function</span><br /><span style="color: navy; font-weight: bold;">def</span> main():<br /> <span style="color: #008800; font-style: italic;"># Download Xml Data</span><br /> raw_xml = urllib2.urlopen(xml_url).read()<br /><br /> <span style="color: #008800; font-style: italic;"># Extract Image Url From Xml</span><br /> (img_url, img_detail) = get_image_details(raw_xml)<br /><br /> <span style="color: #008800; font-style: italic;"># Download Image</span><br /> filename = download_image(img_url)<br /><br /> <span style="color: #008800; font-style: italic;"># Change Desktop Wallpaper</span><br /> change_wallpaper(filename)<br /><br /> <span style="color: navy; font-weight: bold;">return</span><br /><br /><span style="color: #008800; font-style: italic;"># Main Function Trigger</span><br /><span style="color: navy; font-weight: bold;">if</span> __name__ == <span style="color: blue;">'__main__'</span>:<br /> main()<br /></pre></td></tr></tbody></table></div><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><br /></span><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><span style="font-size: 14.85px;"><span style="font-size: 14.85px;"><span style="color: red; font-size: small;">Warning&nbsp;</span></span><span style="font-size: 14.85px;">:&nbsp;<b><u>I am Creating This Tutorial Only For Practise and Educational Purpose. I will not Take any type of responsibility about any illegal activities.</u></b></span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">For Downloading, Raw Script&nbsp;</span><a href="https://github.com/surajsinghbisht054/Information_Gathering_Python_Web_Scraping_Scripts" style="color: #80c2d4; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; text-decoration: none;" target="_blank">Click Here</a></span></span><br /><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><br /></div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;">In Our Future Tutorials, we will try to create youtube video downloader, live score scraper, email harvester , Amazon product details scraper and many other scripts also.&nbsp;</div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><br /></div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="font-size: 14.85px;">For More Update, Visit Our Regularly.&nbsp;</span><br /><span style="font-size: 14.85px;"><span style="font-family: &quot;cherry cream soda&quot;;">And Subscribe Our Blog,&nbsp;</span></span></div><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><span style="font-size: 14.85px;"><span style="font-size: 14.85px;"></span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /></span><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"></span></span><br /><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Follow Us and share it.</span><br /><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">For Any Type of Suggestion Or Help</span><br /><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><span style="font-size: 14.85px;">Contact me:</span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">S.S.B</span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">surajsinghbisht054@gmail.com</span></span></div></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/how-to-create-file-downloader-using.html" data-toggle="tooltip" data-placement="top" title="How To Create File Downloader Using Python - part 7">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/01/how-to-create-live-score-scraperfinder.html" data-toggle="tooltip" data-placement="top" title=" How To Create Live Score Scraper/Finder (Sports) Using Python -  | python web scraping | python example- part 9">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Reinforcement learning example using treasure hunt game - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,Welcome Again To My Blog. Today, I am going to share with you a very super simple example of reinforcement learning example based on treasure h...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2019/01/reinforcement-learning-example-using.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Reinforcement learning example using treasure hunt game</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 26, 2019 &middot; <span class="reading-time" title="Estimated read time">
+  
+   11 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-8VGx_6q8dOo/XEtKLuLp9FI/AAAAAAAAC14/GUWuwsxTbMcXIZ-IzNuW25TOndoz6951ACPcBGAYYCw/s1600/Recent-Developments-in-Neural-Networks.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="442" data-original-width="750" height="376" src="https://3.bp.blogspot.com/-8VGx_6q8dOo/XEtKLuLp9FI/AAAAAAAAC14/GUWuwsxTbMcXIZ-IzNuW25TOndoz6951ACPcBGAYYCw/s640/Recent-Developments-in-Neural-Networks.png" width="640" /></a></div><br /><br /><br />Welcome Again To My Blog. Today, I am going to share with you a very super simple example of reinforcement learning example based on treasure hunt game.<br />Actually, In this script, i am going to set a task for our learning agent where, our learning agent had to start moving from one point to the another end of track in minimum steps.<br /><br />For more information about topics, Please Use Google. As I already said in my previous tutorial this blog is for Hacking, Cracking And CTF Related Topics but i am sharing these codes here just for knowledge sharing purpose.<br /><br />Or You Can Check Collection Of These Script <a href="https://github.com/surajsinghbisht054/reinforcement_learning_scripts">Here Github</a><br /><br /><h3 style="text-align: left;">&nbsp;Features Of This Script</h3><ol style="text-align: left;"><li>Easy To Understand</li><li>Written from scratch</li><li>Lots of Comments</li><li>Written In Python</li></ol>&nbsp;Please Forgive Me, if I had done anything wrong in this codes. please feel free to correct me. I'm still student.<br /><br /><h3 style="text-align: center;">Treasure Hunt Game Using Re-Inforcement Learning In Python</h3><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #aaaaaa; font-style: italic;">#!/usr/bin/python</span><br /><br /><br /><span style="color: #aa5500;">'''</span><br /><span style="color: #aa5500;">Author: </span><br /><span style="color: #aa5500;">        Suraj Singh Bisht</span><br /><span style="color: #aa5500;">        surajsinghbisht054@gmail.com</span><br /><span style="color: #aa5500;">        www.bitforestinfo.com</span><br /><br /><br /><span style="color: #aa5500;">Description:</span><br /><span style="color: #aa5500;">        This Script is Part of https://github.com/surajsinghbisht054/reinforcement_learning_scripts Project.</span><br /><span style="color: #aa5500;">        I Wrote this script just for Educational and Practise Purpose Only.</span><br /><span style="color: #aa5500;">        </span><br /><span style="color: #aa5500;">==================================================================================</span><br /><span style="color: #aa5500;">                Please Don't Remove Author Initials</span><br /><span style="color: #aa5500;">==================================================================================</span><br /><br /><span style="color: #aa5500;">You Can Use These Codes For Anything But You Just Have To Mention Author Initial With</span><br /><span style="color: #aa5500;">The Codes. And yes! This is Compulsory.</span><br /><br /><br /><span style="color: #aa5500;"> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br /><span style="color: #aa5500;">    Creating Simple Treasur Hunt Game Based On Reinforcement Learning</span><br /><span style="color: #aa5500;"> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span><br /><span style="color: #aa5500;">'''</span><br /><span style="color: #0000aa;">import</span> <span style="color: #00aaaa; text-decoration: underline;">time</span><br /><span style="color: #0000aa;">import</span> <span style="color: #00aaaa; text-decoration: underline;">random</span><br /><span style="color: #0000aa;">import</span> <span style="color: #00aaaa; text-decoration: underline;">sys</span><br /><br /><span style="color: #aaaaaa; font-style: italic;"># Configurations</span><br />EPSILON  = <span style="color: #009999;">0.9</span>                 <span style="color: #aaaaaa; font-style: italic;"># Rate Of Changes in EPLISON = (1.0 - RATE_OF_CHANGE_IN_VALUES)</span><br />ACTIONS  = [<span style="color: #aa5500;">'left'</span>, <span style="color: #aa5500;">'right'</span>]<br />ALPHA    = <span style="color: #009999;">0.1</span>                 <span style="color: #aaaaaa; font-style: italic;"># learning rate</span><br />GAMMA    = <span style="color: #009999;">0.9</span>                 <span style="color: #aaaaaa; font-style: italic;"># discount factor</span><br />EPISODES = <span style="color: #009999;">20</span>                  <span style="color: #aaaaaa; font-style: italic;"># EPISODE</span><br />Debug    = <span style="color: #00aaaa;">False</span><br />BIGREWARD = <span style="color: #009999;">1.0</span><br />SMALLREWARD = <span style="color: #009999;">0.1</span> <span style="color: #aaaaaa; font-style: italic;"># small reward </span><br />TIMESLEEP = <span style="color: #009999;">0.1</span><br />CUTREWARD = <span style="color: #009999;">11.0</span> <span style="color: #aaaaaa; font-style: italic;"># divide reward after 11 steps</span><br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># Game Track</span><br />TRACK = [<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>,<span style="color: #aa5500;">'-'</span>]<br />TRACK.append(<span style="color: #aa5500;">'#'</span>) <span style="color: #aaaaaa; font-style: italic;"># gold in the end</span><br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># show debug status</span><br /><span style="color: #0000aa;">if</span> Debug: <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Debug Variable Is True"</span><br /><br /><span style="color: #aaaaaa; font-style: italic;"># print track</span><br /><span style="color: #0000aa;">if</span> Debug: <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Track : "</span>, <span style="color: #aa5500;">''</span>.join(TRACK) <br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># Q Learning Decision Table</span><br />Qtable = [<br />    <span style="color: #aaaaaa; font-style: italic;"># left, right</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 0</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 1</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 2</span><br /><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 3</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 4</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 5</span><br /><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 6</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 7</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 8</span><br /><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 9</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 10</span><br />    [ <span style="color: #009999;">0</span>,    <span style="color: #009999;">0</span> ], <span style="color: #aaaaaa; font-style: italic;"># 11</span><br />]<br /><br />BestQTable = {}<br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># choose action</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">choose_action</span>(playerstate):<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># Get Qtable left right </span><br />    tmprow = Qtable[playerstate]<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># limit random value updating using epsilon value</span><br />    <span style="color: #0000aa;">if</span> ((random.uniform(<span style="color: #009999;">0.0</span>, <span style="color: #009999;">1.0</span>) &gt; EPSILON) <span style="color: #0000aa;">or</span> (<span style="color: #00aaaa;">max</span>(tmprow)==<span style="color: #009999;">0</span> )):<br />        <span style="color: #aaaaaa; font-style: italic;"># choice action randomly </span><br />        action = random.choice(ACTIONS)<br /><br />    <span style="color: #0000aa;">else</span>:<br />        <span style="color: #aaaaaa; font-style: italic;"># decide, based on Qtable Decision value</span><br />        <span style="color: #0000aa;">if</span> tmprow[<span style="color: #009999;">0</span>]&gt;tmprow[<span style="color: #009999;">1</span>]:<br />            action = ACTIONS[<span style="color: #009999;">0</span>]<br />        <span style="color: #0000aa;">else</span>:<br />            action = ACTIONS[<span style="color: #009999;">1</span>]<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># print debugging informations</span><br />    <span style="color: #0000aa;">if</span> Debug: <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Player State : {} | Action Choice : {} "</span>.format(playerstate, action)<br />    <br />    <span style="color: #0000aa;">return</span> action<br /><br /><span style="color: #aaaaaa; font-style: italic;"># take player action and return reward</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">take_action</span>(playerstate, action, count):<br />    <span style="color: #aaaaaa; font-style: italic;">#</span><br />    over = <span style="color: #00aaaa;">False</span><br />    reward = <span style="color: #009999;">0</span><br /><br />    <span style="color: #aaaaaa; font-style: italic;"># if action=left</span><br />    <span style="color: #0000aa;">if</span> action==ACTIONS[<span style="color: #009999;">0</span>]:<br /><br />        <span style="color: #aaaaaa; font-style: italic;"># if player back to starting point</span><br />        <span style="color: #0000aa;">if</span> playerstate==<span style="color: #009999;">0</span>:<br />            newstate = playerstate <span style="color: #aaaaaa; font-style: italic;"># reach starting point</span><br />        <span style="color: #0000aa;">else</span>:<br />            newstate = playerstate - <span style="color: #009999;">1</span><br /><br />    <span style="color: #aaaaaa; font-style: italic;"># action=right</span><br />    <span style="color: #0000aa;">else</span>:<br />        newstate = playerstate + <span style="color: #009999;">1</span><br />        <span style="color: #aaaaaa; font-style: italic;"># win</span><br />        <span style="color: #0000aa;">if</span> playerstate==<span style="color: #009999;">11</span>:<br />            over = <span style="color: #00aaaa;">True</span> <span style="color: #aaaaaa; font-style: italic;"># Game Over</span><br />            reward = (<span style="color: #00aaaa;">float</span>(BIGREWARD)/<span style="color: #00aaaa;">float</span>(count))*CUTREWARD <span style="color: #aaaaaa; font-style: italic;"># Give Reward</span><br />        <span style="color: #0000aa;">else</span>:<br />            reward = SMALLREWARD <span style="color: #aaaaaa; font-style: italic;"># small reward for right, ComeOn! Encourage Agent To Solve it Quickly</span><br />    <span style="color: #0000aa;">if</span> Debug: <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Take Action &gt; Player At {} | Reward {} | End {}"</span>.format(newstate, reward, over)<br />    <span style="color: #0000aa;">return</span> (newstate, reward, over)<br /><br /><span style="color: #aaaaaa; font-style: italic;"># print details over terminal</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">print_updates</span>(S, episode, count, end=<span style="color: #00aaaa;">False</span>):<br />    tmp = TRACK[:]<br />    tmp[S]=<span style="color: #aa5500;">'o'</span><br />    <span style="color: #0000aa;">if</span> Debug: <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"{}"</span>.format(<span style="color: #aa5500;">''</span>.join(tmp))<br /><br />    <span style="color: #0000aa;">if</span> <span style="color: #0000aa;">not</span> Debug: <br />        sys.stdout.write(<span style="color: #aa5500;">"\r{} "</span>.format(<span style="color: #aa5500;">''</span>.join(tmp)))<br />        sys.stdout.flush()<br /><br />    <span style="color: #0000aa;">if</span> end:<br />        <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"\n[*] Numbers of Episode : {}\r"</span>.format(episode)<br />        <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"[*] Numbers of Steps   : {}"</span>.format(count)<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># to make this process more cool</span><br />    time.sleep(TIMESLEEP)<br /><br /><br /><span style="color: #aaaaaa; font-style: italic;"># main function</span><br /><span style="color: #0000aa;">def</span> <span style="color: #00aa00;">main</span>():<br /><br />    <span style="color: #aaaaaa; font-style: italic;"># Iterate Episode</span><br />    <span style="color: #0000aa;">for</span> episode <span style="color: #0000aa;">in</span> <span style="color: #00aaaa;">range</span>(EPISODES):<br /><br />        <span style="color: #aaaaaa; font-style: italic;"># Intialize variable at Every new iteration</span><br />        PS = <span style="color: #009999;">0</span>          <span style="color: #aaaaaa; font-style: italic;"># Player State In Game</span><br />        count = <span style="color: #009999;">0</span>       <span style="color: #aaaaaa; font-style: italic;"># steps counter</span><br />        END = <span style="color: #00aaaa;">False</span>     <span style="color: #aaaaaa; font-style: italic;"># no end</span><br />        print_updates(PS, episode, count)<br />        <br />        <span style="color: #0000aa;">while</span> <span style="color: #0000aa;">not</span> END:<br />            <span style="color: #aaaaaa; font-style: italic;"># choose action to take</span><br />            AC = choose_action(PS)<br /><br />            <span style="color: #aaaaaa; font-style: italic;"># check feed back</span><br />            NS, RW, END = take_action(PS, AC, count)<br />        <br />            <span style="color: #aaaaaa; font-style: italic;"># update</span><br />            print_updates(NS, episode, count, end=END)<br /><br />            <span style="color: #0000aa;">if</span> END:<br />                qtarget = RW<br />            <span style="color: #0000aa;">else</span>:<br />                <span style="color: #aaaaaa; font-style: italic;"># Formula</span><br />                qtarget = RW + GAMMA * <span style="color: #00aaaa;">max</span>(Qtable[PS])<br /><br />            <span style="color: #aaaaaa; font-style: italic;"># previous value</span><br />            prevalue = Qtable[PS][ACTIONS.index(AC)]<br /><br />            <span style="color: #aaaaaa; font-style: italic;"># updated value</span><br />            Qtable[PS][ACTIONS.index(AC)] += ALPHA *( qtarget-prevalue)<br /><br />            count += <span style="color: #009999;">1</span><br /><br />            PS = NS <span style="color: #aaaaaa; font-style: italic;"># new playerstate</span><br />    <span style="color: #0000aa;">return</span><br /><br /><br /><span style="color: #0000aa;">if</span> __name__==<span style="color: #aa5500;">'__main__'</span>:<br />    main()<br />    <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"\n\n{}\t |\t {}\t |\t {}\n"</span>.format(<span style="color: #00aaaa;">str</span>(<span style="color: #aa5500;">"No."</span>).rjust(<span style="color: #009999;">3</span>), <span style="color: #aa5500;">'left'</span>.rjust(<span style="color: #009999;">18</span>), <span style="color: #aa5500;">'right'</span>.rjust(<span style="color: #009999;">18</span>))<br />    <span style="color: #0000aa;">for</span> no, row <span style="color: #0000aa;">in</span> <span style="color: #00aaaa;">enumerate</span>(Qtable):<br />        col1, col2 = row[<span style="color: #009999;">0</span>], row[<span style="color: #009999;">1</span>]<br />        <span style="color: #0000aa;">print</span> <span style="color: #aa5500;">"{}\t |\t {}\t |\t {}"</span>.format(<span style="color: #00aaaa;">str</span>(no).rjust(<span style="color: #009999;">3</span>), <span style="color: #00aaaa;">str</span>(col1).ljust(<span style="color: #009999;">18</span>), <span style="color: #00aaaa;">str</span>(col2).ljust(<span style="color: #009999;">18</span>))<br /></pre></div><br /><br /><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2019/01/how-to-create-tic-tac-toe-game-with.html" data-toggle="tooltip" data-placement="top" title="How To Create Tic Tac Toe Game With Artificial Neural Network Player">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

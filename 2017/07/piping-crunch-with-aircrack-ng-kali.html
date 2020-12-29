@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Piping Crunch With Aircrack-ng - kali Linux tutorials - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Hackers,Today, In This Tutorial I am going to show you how to directly pipe crunch output to aircrack-ng.Q 1. What Is Piping and why to use it?Ans. P...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/07/piping-crunch-with-aircrack-ng-kali.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Piping Crunch With Aircrack-ng - kali Linux tutorials</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on July 29, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   2 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Hackers,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-nBzk58Z7WfA/WG-6dcFsycI/AAAAAAAAAqM/tozBBKrniJU433wfAumWxa9WCToWbDtrACPcBGAYYCw/s1600/Introduction-to-aircrack-ng-rootsh3ll.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="457" data-original-width="813" height="358" src="https://1.bp.blogspot.com/-nBzk58Z7WfA/WG-6dcFsycI/AAAAAAAAAqM/tozBBKrniJU433wfAumWxa9WCToWbDtrACPcBGAYYCw/s640/Introduction-to-aircrack-ng-rootsh3ll.jpg" width="640" /></a></div><br /><br />Today, In This Tutorial I am going to show you how to directly pipe crunch output to aircrack-ng.<br /><br />Q 1. What Is Piping and why to use it?<br />Ans. Piping Is a simple way to connect any particular program output to another program input. Actually In Simple Words, Piping is a special technique to create a local direct connection between two programs nodes without depending on any local drive files. <b>Why to use it?</b>&nbsp;as you already know, for brute forcing any password, wordlists are very important files and the size of wordlist can be really very big. So, &nbsp;With The Help Of These Piping, A Hacker Can Directly Pipe Crunch Output To Aircrack-ng Without Worrying About Crunch Output Data Size.<br /><br /><br /><br />So, Let Me Quickly Show You Commands.<br /><br />Open Terminal An Type:<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">:<span style="font-weight: bold;">~</span><span style="color: #999988; font-style: italic;"># crunch [crunch_arguments_options] | aircrack-ng -e [ESSID] -w - [path/to/handshake/file.cap]</span><br /></pre></div><br /><br />Example:<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">:<span style="font-weight: bold;">~</span><span style="color: #999988; font-style: italic;"># crunch 8 10 bitforestn | aircrack-ng -e Thisisme -w - [path/to/handshake/file.cap]</span><br /></pre></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-FpVLskDZKXA/WXuMFK9u1HI/AAAAAAAABT8/Zgo9OdxVC1sMNiXtl9KTXDtIE3bQm5nNQCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-07-26%2B20-07-16.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="744" data-original-width="1311" height="362" src="https://4.bp.blogspot.com/-FpVLskDZKXA/WXuMFK9u1HI/AAAAAAAABT8/Zgo9OdxVC1sMNiXtl9KTXDtIE3bQm5nNQCLcBGAs/s640/Screenshot%2Bfrom%2B2017-07-26%2B20-07-16.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br />For Crunch Tutorial <a href="http://www.bitforestinfo.com/2017/01/how-to-create-wordlists-dictionary.html" target="_blank">Click Here</a><br />Cracking Handshake With High Speed. <a href="http://www.bitforestinfo.com/2017/07/fast-wpawpa2-psk-handshake-cracking.html" target="_blank">Click Here</a><br /><br />Done!<br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/07/how-to-install-cowpatty-in-ubuntu.html" data-toggle="tooltip" data-placement="top" title="how to install cowpatty in ubuntu">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/07/fast-wpawpa2-psk-handshake-cracking.html" data-toggle="tooltip" data-placement="top" title="Fast WPA/WPA2-PSK Handshake Cracking With Cowpatty and Genpmk">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>

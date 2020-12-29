@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Create WLAN SSID Sniffer Using Python Socket Module - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,Today, In This Post I Am Going To Show You How To Create WLAN SSID Sniffing Script Using Python And Socket Module.And If You Are A New Visito...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/07/create-wlan-ssid-sniffer-using-python-socket-module.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Create WLAN SSID Sniffer Using Python Socket Module</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on July 19, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   17 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-yYeu1nvOnao/WW3DtYwUgRI/AAAAAAAABO0/gvAx_Mjory0T-ntLRKKF42-vO3dFPZoCQCPcBGAYYCw/s1600/%25C2%25A3%2B150%2BMILLONES%2BPARA%2BLAS%2BCARRETERAS%2BINTELIGENTES.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="693" data-original-width="800" height="554" src="https://4.bp.blogspot.com/-yYeu1nvOnao/WW3DtYwUgRI/AAAAAAAABO0/gvAx_Mjory0T-ntLRKKF42-vO3dFPZoCQCPcBGAYYCw/s640/%25C2%25A3%2B150%2BMILLONES%2BPARA%2BLAS%2BCARRETERAS%2BINTELIGENTES.png" width="640" /></a></div><br /><br />Today, In This Post I Am Going To Show You How To Create WLAN SSID Sniffing Script Using Python And Socket Module.<br />And If You Are A New Visitor On My Blog Then I Will Suggest You To Take A Look On My Blog Index For My Previous Interesting And Knowledgeable Posts.<br />So, Let's Focus To Our Main Topic.<br /><br />To Create A WLAN SSID Sniffer Script Using Socket Module First We Need To Understand Basic Structure Of Wireless Devices And Their Procedure. So, To Make Your All Queries Clear Here, I am Writing Some Important Information In Question And Answer Way.<br /><br /><h4 style="text-align: left;">Q 1. What Is Beacon Frames?</h4>Ans. Check This Previous Post&nbsp;<a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">Beacon Frame, IEEE 802.11</a><br /><br /><h4 style="text-align: left;">Q 2. What Is Monitor Mode?</h4>Ans. Check This Previous Post&nbsp;<a href="http://www.bitforestinfo.com/2017/06/2-easiest-way-to-enable-wireless-lan-monitor-mode-in-ubuntu-or-linux-using-airmon-ng.html" target="_blank">2-Easiest Way To Enable Wireless Lan Monitor Mode</a>.<br /><br /><h4 style="text-align: left;">Q 3. What we are going to do?</h4>Ans. First, We Will Start Our Wireless LAN Monitor Modes To Capture All Packets Available On Air. Then We Will Use Python Socket Module To Capture all Packets From WLAN Interface And After That, We Will Try To Filter Useful Frames From Packets To Find Required Information. Here, Useful Frames Means RadioTab Header Frame And Beacon Frame. As I Already Described In This Previous Post &nbsp;<a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">Beacon Frame, IEEE 802.11</a>&nbsp;Beacon Frame Provides Various Important Information's About Wireless Access Point. So, In Simple Words, We Will Try To Find And Filter Beacon Frames From All Captured Packets To Extract Required Access Point Information.<br /><br />So, Let's Move Ahead And Try To Understand These Codes. &nbsp;Here, This Is My Codes<br /><h4 style="text-align: left;">1. ap_socket.py</h4><div style="background: #eeeedd; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61<br />62<br />63<br />64<br />65<br />66<br />67<br />68<br />69<br />70<br />71<br />72<br />73<br />74<br />75<br />76<br />77<br />78<br />79<br />80<br />81<br />82<br />83<br />84<br />85<br />86<br />87<br />88<br />89<br />90<br />91<br />92<br />93<br />94<br />95<br />96</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: forestgreen;">#!/usr/bin/python</span><br /><span style="color: forestgreen;"># -*- coding: utf-8 -*-</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;"># +++++++++++++++++++++++++++++++++++++++++</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;"># WLAN BEACON FRAME EXTRACTOR </span><br /><span style="color: forestgreen;"># +++++++++++++++++++++++++++++++++++++++++</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;"># Author : SSB</span><br /><span style="color: forestgreen;">#  surajsinghbisht054@gmail.com</span><br /><span style="color: forestgreen;">#  http://bitforestinfo.blogspot.com</span><br /><span style="color: forestgreen;">#  github.com/surajsinghbisht054</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;"># This Script Is Created For Educational And Practise Purpose Only</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;">#</span><br /><span style="color: forestgreen;"># import module</span><br /><span style="color: darkmagenta; font-weight: bold;">import</span> <span style="color: #008b45; text-decoration: underline;">socket</span><br /><span style="color: darkmagenta; font-weight: bold;">import</span> <span style="color: #008b45; text-decoration: underline;">struct</span><br /><br /><span style="color: forestgreen;"># create Socket</span><br />s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(<span style="color: #b452cd;">0x0003</span>))<br /><br /><span style="color: forestgreen;"># bind with monitor mode interface</span><br />s.bind((<span style="color: #cd5555;">'mon0'</span>,<span style="color: #b452cd;">0x0003</span>))<br /><br /><br /><span style="color: forestgreen;"># function for formating mac addresses</span><br /><span style="color: darkmagenta; font-weight: bold;">def</span> <span style="color: #008b45;">addr</span>(s):<br /> <span style="color: darkmagenta; font-weight: bold;">return</span> <span style="color: #cd5555;">"{}{}:{}{}:{}{}:{}{}:{}{}:{}{}"</span>.format(*s.upper())<br /><br /><span style="color: forestgreen;"># Founded Access Point List</span><br />ap_list = []<br /><br /><br /><span style="color: forestgreen;"># loop</span><br /><span style="color: darkmagenta; font-weight: bold;">while</span> <span style="color: #658b00;">True</span>:<br /> <span style="color: forestgreen;"># Sniff Packet and get packet from list</span><br /> pkt = s.recvfrom(<span style="color: #b452cd;">2048</span>)[<span style="color: #b452cd;">0</span>]<br /><br /> <span style="color: forestgreen;"># Check RadioTap Header Frame In Packet</span><br /> <span style="color: darkmagenta; font-weight: bold;">if</span> pkt[<span style="color: #b452cd;">2</span>:<span style="color: #b452cd;">4</span>]==<span style="color: #cd5555;">'$\x00'</span>:<br /><br />  <span style="color: forestgreen;"># Get Total Length Of RadioTap Header Packet Bytes</span><br />  len_of_header = struct.unpack(<span style="color: #cd5555;">'h'</span>, pkt[<span style="color: #b452cd;">2</span>:<span style="color: #b452cd;">4</span>])[<span style="color: #b452cd;">0</span>]<br /><br />  <span style="color: forestgreen;"># Extract RadioTap Header</span><br />  radio_tap_header_frame = pkt[:len_of_header].encode(<span style="color: #cd5555;">'hex'</span>)<br /><br />  <span style="color: forestgreen;"># Now, assume that next frame from radiotap is Beacon Frame</span><br />  beacon_frame = pkt[len_of_header:len_of_header+<span style="color: #b452cd;">24</span>].encode(<span style="color: #cd5555;">'hex'</span>)<br /><br />  <span style="color: forestgreen;"># Frame Type</span><br />  f_type = beacon_frame[:<span style="color: #b452cd;">2</span>]<br /><br />  <span style="color: forestgreen;"># Extract Addr1</span><br />  addr1  = beacon_frame[<span style="color: #b452cd;">8</span>:<span style="color: #b452cd;">20</span>]<br /><br />  <span style="color: forestgreen;"># Extract Addr2</span><br />  addr2  = beacon_frame[<span style="color: #b452cd;">20</span>:<span style="color: #b452cd;">32</span>]<br /><br />  <span style="color: forestgreen;"># Extract Addr3</span><br />  addr3  = beacon_frame[<span style="color: #b452cd;">32</span>:<span style="color: #b452cd;">44</span>]<br /><br />  <span style="color: forestgreen;"># Try To Extract SSID if present</span><br />  <span style="color: darkmagenta; font-weight: bold;">try</span>:<br />   len_of_ssid = <span style="color: #658b00;">ord</span>(pkt[<span style="color: #b452cd;">73</span>])<br />   ssid   = pkt[<span style="color: #b452cd;">74</span>:<span style="color: #b452cd;">74</span>+len_of_ssid]<br />  <span style="color: darkmagenta; font-weight: bold;">except</span>:<br />   ssid = <span style="color: #cd5555;">"Unknown"</span><br /><br />  <span style="color: forestgreen;"># Verify that extract frame is a beacon frame and not printed yet</span><br />  <span style="color: darkmagenta; font-weight: bold;">if</span> addr2 <span style="color: darkmagenta;">not</span> <span style="color: darkmagenta;">in</span> ap_list <span style="color: darkmagenta;">and</span> f_type==<span style="color: #cd5555;">'80'</span>:<br /><br />   <span style="color: forestgreen;"># append addr2 in ap_list </span><br />   ap_list.append(addr2)<br /><br />   <span style="color: forestgreen;"># Print Info</span><br />   <span style="color: darkmagenta; font-weight: bold;">print</span> <span style="color: #cd5555;">"""</span><br /><span style="color: #cd5555;">++++++++++ [ Beacon Frame ] ++++++++++++++++++++</span><br /><br /><span style="color: #cd5555;">Frame Type : {}</span><br /><span style="color: #cd5555;">SSID  : {}</span><br /><span style="color: #cd5555;">Receiver : {}</span><br /><span style="color: #cd5555;">Transmitter : {}</span><br /><span style="color: #cd5555;">Source  : {}</span><br /><br /><br /><span style="color: #cd5555;">   """</span>.format(f_type, <span style="color: forestgreen;"># Frame Type</span><br />    ssid ,  <span style="color: forestgreen;"># SSID</span><br />    addr(addr1),  <span style="color: forestgreen;"># Addr1</span><br />    addr(addr2),  <span style="color: forestgreen;"># Addr2</span><br />    addr(addr3) <span style="color: forestgreen;"># Addr3</span><br />    )<br /></pre></td></tr></tbody></table></div><br />To Run These Codes On Your System, First You need to start your wireless monitor mode. for more info about monitor mode check here&nbsp;<a href="http://www.bitforestinfo.com/2017/06/2-easiest-way-to-enable-wireless-lan-monitor-mode-in-ubuntu-or-linux-using-airmon-ng.html" target="_blank">2-Easiest Way To Enable Wireless Lan Monitor Mode</a>.<br />Then, Type On Terminal<br /><br />&nbsp;<span style="color: #cccccc;">sudo</span> <span style="color: #cccccc;">python</span> <span style="color: #cccccc;">ap_socket</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">py&nbsp;</span><br /><span style="color: #cccccc;"><br /></span><br /><h4 style="text-align: left;"><span style="color: #cccccc;">My Output:</span></h4><br /><!-- HTML generated using hilite.me --><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #cccccc;">aya@bitforestinfo:</span><span style="color: #3399cc;">~</span><span style="border: 1px solid #ff0000; color: #cccccc;">$</span> <span style="color: #cccccc;">sudo</span> <span style="color: #cccccc;">python</span> <span style="color: #cccccc;">ap_socket</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">py</span> <br /><br /><span style="color: #3399cc;">++++++++++</span> <span style="color: #cccccc;">[</span> <span style="color: #cccccc;">Beacon</span> <span style="color: #cccccc;">Frame</span> <span style="color: #cccccc;">]</span> <span style="color: #3399cc;">++++++++++++++++++++</span><br /><br /><span style="color: #cccccc;">Frame</span> <span style="color: #cccccc;">Type</span> <span style="color: #cccccc;">:</span> <span style="color: #cd00cd;">80</span><br /><span style="color: #cccccc;">SSID</span>  <span style="color: #cccccc;">:</span> <span style="color: #cccccc;">E</span><span style="color: #3399cc;">*****</span><span style="color: #cccccc;">e</span><br /><span style="color: #cccccc;">Receiver</span> <span style="color: #cccccc;">:</span> <span style="color: #cccccc;">FF:FF:FF:FF:FF:FF</span><br /><span style="color: #cccccc;">Transmitter</span> <span style="color: #cccccc;">:</span> <span style="color: #cccccc;">C8:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #cd00cd;">5</span><span style="color: #cccccc;">B</span><br /><span style="color: #cccccc;">Source</span>  <span style="color: #cccccc;">:</span> <span style="color: #cccccc;">C8:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #3399cc;">**</span><span style="color: #cccccc;">:</span><span style="color: #cd00cd;">5</span><span style="color: #cccccc;">B</span><br /><br /><br />  <br /></pre></div><br /><br />Now, Let me explain you these python codes in simple way by dividing all codes in small parts with explanation.<br /><br /><br /><b>Code Part 1.</b><br /><br />import socket module and struct module<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">#</span><br /><span style="color: #888888;"># import module</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">socket</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">struct</span><br /><br /></pre></div><br /><br /><b>Code Part 2.</b><br /><br />Here, In This Codes First Statement Is For Creating RAW Socket Object And Second Statement is for binding RAW Socket With Monitor Mode Enabled Interface.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;"># create Socket</span><br />s <span style="color: #333333;">=</span> socket<span style="color: #333333;">.</span>socket(socket<span style="color: #333333;">.</span>AF_PACKET, socket<span style="color: #333333;">.</span>SOCK_RAW, socket<span style="color: #333333;">.i</span>htons(<span style="color: #005588; font-weight: bold;">0x0003</span>))<br /><br /><span style="color: #888888;"># bind with monitor mode interface</span><br />s<span style="color: #333333;">.</span>bind((<span style="background-color: #fff0f0;">'mon0'</span>,<span style="color: #005588; font-weight: bold;">0x0003</span>))<br /><br /></pre></div><br /><br /><b>Code Part 3.</b><br /><br />addr(s) function is only for formatting provided mac address in standard way.<br />For Example:<br /><br />Input ------&gt; addr(ffffffffffff)<br />Output ---------------------&gt; FF:FF:FF:FF:FF:FF <br /><br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;"># function for formating mac addresses</span><br /><span style="color: #008800; font-weight: bold;">def</span> <span style="color: #0066bb; font-weight: bold;">addr</span>(s):<br /> <span style="color: #008800; font-weight: bold;">return</span> <span style="background-color: #fff0f0;">"{}{}:{}{}:{}{}:{}{}:{}{}:{}{}"</span><span style="color: #333333;">.</span>format(<span style="color: #333333;">*</span>s<span style="color: #333333;">.</span>upper())<br /><br /><span style="color: #888888;"># Founded Access Point List</span><br />ap_list <span style="color: #333333;">=</span> []<br /><br /></pre></div><br /><br /><b>Code Part 4.</b><br /><br />Here, <i>&nbsp;pkt <span style="color: #333333;">=</span> s<span style="color: #333333;">.</span>recvfrom(<span style="color: #0000dd; font-weight: bold;">2048</span>)[<span style="color: #0000dd; font-weight: bold;">0</span>]</i> statement is for capturing packets from WLAN Interface and Then,<i>&nbsp;<span style="color: #008800; font-weight: bold;">if</span> pkt[<span style="color: #0000dd; font-weight: bold;">2</span>:<span style="color: #0000dd; font-weight: bold;">4</span>]<span style="color: #333333;">==</span><span style="background-color: #fff0f0;">'$</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\x00</span><span style="background-color: #fff0f0;">'</span>:</i> Statement is for Verifying RadioTap &nbsp;Availability In Captured Packets. After Finding RadioTap, <i>&nbsp;len_of_header <span style="color: #333333;">=</span> struct<span style="color: #333333;">.</span>unpack(<span style="background-color: #fff0f0;">'h'</span>, pkt[<span style="color: #0000dd; font-weight: bold;">2</span>:<span style="color: #0000dd; font-weight: bold;">4</span>])[<span style="color: #0000dd; font-weight: bold;">0</span>]</i> Statement Extract RadioTap Frame Length. <i>radio_tap_header_frame <span style="color: #333333;">=</span> pkt[:len_of_header]<span style="color: #333333;">.</span>encode(<span style="background-color: #fff0f0;">'hex'</span>)</i> Statement is For Extracting RadioTap From Captured Packets.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;"># loop</span><br /><span style="color: #008800; font-weight: bold;">while</span> <span style="color: #007020;">True</span>:<br /> <span style="color: #888888;"># Sniff Packet and get packet from list</span><br /> pkt <span style="color: #333333;">=</span> s<span style="color: #333333;">.</span>recvfrom(<span style="color: #0000dd; font-weight: bold;">2048</span>)[<span style="color: #0000dd; font-weight: bold;">0</span>]<br /><br /> <span style="color: #888888;"># Check RadioTap Header Frame In Packet</span><br /> <span style="color: #008800; font-weight: bold;">if</span> pkt[<span style="color: #0000dd; font-weight: bold;">2</span>:<span style="color: #0000dd; font-weight: bold;">4</span>]<span style="color: #333333;">==</span><span style="background-color: #fff0f0;">'$</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\x00</span><span style="background-color: #fff0f0;">'</span>:<br /><br />  <span style="color: #888888;"># Get Total Length Of RadioTap Header Packet Bytes</span><br />  len_of_header <span style="color: #333333;">=</span> struct<span style="color: #333333;">.</span>unpack(<span style="background-color: #fff0f0;">'h'</span>, pkt[<span style="color: #0000dd; font-weight: bold;">2</span>:<span style="color: #0000dd; font-weight: bold;">4</span>])[<span style="color: #0000dd; font-weight: bold;">0</span>]<br /><br />  <span style="color: #888888;"># Extract RadioTap Header</span><br />  radio_tap_header_frame <span style="color: #333333;">=</span> pkt[:len_of_header]<span style="color: #333333;">.</span>encode(<span style="background-color: #fff0f0;">'hex'</span>)<br /><br /></pre></div><br /><br /><b>Code Part 5.</b><br /><br />In This Part All Statements are responsible for extracting various information from beacon frame.<br /><br />Extract Beacon Frames From Captured Packets.<br /><pre style="line-height: 16.25px;">beacon_frame <span style="color: #333333;">=</span> pkt[len_of_header:len_of_header<span style="color: #333333;">+</span><span style="color: #0000dd; font-weight: bold;">24</span>]<span style="color: #333333;">.</span>encode(<span style="background-color: #fff0f0;">'hex'</span>)</pre><pre style="line-height: 16.25px;"></pre>Extract Frame Subtype.<br /><pre style="line-height: 16.25px;">f_type <span style="color: #333333;">=</span> beacon_frame[:<span style="color: #0000dd; font-weight: bold;">2</span>]</pre><br />Extract Receiver MAC Address.<br /><pre style="line-height: 16.25px;">addr1  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">8</span>:<span style="color: #0000dd; font-weight: bold;">20</span>]</pre><br />Extract Transmitter MAC Address.<br /><pre style="line-height: 16.25px;">addr2  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">20</span>:<span style="color: #0000dd; font-weight: bold;">32</span>]</pre><br />Extract Source MAC Address.<br /><pre style="line-height: 16.25px;">addr3  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">32</span>:<span style="color: #0000dd; font-weight: bold;">44</span>]</pre><pre style="line-height: 16.25px;">  </pre>Extract SSID From Frame.<br /><pre style="line-height: 16.25px;">ssid   <span style="color: #333333;">=</span> pkt[<span style="color: #0000dd; font-weight: bold;">74</span>:<span style="color: #0000dd; font-weight: bold;">74</span><span style="color: #333333;">+</span>len_of_ssid]</pre><pre style="line-height: 16.25px;"></pre><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <span style="color: #888888;"># Now, assume that next frame from radiotap is Beacon Frame</span><br />  beacon_frame <span style="color: #333333;">=</span> pkt[len_of_header:len_of_header<span style="color: #333333;">+</span><span style="color: #0000dd; font-weight: bold;">24</span>]<span style="color: #333333;">.</span>encode(<span style="background-color: #fff0f0;">'hex'</span>)<br /><br />  <span style="color: #888888;"># Frame Type</span><br />  f_type <span style="color: #333333;">=</span> beacon_frame[:<span style="color: #0000dd; font-weight: bold;">2</span>]<br /><br />  <span style="color: #888888;"># Extract Addr1</span><br />  addr1  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">8</span>:<span style="color: #0000dd; font-weight: bold;">20</span>]<br /><br />  <span style="color: #888888;"># Extract Addr2</span><br />  addr2  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">20</span>:<span style="color: #0000dd; font-weight: bold;">32</span>]<br /><br />  <span style="color: #888888;"># Extract Addr3</span><br />  addr3  <span style="color: #333333;">=</span> beacon_frame[<span style="color: #0000dd; font-weight: bold;">32</span>:<span style="color: #0000dd; font-weight: bold;">44</span>]<br /><br />  <span style="color: #888888;"># Try To Extract SSID if present</span><br />  <span style="color: #008800; font-weight: bold;">try</span>:<br />   len_of_ssid <span style="color: #333333;">=</span> <span style="color: #007020;">ord</span>(pkt[<span style="color: #0000dd; font-weight: bold;">73</span>])<br />   ssid   <span style="color: #333333;">=</span> pkt[<span style="color: #0000dd; font-weight: bold;">74</span>:<span style="color: #0000dd; font-weight: bold;">74</span><span style="color: #333333;">+</span>len_of_ssid]<br />  <span style="color: #008800; font-weight: bold;">except</span>:<br />   ssid <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"Unknown"</span><br /><br /></pre></div><br /><br /><b>Code Part 6.</b><br /><br />And At The End, In this Part,<i>&nbsp;<span style="color: #008800; font-weight: bold;">if</span> addr2 <span style="color: black; font-weight: bold;">not</span> <span style="color: black; font-weight: bold;">in</span> ap_list <span style="color: black; font-weight: bold;">and</span> f_type<span style="color: #333333;">==</span><span style="background-color: #fff0f0;">'80'</span>: </i>Statement is for Verifying Beacon Frame And Also For Not Repeating Same Address Again.<br /><br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <span style="color: #888888;"># Verify that extract frame is a beacon frame and not printed yet</span><br />  <span style="color: #008800; font-weight: bold;">if</span> addr2 <span style="color: black; font-weight: bold;">not</span> <span style="color: black; font-weight: bold;">in</span> ap_list <span style="color: black; font-weight: bold;">and</span> f_type<span style="color: #333333;">==</span><span style="background-color: #fff0f0;">'80'</span>:<br /><br />   <span style="color: #888888;"># append addr2 in ap_list </span><br />   ap_list<span style="color: #333333;">.</span>append(addr2)<br /><br />   <span style="color: #888888;"># Print Info</span><br />   <span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"""</span><br /><span style="background-color: #fff0f0;">++++++++++ [ Beacon Frame ] ++++++++++++++++++++</span><br /><br /><span style="background-color: #fff0f0;">Frame Type : {}</span><br /><span style="background-color: #fff0f0;">SSID  : {}</span><br /><span style="background-color: #fff0f0;">Receiver : {}</span><br /><span style="background-color: #fff0f0;">Transmitter : {}</span><br /><span style="background-color: #fff0f0;">Source  : {}</span><br /><br /><br /><span style="background-color: #fff0f0;">   """</span><span style="color: #333333;">.</span>format(f_type, <span style="color: #888888;"># Frame Type</span><br />    ssid ,  <span style="color: #888888;"># SSID</span><br />    addr(addr1),  <span style="color: #888888;"># Addr1</span><br />    addr(addr2),  <span style="color: #888888;"># Addr2</span><br />    addr(addr3) <span style="color: #888888;"># Addr3</span><br />    )<br /></pre></div><br /><br />Done!<br /><br />You Can Also Download Raw Code From <a href="https://github.com/surajsinghbisht054/wireless_scripts/blob/master/ap_socket.py" target="_blank">Here</a><br /><br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SSB<br /><br /><br />&nbsp;&nbsp;</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/07/what-is-beacon-frame-ieee-80211.html" data-toggle="tooltip" data-placement="top" title="What Is Beacon Frame? IEEE 802.11">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/07/find-hidden-wireless-ssid-using-wireshark-and-kali-linux.html" data-toggle="tooltip" data-placement="top" title="Find Hidden Wireless SSID Using Wireshark and Kali Linux">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>
