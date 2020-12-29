@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Simple Cmd Argument Parser Class In C++ - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,In Today&#39;s Post, I am going to share with you a simple C++ Script, That can help a newbie in Understanding Argument Parsing Concept.Codes Sec...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/blog/04/05/simple-cmd-argument-parser-class-in-c.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Simple Cmd Argument Parser Class In C++</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on April 05, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   14 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-B5AVSvGTwPY/WOehPhjTBKI/AAAAAAAABBc/jFUMRLM65tUiuTgWvG7YZo02G4Okjr4sgCPcBGAYYCw/s1600/p19cpcvtrh7sm1hqqjas172v11k73.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="290" data-original-width="590" height="314" src="https://4.bp.blogspot.com/-B5AVSvGTwPY/WOehPhjTBKI/AAAAAAAABBc/jFUMRLM65tUiuTgWvG7YZo02G4Okjr4sgCPcBGAYYCw/s640/p19cpcvtrh7sm1hqqjas172v11k73.jpg" width="640" /></a></div><br /><br /><br />In Today's Post, I am going to share with you a simple C++ Script, That can help a newbie in Understanding Argument Parsing Concept.<br /><br /><br /><h4 style="text-align: left;">Codes Section (Include Header Files)</h4><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">// Include header file</span><br /><span style="color: #557799;">#include &lt;iostream&gt;</span><br /><span style="color: #557799;">#include &lt;string&gt;</span><br /></pre></div><br /><br /><br /><h4 style="text-align: left;">Codes Section 2</h4><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">// Option Parser Extracting Class</span><br />class OptionParser<br />{<br /> <span style="color: #997700; font-weight: bold;">private:</span><br /><br />  <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">**</span>argv;<br />  <span style="color: #333399; font-weight: bold;">int</span>   argc;<br />  <span style="color: #333399; font-weight: bold;">int</span>   ret, b;<br />        std<span style="color: #333333;">::</span>string temp;<br />        std<span style="color: #333333;">::</span>string a;<br />        <br />  <br /> <span style="color: #997700; font-weight: bold;">public:</span><br /><br />  <span style="color: #888888;">// Define Functions</span><br />  std<span style="color: #333333;">::</span>string getvalue(<span style="color: #008800; font-weight: bold;">const</span> <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">*</span>s); <span style="color: #888888;">// Get Argument Index In Return</span><br />  std<span style="color: #333333;">::</span>string getargv(<span style="color: #333399; font-weight: bold;">int</span> i);          <span style="color: #888888;">// Get Argument As String In Return </span><br />  <span style="color: #333399; font-weight: bold;">int</span> <span style="color: #0066bb; font-weight: bold;">check</span>(<span style="color: #008800; font-weight: bold;">const</span> <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">*</span>s);            <span style="color: #888888;">// check char availability and return Index</span><br />  <span style="color: #333399; font-weight: bold;">void</span> <span style="color: #0066bb; font-weight: bold;">load</span>(<span style="color: #333399; font-weight: bold;">int</span> argc, <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">**</span>argv);   <span style="color: #888888;">// Load Data </span><br /> <br />};<br /></pre></div><br /><br /><h4 style="text-align: left;">Codes Section 3</h4><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">/*  </span><br /><span style="color: #888888;">Functions </span><br /><br /><span style="color: #888888;">*/</span><br /><br />std<span style="color: #333333;">::</span>string OptionParser<span style="color: #333333;">::</span>getvalue(<span style="color: #008800; font-weight: bold;">const</span> <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">*</span>p){<br /><br />            b<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">0</span>;<br />            a<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">""</span>;<br /><br />            b<span style="color: #333333;">=</span>check(p);<br /><br />            <span style="color: #008800; font-weight: bold;">if</span> ((b<span style="color: #333333;">!=</span><span style="color: #0000dd; font-weight: bold;">0</span>)<span style="color: #333333;">&amp;&amp;</span>((b<span style="color: #333333;">+</span><span style="color: #0000dd; font-weight: bold;">1</span>)<span style="color: #333333;">&lt;</span>argc)){<br />                <br />                a <span style="color: #333333;">=</span> getargv(b<span style="color: #333333;">+</span><span style="color: #0000dd; font-weight: bold;">1</span>);<br />                <br />            }<br />        <br />            <span style="color: #008800; font-weight: bold;">return</span> a;<br /><br />}; <br /><br />std<span style="color: #333333;">::</span>string OptionParser<span style="color: #333333;">::</span>getargv(<span style="color: #333399; font-weight: bold;">int</span> i){<br /><br />    temp <span style="color: #333333;">=</span> argv[i];<br />    <span style="color: #008800; font-weight: bold;">return</span> temp;<br /><br /><br />};<br /></pre></div><br /><br /><h4 style="text-align: left;">Codes Section 4</h4><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #333399; font-weight: bold;">int</span> OptionParser<span style="color: #333333;">::</span>check(<span style="color: #008800; font-weight: bold;">const</span> <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">*</span>s){<br /><br />    ret <span style="color: #333333;">=</span> <span style="color: #0000dd; font-weight: bold;">0</span>;<br />    temp <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">""</span>;<br />    <br />    <span style="color: #888888;">// Iter arguments</span><br />    <span style="color: #008800; font-weight: bold;">for</span>(<span style="color: #333399; font-weight: bold;">int</span> i<span style="color: #333333;">=</span><span style="color: #0000dd; font-weight: bold;">0</span>; i<span style="color: #333333;">&lt;</span>argc; i<span style="color: #333333;">++</span>){<br />        <span style="color: #888888;">// Take argument</span><br />        temp <span style="color: #333333;">=</span> getargv(i);<br />    <br />        <span style="color: #008800; font-weight: bold;">if</span>(temp<span style="color: #333333;">==</span>s){<br />                ret <span style="color: #333333;">=</span> i;<br />            }<br /><br />        }<br />    <span style="color: #008800; font-weight: bold;">return</span> ret;<br /><br /><br />};<br /><br /><span style="color: #333399; font-weight: bold;">void</span> OptionParser<span style="color: #333333;">::</span>load(<span style="color: #333399; font-weight: bold;">int</span> argn, <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">**</span>argm){<br />    argv <span style="color: #333333;">=</span> argm;<br />    argc <span style="color: #333333;">=</span> argn;<br />};<br /></pre></div><br /><br /><h4 style="text-align: left;">Codes Section 5</h4><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">// main function</span><br /><span style="color: #333399; font-weight: bold;">int</span> <span style="color: #0066bb; font-weight: bold;">main</span>(<span style="color: #333399; font-weight: bold;">int</span> argc, <span style="color: #333399; font-weight: bold;">char</span> <span style="color: #333333;">**</span>argv){<br /> <br /> <span style="color: #888888;">// Create Object handler</span><br /> OptionParser parse;<br /> <br /> <span style="color: #888888;">// Load Data Into Object</span><br /> parse.load(argc, argv);<br /> <br /> <span style="color: #888888;">// Get Loaded Argument;</span><br />        std<span style="color: #333333;">::</span>cout <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">" No. Of Argument  : "</span> <span style="color: #333333;">&lt;&lt;</span> argc <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">"</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\n</span><span style="background-color: #fff0f0;">"</span>;<br /> std<span style="color: #333333;">::</span>cout <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">" First Argument   : "</span> <span style="color: #333333;">&lt;&lt;</span> parse.getargv(argc<span style="color: #333333;">-</span><span style="color: #0000dd; font-weight: bold;">1</span>) <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">"</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\n</span><span style="background-color: #fff0f0;">"</span>;<br /> <br /> <span style="color: #888888;">// check input</span><br /> std<span style="color: #333333;">::</span>cout <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">" Check Input (-h) : "</span> <span style="color: #333333;">&lt;&lt;</span> parse.check(<span style="background-color: #fff0f0;">"-h"</span>) <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">"</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\n</span><span style="background-color: #fff0f0;">"</span>;<br /> <br />        <span style="color: #008800; font-weight: bold;">if</span> (parse.check(<span style="background-color: #fff0f0;">"-h"</span>))<br />     {<br />      <span style="color: #888888;">//std::string x;</span><br />  std<span style="color: #333333;">::</span>cout <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">" Get Value Of h  : "</span> <span style="color: #333333;">&lt;&lt;</span> parse.getvalue(<span style="background-color: #fff0f0;">"-h"</span>) <span style="color: #333333;">&lt;&lt;</span> <span style="background-color: #fff0f0;">"</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\n</span><span style="background-color: #fff0f0;">"</span>;<br />     }<br /><br /> <br /> <br /> <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #0000dd; font-weight: bold;">0</span>;<br />}<br /></pre></div><br /><br /><h4 style="text-align: left;">Codes Section 6</h4><br /><b>Complete Code</b><br /><b><br /></b><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">  1<br />  2<br />  3<br />  4<br />  5<br />  6<br />  7<br />  8<br />  9<br /> 10<br /> 11<br /> 12<br /> 13<br /> 14<br /> 15<br /> 16<br /> 17<br /> 18<br /> 19<br /> 20<br /> 21<br /> 22<br /> 23<br /> 24<br /> 25<br /> 26<br /> 27<br /> 28<br /> 29<br /> 30<br /> 31<br /> 32<br /> 33<br /> 34<br /> 35<br /> 36<br /> 37<br /> 38<br /> 39<br /> 40<br /> 41<br /> 42<br /> 43<br /> 44<br /> 45<br /> 46<br /> 47<br /> 48<br /> 49<br /> 50<br /> 51<br /> 52<br /> 53<br /> 54<br /> 55<br /> 56<br /> 57<br /> 58<br /> 59<br /> 60<br /> 61<br /> 62<br /> 63<br /> 64<br /> 65<br /> 66<br /> 67<br /> 68<br /> 69<br /> 70<br /> 71<br /> 72<br /> 73<br /> 74<br /> 75<br /> 76<br /> 77<br /> 78<br /> 79<br /> 80<br /> 81<br /> 82<br /> 83<br /> 84<br /> 85<br /> 86<br /> 87<br /> 88<br /> 89<br /> 90<br /> 91<br /> 92<br /> 93<br /> 94<br /> 95<br /> 96<br /> 97<br /> 98<br /> 99<br />100<br />101<br />102<br />103<br />104<br />105<br />106<br />107<br />108<br />109<br />110<br />111</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">// Include header file</span><br /><span style="color: #bc7a00;">#include &lt;iostream&gt;</span><br /><span style="color: #bc7a00;">#include &lt;string&gt;</span><br /><br /><br /><span style="color: #408080; font-style: italic;">// Option Parser Extracting Class</span><br />class OptionParser<br />{<br /> <span style="color: #a0a000;">private:</span><br /><br />  <span style="color: #b00040;">char</span> <span style="color: #666666;">**</span>argv;<br />  <span style="color: #b00040;">int</span>   argc;<br />  <span style="color: #b00040;">int</span>   ret, b;<br />        std<span style="color: #666666;">::</span>string temp;<br />        std<span style="color: #666666;">::</span>string a;<br />        <br />  <br /> <span style="color: #a0a000;">public:</span><br /><br />  <span style="color: #408080; font-style: italic;">// Define Functions</span><br />  std<span style="color: #666666;">::</span>string getvalue(<span style="color: green; font-weight: bold;">const</span> <span style="color: #b00040;">char</span> <span style="color: #666666;">*</span>s); <span style="color: #408080; font-style: italic;">// Get Argument Index In Return</span><br />  std<span style="color: #666666;">::</span>string getargv(<span style="color: #b00040;">int</span> i);          <span style="color: #408080; font-style: italic;">// Get Argument As String In Return </span><br />  <span style="color: #b00040;">int</span> <span style="color: blue;">check</span>(<span style="color: green; font-weight: bold;">const</span> <span style="color: #b00040;">char</span> <span style="color: #666666;">*</span>s);            <span style="color: #408080; font-style: italic;">// check char availability and return Index</span><br />  <span style="color: #b00040;">void</span> <span style="color: blue;">load</span>(<span style="color: #b00040;">int</span> argc, <span style="color: #b00040;">char</span> <span style="color: #666666;">**</span>argv);   <span style="color: #408080; font-style: italic;">// Load Data </span><br /> <br />};<br /><br /><span style="color: #408080; font-style: italic;">/*  </span><br /><span style="color: #408080; font-style: italic;">Functions </span><br /><br /><span style="color: #408080; font-style: italic;">*/</span><br /><br />std<span style="color: #666666;">::</span>string OptionParser<span style="color: #666666;">::</span>getvalue(<span style="color: green; font-weight: bold;">const</span> <span style="color: #b00040;">char</span> <span style="color: #666666;">*</span>p){<br /><br />            b<span style="color: #666666;">=0</span>;<br />            a<span style="color: #666666;">=</span><span style="color: #ba2121;">""</span>;<br /><br />            b<span style="color: #666666;">=</span>check(p);<br /><br />            <span style="color: green; font-weight: bold;">if</span> ((b<span style="color: #666666;">!=0</span>)<span style="color: #666666;">&amp;&amp;</span>((b<span style="color: #666666;">+1</span>)<span style="color: #666666;">&lt;</span>argc)){<br />                <br />                a <span style="color: #666666;">=</span> getargv(b<span style="color: #666666;">+1</span>);<br />                <br />            }<br />        <br />            <span style="color: green; font-weight: bold;">return</span> a;<br /><br />}; <br /><br />std<span style="color: #666666;">::</span>string OptionParser<span style="color: #666666;">::</span>getargv(<span style="color: #b00040;">int</span> i){<br /><br />    temp <span style="color: #666666;">=</span> argv[i];<br />    <span style="color: green; font-weight: bold;">return</span> temp;<br /><br /><br />};<br /><br /><span style="color: #b00040;">int</span> OptionParser<span style="color: #666666;">::</span>check(<span style="color: green; font-weight: bold;">const</span> <span style="color: #b00040;">char</span> <span style="color: #666666;">*</span>s){<br /><br />    ret <span style="color: #666666;">=</span> <span style="color: #666666;">0</span>;<br />    temp <span style="color: #666666;">=</span> <span style="color: #ba2121;">""</span>;<br />    <br />    <span style="color: #408080; font-style: italic;">// Iter arguments</span><br />    <span style="color: green; font-weight: bold;">for</span>(<span style="color: #b00040;">int</span> i<span style="color: #666666;">=0</span>; i<span style="color: #666666;">&lt;</span>argc; i<span style="color: #666666;">++</span>){<br />        <span style="color: #408080; font-style: italic;">// Take argument</span><br />        temp <span style="color: #666666;">=</span> getargv(i);<br />    <br />        <span style="color: green; font-weight: bold;">if</span>(temp<span style="color: #666666;">==</span>s){<br />                ret <span style="color: #666666;">=</span> i;<br />            }<br /><br />        }<br />    <span style="color: green; font-weight: bold;">return</span> ret;<br /><br /><br />};<br /><br /><span style="color: #b00040;">void</span> OptionParser<span style="color: #666666;">::</span>load(<span style="color: #b00040;">int</span> argn, <span style="color: #b00040;">char</span> <span style="color: #666666;">**</span>argm){<br />    argv <span style="color: #666666;">=</span> argm;<br />    argc <span style="color: #666666;">=</span> argn;<br />};<br /><br /><br /><br /><br /><span style="color: #408080; font-style: italic;">// main function</span><br /><span style="color: #b00040;">int</span> <span style="color: blue;">main</span>(<span style="color: #b00040;">int</span> argc, <span style="color: #b00040;">char</span> <span style="color: #666666;">**</span>argv){<br /> <br /> <span style="color: #408080; font-style: italic;">// Create Object handler</span><br /> OptionParser parse;<br /> <br /> <span style="color: #408080; font-style: italic;">// Load Data Into Object</span><br /> parse.load(argc, argv);<br /> <br /> <span style="color: #408080; font-style: italic;">// Get Loaded Argument;</span><br />        std<span style="color: #666666;">::</span>cout <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">" No. Of Argument  : "</span> <span style="color: #666666;">&lt;&lt;</span> argc <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br /> std<span style="color: #666666;">::</span>cout <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">" First Argument   : "</span> <span style="color: #666666;">&lt;&lt;</span> parse.getargv(argc<span style="color: #666666;">-1</span>) <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br /> <br /> <span style="color: #408080; font-style: italic;">// check input</span><br /> std<span style="color: #666666;">::</span>cout <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">" Check Input (-h) : "</span> <span style="color: #666666;">&lt;&lt;</span> parse.check(<span style="color: #ba2121;">"-h"</span>) <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br /> <br />        <span style="color: green; font-weight: bold;">if</span> (parse.check(<span style="color: #ba2121;">"-h"</span>))<br />     {<br />      <span style="color: #408080; font-style: italic;">//std::string x;</span><br />  std<span style="color: #666666;">::</span>cout <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">" Get Value Of h  : "</span> <span style="color: #666666;">&lt;&lt;</span> parse.getvalue(<span style="color: #ba2121;">"-h"</span>) <span style="color: #666666;">&lt;&lt;</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;">"</span>;<br />     }<br /><br /> <br /> <br /> <span style="color: green; font-weight: bold;">return</span> <span style="color: #666666;">0</span>;<br />}<br /></pre></td></tr></tbody></table></div><br /><br /><br /><h4 style="text-align: left;">After Compiling These Codes, Run To Test it.</h4><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">C_Programs :~# ./argument -h bitforestinfo<br /> No. Of Argument  : 3<br /> First Argument   : bitforestinfo<br /> Check Input (-h) : 1<br /> Get Value Of h  : bitforestinfo</pre></div><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/blog/04/04/binary-exploitation-protostar-stack0.html" data-toggle="tooltip" data-placement="top" title="Binary Exploitation Protostar Stack0 - Walkthrough">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/blog/04/07/binary-exploitation-protostar-stack1.html" data-toggle="tooltip" data-placement="top" title="Binary Exploitation Protostar Stack1 - Walkthrough -Writeup">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>
