@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Write Simple CGI Server In Python - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Welcome Again To My Blog. Friends, Today, I Am Going To Writ...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/01/09/how-to-create-python-cgi-server-using.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Write Simple CGI Server In Python</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Yashwant bisht</a>
+              on January 09, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   9 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;"><span style="color: #444444;"></span><span style="color: #444444;"></span>Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAAVF4A1EB6NFLSaidRFOEhwCPcB/s1600/python.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="274" src="https://4.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAAVF4A1EB6NFLSaidRFOEhwCPcB/s640/python.png" width="640" /></a></div><br /><br /></div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Welcome Again To My Blog. Friends, Today, I Am Going To Write About CGI Module. So, Readers Keep Reading This Post Carefully.<br /><br />Let'S Start.<br /><br />After Reading Title CGI, The First Question Comes In Our Mind,<br /><h3 style="text-align: left;">Q. What Is A CGI (Common Gateway Interface) ?.</h3>Ans. As Wikipedia: <i>The Simplest CGI Script That Can Be Considered Interesting Involves Printing Out An Http Header ("Content-Type: Text/Html") And A Web Page. In Addition, You Might Want To Handle Any Incoming Inputs From Things Like Html Forms Or Request Parameters. In The Earliest Days Of CGI, Shell Scripts Were Sometimes Used To Do Things Like This, So The Principles Are Not Particularly Advanced</i>.<br /><br />In Simple Words, CGI Script Is One Type Of Programmable Web Page Where You can perform all Web Functionalities, HTTP request/response and Other Operations Using Any Programming Language. I Hope You All Are Already Aware About How A Html Page Works.<br /><br />For Example, Whenever We Do Any Change In Html Web Document, We Can Easily Check Those Changes In A Browser. Same Scenario Comes With CGI Script. CGI Script, Is One Of Web Html Generating Script Written In Any Scripting Language Like Python, Perl, Ruby Etc That Manipulate Html Document According To Programmer Designed Codes Condition.<br /><br /><h2 id="Configuration">Configuration</h2><div class="line874">It can be an annoying experience getting some type of permissions just right on the script so that Web servers like Apache will run it, but the following checklist may be of some use:</div><ol type="1"><li>Find out which user runs the Web server - it's not often the same one as your own user, and it may be one with very limited permissions.</li><li>Check the server configuration to see if it lets you run scripts in a particular directory. Make sure that if you're using a configuration file for a particular directory, the global configuration permits you to define CGI script directories in that directory-local configuration file - some sites stop their users from altering such settings in such a way.</li><li>Check the permissions from the top of the filesystem down to the directory where the script resides. The Web server user must be able to read and open/execute all the directories from the top right down to the script.</li><li>Make sure your script is readable and executable by the Web server user.</li><li><div class="line862">Make sure that the first line of the script refers to an interpreter that the Web server user can run. Things like <tt>/usr/bin/env&nbsp;python</tt> might not have any meaning to the Web server user because the <tt>python</tt> program may not be on the user's <tt>PATH</tt>.</div></li></ol>&nbsp;So, friends let's start quickly<br /><br />Now, First Step is to Create an Empty Folder and named that Folder anything as your need.&nbsp; here I named example1. Now Create another folder under example1 and named that folder only "<i>cgi-bin"</i> because we will copy all&nbsp; CGI Script here for Working Correctly.<br /><br />here, I am going to show you how you can create a simple web page.<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">#!/usr/bin/python</span><br /><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">cgi</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">cgitb</span>; cgitb<span style="color: #333333;">.</span>enable()<br /><br /><span style="color: #888888;">#+++++++ Html Codings ++++++++++++++++++++++</span><br /><span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"Content-type:text/html</span><span style="background-color: #fff0f0; color: #666666; font-weight: bold;">\r\n\r\n\r\n</span><span style="background-color: #fff0f0;">"</span><br /><span style="color: #008800; font-weight: bold;">print</span> <span style="background-color: #fff0f0;">"""</span><br /><span style="background-color: #fff0f0;">&lt;html&gt;</span><br /><span style="background-color: #fff0f0;">&lt;title&gt;Welcome To Hack World With SSB index Page&lt;/title&gt;</span><br /><span style="background-color: #fff0f0;">&lt;body&gt;</span><br /><span style="background-color: #fff0f0;">&lt;h1&gt;Hello! World&lt;/h1&gt;</span><br /><span style="background-color: #fff0f0;">&lt;/body&gt;&lt;/html&gt;"""</span></pre></td></tr></tbody></table></div><br />now, save this code as hello.py on /example1/cgi-bin/hello.py<br /><br />Before running your CGI program, make sure you have change mode of the file using <b>chmod 755 hello.py</b> UNIX command to make file executable.<br /><br />After This We Need a Server To Host This Script. So, You Can Use any CGI Supporting Server. But Here I am using python in-built Server.<br /><br />Copy all The codes Given Below And Save Them As on /example1/server.py<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">#!/usr/bin/env python2</span><br /><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">CGIHTTPServer</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">BaseHTTPServer</span><br /><br /><span style="color: #008800; font-weight: bold;">if</span> __name__ <span style="color: #333333;">==</span> <span style="background-color: #fff0f0;">"__main__"</span>:<br />    server <span style="color: #333333;">=</span> BaseHTTPServer<span style="color: #333333;">.</span>HTTPServer<br />    handler <span style="color: #333333;">=</span> CGIHTTPServer<span style="color: #333333;">.</span>CGIHTTPRequestHandler<br />    server_address <span style="color: #333333;">=</span> (<span style="background-color: #fff0f0;">""</span>, <span style="color: #0000dd; font-weight: bold;">8000</span>)<br />    <span style="color: #888888;"># Note that only /cgi-bin will work:</span><br />    handler<span style="color: #333333;">.</span>cgi_directories <span style="color: #333333;">=</span> [<span style="background-color: #fff0f0;">"/cgi-bin"</span>, <span style="background-color: #fff0f0;">"/cgi-bin/subdir"</span>]<br />    httpd <span style="color: #333333;">=</span> server(server_address, handler)<br />    httpd<span style="color: #333333;">.</span>serve_forever()</pre></td></tr></tbody></table></div><br />Then, Execute This Script.<br /><br />During The Execution of server.py&nbsp; Open Browser and Type<br />Url Address : 127.0.0.1:8000/cgi-bin/hello.py<br />And Boom! You Got The Webpage.<br /><br />Now, Let me Example you How This CGI Script works?<br />Basically, To make a CGI Script in Python, We have to use 2 modules, CGIHTTPServer and BaseHTTPServer. CGIHTTPServer Script is Handle CGI code available in Python CGI Script. In Simple words, This module handles Internal CGI operations. And BaseHTTPServer, handle HTTP request/response between Browser and Server Script.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">CGIHTTPServer</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">BaseHTTPServer</span><br /></pre></div><br /><br />So, In This Part First Create BaseHTTPServer Object To handle all Browser and Server related Communications.<br />and Then, Create Another Object To Handle CGI Operations<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">if</span> __name__ <span style="color: #333333;">==</span> <span style="background-color: #fff0f0;">"__main__"</span>:<br />    server <span style="color: #333333;">=</span> BaseHTTPServer<span style="color: #333333;">.</span>HTTPServer<br />    handler <span style="color: #333333;">=</span> CGIHTTPServer<span style="color: #333333;">.</span>CGIHTTPRequestHandler<br />    server_address <span style="color: #333333;">=</span> (<span style="background-color: #fff0f0;">""</span>, <span style="color: #0000dd; font-weight: bold;">8000</span>)<br /></pre></div><br /><br />In this Last, apply all objects, provide function and deploy it. Very Simple!<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">CGIHTTPServer</span><br /><span style="color: #008800; font-weight: bold;">import</span> <span style="color: #0e84b5; font-weight: bold;">BaseHTTPServer</span><br /><br /><span style="color: #008800; font-weight: bold;">if</span> __name__ <span style="color: #333333;">==</span> <span style="background-color: #fff0f0;">"__main__"</span>:<br />    server <span style="color: #333333;">=</span> BaseHTTPServer<span style="color: #333333;">.</span>HTTPServer<br />    handler <span style="color: #333333;">=</span> CGIHTTPServer<span style="color: #333333;">.</span>CGIHTTPRequestHandler<br />    server_address <span style="color: #333333;">=</span> (<span style="background-color: #fff0f0;">""</span>, <span style="color: #0000dd; font-weight: bold;">8000</span>)<br />    <span style="color: #888888;"># Note that only /cgi-bin will work:</span><br />    handler<span style="color: #333333;">.</span>cgi_directories <span style="color: #333333;">=</span> [<span style="background-color: #fff0f0;">"/cgi-bin"</span>, <span style="background-color: #fff0f0;">"/cgi-bin/subdir"</span>]<br />    httpd <span style="color: #333333;">=</span> server(server_address, handler)<br />    httpd<span style="color: #333333;">.</span>serve_forever()<br /></pre></div><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/09/how-to-create-font-chooser-using_86.html" data-toggle="tooltip" data-placement="top" title="Font Selection Dialog Box Using Python And Tkinter">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/01/09/how-to-recover-deleted-files-and.html" data-toggle="tooltip" data-placement="top" title="how to recover deleted files and folders from hard disk/drive using recuva software">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

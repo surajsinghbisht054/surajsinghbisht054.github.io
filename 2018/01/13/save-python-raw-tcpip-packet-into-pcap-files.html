@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Save Python raw TCP/IP packet into pcap file - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,In Today&#39;s Tutorial, I am going to show you how we can save various types of protocol packets including TCP/IP raw packet into pcap file.Intr...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2018/01/13/save-python-raw-tcpip-packet-into-pcap-files.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Save Python raw TCP/IP packet into pcap file</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 13, 2018 &middot; <span class="reading-time" title="Estimated read time">
+  
+   11 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-9cEoNZ9mRDs/WlnkJRkF6wI/AAAAAAAABrM/GltDsuAUewQNS_4EyRkcBaQ2zlrTiJQAACLcBGAs/s1600/Picture1-1-990x323.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="323" data-original-width="990" height="208" src="https://3.bp.blogspot.com/-9cEoNZ9mRDs/WlnkJRkF6wI/AAAAAAAABrM/GltDsuAUewQNS_4EyRkcBaQ2zlrTiJQAACLcBGAs/s640/Picture1-1-990x323.png" width="640" /></a></div><br /><br /><h3 style="text-align: left;"><span style="font-weight: normal;">In Today's Tutorial, I am going to show you how we can save various types of protocol packets including TCP/IP raw packet into pcap file.</span></h3><h4 style="text-align: left;"><div style="text-align: center;"><br /></div><div style="text-align: center;">Introduction</div></h4><br />Friends, Many times during different types of networking projects we have to save our created or Captured raw packets into Pcap files so that we can analyze it with Wireshark. So, Today I am going to show you how you can do it. basically, we just going to create a class object that will provide us a simple way to write packets into pcap files.<br /><br /><b>Pre-requested Requirement</b><br /><br /><ul style="text-align: left;"><li>Python Syntax</li><li>Python Struct Module</li><li>Basic Networking Protocols Info&nbsp;</li></ul><br /><h4 style="text-align: left;"><div style="text-align: center;"><br /></div><div style="text-align: center;">How it's Going to work.</div></h4><br />Actually, here I am going to create a class that will handle required operations to make a valid Pcap file and saves packets inside that pcap file.<br /><b><br /></b><b>Required Operation</b><br /><br />1. Save Pcap Global Header<br />2. Attach a header with all Network packets.<br /><br />For Pcap Structure Info <a href="http://www.bitforestinfo.com/2018/01/wireshark-pcap-file-global-header-format.html" target="_blank">Click here</a><br /><h4 style="text-align: left;"><div style="text-align: center;">Example Code:</div></h4><br /><b>1. First Import Required Modules</b><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;"># import module</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">struct</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">time</span><br /></pre></div><br /><b>2. Assign Required Values</b><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#     Pcap Global Header Format :</span><br /><span style="color: #408080; font-style: italic;">#                       ( magic number + </span><br /><span style="color: #408080; font-style: italic;">#                         major version number + </span><br /><span style="color: #408080; font-style: italic;">#                         minor version number + </span><br /><span style="color: #408080; font-style: italic;">#                         GMT to local correction +</span><br /><span style="color: #408080; font-style: italic;">#                         accuracy of timestamps + </span><br /><span style="color: #408080; font-style: italic;">#                         max length of captured #packets, in octets +</span><br /><span style="color: #408080; font-style: italic;">#                         data link type) </span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><br />PCAP_GLOBAL_HEADER_FMT <span style="color: #666666;">=</span> <span style="color: #ba2121;">'@ I H H i I I I '</span><br /><br /><br /><span style="color: #408080; font-style: italic;"># Global Header Values</span><br />PCAP_MAGICAL_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">2712847316</span><br />PCAP_MJ_VERN_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">2</span><br />PCAP_MI_VERN_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">4</span><br />PCAP_LOCAL_CORECTIN <span style="color: #666666;">=</span> <span style="color: #666666;">0</span><br />PCAP_ACCUR_TIMSTAMP <span style="color: #666666;">=</span> <span style="color: #666666;">0</span><br />PCAP_MAX_LENGTH_CAP <span style="color: #666666;">=</span> <span style="color: #666666;">65535</span><br />PCAP_DATA_LINK_TYPE <span style="color: #666666;">=</span> <span style="color: #666666;">1</span><br /></pre></div><br /><b>3. Create Pcap Class</b><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: green; font-weight: bold;">class</span> <span style="color: blue; font-weight: bold;">Pcap</span>:<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">__init__</span>(<span style="color: green;">self</span>, filename, link_type<span style="color: #666666;">=</span>PCAP_DATA_LINK_TYPE):<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file <span style="color: #666666;">=</span> <span style="color: green;">open</span>(filename, <span style="color: #ba2121;">'wb'</span>) <br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(struct<span style="color: #666666;">.</span>pack(<span style="color: #ba2121;">'@ I H H i I I I '</span>, PCAP_MAGICAL_NUMBER, PCAP_MJ_VERN_NUMBER, PCAP_MI_VERN_NUMBER, PCAP_LOCAL_CORECTIN, PCAP_ACCUR_TIMSTAMP, PCAP_MAX_LENGTH_CAP, link_type))<br />  <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"[+] Link Type : {}"</span><span style="color: #666666;">.</span>format(link_type)<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">writelist</span>(<span style="color: green;">self</span>, data<span style="color: #666666;">=</span>[]):<br />  <span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> data:<br />   <span style="color: green;">self</span><span style="color: #666666;">.</span>write(i)<br />  <span style="color: green; font-weight: bold;">return</span><br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">write</span>(<span style="color: green;">self</span>, data):<br />  ts_sec, ts_usec <span style="color: #666666;">=</span> <span style="color: green;">map</span>(<span style="color: green;">int</span>, <span style="color: green;">str</span>(time<span style="color: #666666;">.</span>time())<span style="color: #666666;">.</span>split(<span style="color: #ba2121;">'.'</span>))<br />  length <span style="color: #666666;">=</span> <span style="color: green;">len</span>(data)<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(struct<span style="color: #666666;">.</span>pack(<span style="color: #ba2121;">'@ I I I I'</span>, ts_sec, ts_usec, length, length))<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(data)<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">close</span>(<span style="color: green;">self</span>):<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>close()<br /></pre></div><br /><br /><b>4. Final Codes.</b><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;"># import module</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">struct</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">time</span><br /><br /><span style="color: #408080; font-style: italic;">#     Pcap Global Header Format :</span><br /><span style="color: #408080; font-style: italic;">#                       ( magic number + </span><br /><span style="color: #408080; font-style: italic;">#                         major version number + </span><br /><span style="color: #408080; font-style: italic;">#                         minor version number + </span><br /><span style="color: #408080; font-style: italic;">#                         GMT to local correction +</span><br /><span style="color: #408080; font-style: italic;">#                         accuracy of timestamps + </span><br /><span style="color: #408080; font-style: italic;">#                         max length of captured #packets, in octets +</span><br /><span style="color: #408080; font-style: italic;">#                         data link type) </span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><br />PCAP_GLOBAL_HEADER_FMT <span style="color: #666666;">=</span> <span style="color: #ba2121;">'@ I H H i I I I '</span><br /><br /><br /><span style="color: #408080; font-style: italic;"># Global Header Values</span><br />PCAP_MAGICAL_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">2712847316</span><br />PCAP_MJ_VERN_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">2</span><br />PCAP_MI_VERN_NUMBER <span style="color: #666666;">=</span> <span style="color: #666666;">4</span><br />PCAP_LOCAL_CORECTIN <span style="color: #666666;">=</span> <span style="color: #666666;">0</span><br />PCAP_ACCUR_TIMSTAMP <span style="color: #666666;">=</span> <span style="color: #666666;">0</span><br />PCAP_MAX_LENGTH_CAP <span style="color: #666666;">=</span> <span style="color: #666666;">65535</span><br />PCAP_DATA_LINK_TYPE <span style="color: #666666;">=</span> <span style="color: #666666;">1</span><br /><br /><span style="color: green; font-weight: bold;">class</span> <span style="color: blue; font-weight: bold;">Pcap</span>:<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">__init__</span>(<span style="color: green;">self</span>, filename, link_type<span style="color: #666666;">=</span>PCAP_DATA_LINK_TYPE):<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file <span style="color: #666666;">=</span> <span style="color: green;">open</span>(filename, <span style="color: #ba2121;">'wb'</span>) <span style="color: #408080; font-style: italic;"># 4 + 2 + 2 + 4 + 4 + 4 + 4</span><br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(struct<span style="color: #666666;">.</span>pack(<span style="color: #ba2121;">'@ I H H i I I I '</span>, PCAP_MAGICAL_NUMBER, PCAP_MJ_VERN_NUMBER, PCAP_MI_VERN_NUMBER, PCAP_LOCAL_CORECTIN, PCAP_ACCUR_TIMSTAMP, PCAP_MAX_LENGTH_CAP, link_type))<br />  <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"[+] Link Type : {}"</span><span style="color: #666666;">.</span>format(link_type)<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">writelist</span>(<span style="color: green;">self</span>, data<span style="color: #666666;">=</span>[]):<br />  <span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> data:<br />   <span style="color: green;">self</span><span style="color: #666666;">.</span>write(i)<br />  <span style="color: green; font-weight: bold;">return</span><br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">write</span>(<span style="color: green;">self</span>, data):<br />  ts_sec, ts_usec <span style="color: #666666;">=</span> <span style="color: green;">map</span>(<span style="color: green;">int</span>, <span style="color: green;">str</span>(time<span style="color: #666666;">.</span>time())<span style="color: #666666;">.</span>split(<span style="color: #ba2121;">'.'</span>))<br />  length <span style="color: #666666;">=</span> <span style="color: green;">len</span>(data)<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(struct<span style="color: #666666;">.</span>pack(<span style="color: #ba2121;">'@ I I I I'</span>, ts_sec, ts_usec, length, length))<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>write(data)<br /><br /> <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">close</span>(<span style="color: green;">self</span>):<br />  <span style="color: green;">self</span><span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>close()<br /></pre></td></tr></tbody></table></div><br /><br /><h4 style="text-align: center;">Want Test Run?</h4><br />Paste Below Codes at the bottom of class<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: green; font-weight: bold;">if</span> __name__<span style="color: #666666;">==</span><span style="color: #ba2121;">'__main__'</span>:<br /><br />    <span style="color: #408080; font-style: italic;"># import modules</span><br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">socket</span><br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">struct</span><br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">binascii</span><br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">os</span><br /><br />    <span style="color: #408080; font-style: italic;"># Create Socket </span><br />    <span style="color: green; font-weight: bold;">if</span> os<span style="color: #666666;">.</span>name <span style="color: #666666;">==</span> <span style="color: #ba2121;">"nt"</span>:<br />        s <span style="color: #666666;">=</span> socket<span style="color: #666666;">.</span>socket(socket<span style="color: #666666;">.</span>AF_INET,socket<span style="color: #666666;">.</span>SOCK_RAW,socket<span style="color: #666666;">.</span>IPPROTO_IP)<br />        s<span style="color: #666666;">.</span>bind((<span style="color: green;">raw_input</span>(<span style="color: #ba2121;">"[+] YOUR_INTERFACE : "</span>),<span style="color: #666666;">0</span>))<br />        s<span style="color: #666666;">.</span>setsockopt(socket<span style="color: #666666;">.</span>IPPROTO_IP,socket<span style="color: #666666;">.</span>IP_HDRINCL,<span style="color: #666666;">1</span>)<br />        s<span style="color: #666666;">.</span>ioctl(socket<span style="color: #666666;">.</span>SIO_RCVALL,socket<span style="color: #666666;">.</span>RCVALL_ON)<br />    <span style="color: green; font-weight: bold;">else</span>:<br />        s<span style="color: #666666;">=</span>socket<span style="color: #666666;">.</span>socket(socket<span style="color: #666666;">.</span>PF_PACKET, socket<span style="color: #666666;">.</span>SOCK_RAW, socket<span style="color: #666666;">.</span>ntohs(<span style="color: #666666;">0x0800</span>))<br /><br />    <span style="color: #408080; font-style: italic;"># Create Object</span><br />    p <span style="color: #666666;">=</span> Pcap(<span style="color: #ba2121;">'temp.pcap'</span>)<br /><br />    <span style="color: green; font-weight: bold;">while</span> <span style="color: green;">True</span>:<br /><br />        <span style="color: #408080; font-style: italic;"># Sniff Packet</span><br />        pkt<span style="color: #666666;">=</span>s<span style="color: #666666;">.</span>recvfrom(<span style="color: #666666;">65565</span>)<br />        <br />        <span style="color: #408080; font-style: italic;"># Save captured packets into pcap file</span><br />        p<span style="color: #666666;">.</span>write(pkt[<span style="color: #666666;">0</span>])<br /><br />        <span style="color: #408080; font-style: italic;"># flush data</span><br />        p<span style="color: #666666;">.</span>pcap_file<span style="color: #666666;">.</span>flush()<br /><br />    <span style="color: #408080; font-style: italic;"># close file</span><br />    p<span style="color: #666666;">.</span>close()<br /></pre></div><br /><br /><br />Now, Open temp.pcap file with Wireshark! and Done.<br /><br /><br />I hope you enjoyed this tutorial.<br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2018/01/13/wireshark-pcap-file-global-header-format.html" data-toggle="tooltip" data-placement="top" title="Wireshark pcap file Global header format ">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2018/01/14/python-codes-to-calculate-tcp-checksum.html" data-toggle="tooltip" data-placement="top" title="python codes to calculate TCP packet checksum">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

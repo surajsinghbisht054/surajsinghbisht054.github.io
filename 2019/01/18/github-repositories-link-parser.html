@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Github Repositories Link Parser Using Bash - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,Welcome Again To My Blog. Today, I am going To Share With You Another Simple Bash Script That Can Parse All Repositories Links From Anyone Gith...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2019/01/18/github-repositories-link-parser.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Github Repositories Link Parser Using Bash</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 18, 2019 &middot; <span class="reading-time" title="Estimated read time">
+  
+   8 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Hello Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-dYM1iT5VjtQ/XEHmt51foeI/AAAAAAAACxs/1f3yGpiOE9MupIHDMjEQwaLQ2gW9kMIeACLcBGAs/s1600/bash.jpeg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="630" data-original-width="1200" height="336" src="https://3.bp.blogspot.com/-dYM1iT5VjtQ/XEHmt51foeI/AAAAAAAACxs/1f3yGpiOE9MupIHDMjEQwaLQ2gW9kMIeACLcBGAs/s640/bash.jpeg" width="640" /></a></div><br /><br />Welcome  Again To My Blog. Today, I am going To Share With You Another Simple  Bash Script That Can Parse All Repositories Links From Anyone Github Accounts Just in few Seconds. You don't need to do anything, Just Run this bash script, provide github username, Repositories types and Output filename to save all parse links. Well I'm hoping that You all are already aware of Github Repositories and Link Extracting Concept.<br /><br />This  Bash Script is really very to Understand and By The Way, For Completely  New Bies, I had Used Good Comments Lines To Make Sure, that This Script look More Easy  To Understand.<br /><br />To Run This Script<br /><br /><pre>chmod +x path_to_script.sh<br /><br />./path_to_script.sh&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre>Well In This Script, I Used Various Tool To Achieve my Goals like <br /><pre> </pre><pre>wget  = To Download Html Page Data</pre><pre>tr    = To Replace String Character With Another One</pre><pre>grep  = To Grep Matching Lines</pre><pre>cut   = Split Strings</pre><pre>uniq  = To Remove Duplicate</pre><pre>sort  = To Sorting</pre><pre>xargs = Manipulate String</pre><pre> </pre><pre>And Bash Syntaxs. </pre><br />if You don't know that much these tools, then, don't worry use linux man page.  Just Type in Your Terminal<br /><br /><pre>man name_of_tool</pre><br /><h3 style="text-align: center;">Github Repositories Links Parser Using Bash Script</h3><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #888888;">#!/bin/bash</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;"># ==============================================================</span><br /><span style="color: #888888;">#          Please, Don't Remove Author Details </span><br /><span style="color: #888888;"># ==============================================================</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;"># Author : Suraj Singh Bisht</span><br /><span style="color: #888888;">#          Surajsinghbisht054@gmail.com</span><br /><span style="color: #888888;">#          www.bitforestinfo.com</span><br /><span style="color: #888888;">#          github.com/surajsinghbisht054</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;"># Description:</span><br /><span style="color: #888888;">#            This Script Can Extract All Available Repositories Links With Details From</span><br /><span style="color: #888888;">#            Anyone Github Account.</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;">#</span><br /><span style="color: #888888;">#</span><br /><br /><br /><br /><span style="color: #888888;"># instruction to use script</span><br /><br /><span style="color: #888888;"># usages details</span><br /><span style="color: #008800; font-weight: bold;">if</span> <span style="color: #333333;">[</span> <span style="color: #996633;">$# </span><span style="color: #333333;">=</span> 1 <span style="color: #333333;">]</span>; <span style="color: #008800; font-weight: bold;">then</span><br /><span style="color: #008800; font-weight: bold;"> if</span> <span style="color: #333333;">[</span> <span style="color: #996633;">$1</span> <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"--help"</span> <span style="color: #333333;">]</span> <span style="color: #333333;">||</span> <span style="color: #333333;">[</span> <span style="color: #996633;">$1</span> <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"-h"</span> <span style="color: #333333;">]</span>; <span style="color: #008800; font-weight: bold;">then</span><br /><span style="color: #008800; font-weight: bold;">  </span><span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"====================================================================\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\--------------------- This is Help Menu ---------------------------/\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"====================================================================\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"                                      Author: Suraj Singh \n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"                                      surajsinghbisht054@gmail.com\n\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\---------------------- Read Me -----------------------------------/\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"       This program can extract Github repositries links of Any \n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"  Specific Account. If you want to find all repo links of anyone Github,\n"</span>;<br />         <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"  Just Run This parse over that Account. This script can extract links\n"</span>;<br />         <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"  and Can Save All Links into txt files.\n\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"Simple Usages:\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\n\tProgram Usages : %s [url] [repo_type] [output]\n\n"</span> <span style="color: #996633;">$0</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"Url : https://github.com/example_user_name/\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"Repo : fork, source\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"output : file_name_to_save Output\n"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\n\nExample\n"</span><br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"  %s github_user_name source links.txt\n\n\n"</span> <span style="color: #996633;">$0</span>;<br />  <span style="color: #007020;">exit</span>;<br /> <span style="color: #008800; font-weight: bold;">fi</span><br /><span style="color: #008800; font-weight: bold;">else</span><br /><span style="color: #008800; font-weight: bold;"> if</span> <span style="color: #333333;">[</span> <span style="color: #996633;">$# </span>!<span style="color: #333333;">=</span> 3 <span style="color: #333333;">]</span>; <span style="color: #008800; font-weight: bold;">then</span><br /><span style="color: #008800; font-weight: bold;">       </span><span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"  %s --help\n"</span> <span style="color: #996633;">$0</span>;<br />         <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\nProgram Usages : %s [url] [repo_type] [output]\n\n"</span> <span style="color: #996633;">$0</span>;<br />  <span style="color: #007020;">exit</span>;<br /><br /> <span style="color: #008800; font-weight: bold;">fi</span>;<br /><span style="color: #008800; font-weight: bold;">fi</span>;<br /><br /><br /><span style="color: #888888;"># initialize user inputs</span><br /><span style="color: #996633;">USERNAME</span><span style="color: #333333;">=</span><span style="color: #996633;">$1</span>;<br /><span style="color: #996633;">REPO_TAB</span><span style="color: #333333;">=</span><span style="color: #996633;">$2</span>;<br /><span style="color: #996633;">OUTPUT_F</span><span style="color: #333333;">=</span><span style="color: #996633;">$3</span>;<br /><br /><span style="color: #888888;"># Time To Download First Page of Account</span><br /><span style="color: #996633;">w</span><span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"https://github.com/$USERNAME?tab=repositories&amp;type=$REPO_TAB"</span>;<br /><br /><span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\n\nGenerating Github link : %s\n"</span> <span style="color: #996633;">$w</span><br /><br />wget <span style="color: #996633;">$w</span> -O /tmp/github_link_extractor<br /><br /><span style="color: #008800; font-weight: bold;">for</span><span style="color: #333333;">((</span><span style="color: #996633;">n</span><span style="color: #333333;">=</span>0; n&lt;1; n++<span style="color: #333333;">))</span><br /><span style="color: #008800; font-weight: bold;">do</span><br /><br /><span style="color: #008800; font-weight: bold;"> </span>cat /tmp/github_link_extractor | tr <span style="background-color: #fff0f0;">' '</span> <span style="background-color: #fff0f0;">'\n'</span> | tr <span style="background-color: #fff0f0;">'&gt;'</span> <span style="background-color: #fff0f0;">'\n'</span> | grep -i <span style="background-color: #fff0f0;">"href=[^&gt;]"</span> | cut -d <span style="background-color: #fff0f0;">'"'</span> -f 2 | uniq | sort | grep -e <span style="background-color: #fff0f0;">"/$USERNAME/.*"</span> | xargs -n 1 -I% <span style="color: #007020;">echo</span> <span style="background-color: #fff0f0;">"https://github.com%"</span> &gt; <span style="color: #996633;">$OUTPUT_F</span> ;<br /><br /> <span style="color: #996633;">token</span><span style="color: #333333;">=</span><span style="color: #008800; font-weight: bold;">$(</span>cat /tmp/github_link_extractor | tr <span style="background-color: #fff0f0;">" "</span> <span style="background-color: #fff0f0;">"\n"</span> |grep -e <span style="background-color: #fff0f0;">"href="</span>| tr <span style="background-color: #fff0f0;">"&gt;"</span> <span style="background-color: #fff0f0;">"\n"</span> | grep -e <span style="background-color: #fff0f0;">"after"</span> | cut -d<span style="background-color: #fff0f0;">"="</span> -f3 | cut -d<span style="background-color: #fff0f0;">"&amp;"</span> -f 1<span style="color: #008800; font-weight: bold;">)</span>;<br /><span style="color: #008800; font-weight: bold;">done</span>;<br /><br /><br /><span style="color: #008800; font-weight: bold;">for</span><span style="color: #333333;">((</span><span style="color: #996633;">n</span><span style="color: #333333;">=</span>0; n&lt;1; n++<span style="color: #333333;">))</span><br /><span style="color: #008800; font-weight: bold;">do</span><br /><span style="color: #008800; font-weight: bold;"> if</span> <span style="color: #333333;">[</span> <span style="color: #008800; font-weight: bold;">${#</span><span style="color: #996633;">token</span><span style="color: #008800; font-weight: bold;">}</span> -le 90 <span style="color: #333333;">]</span>;<br /> <span style="color: #008800; font-weight: bold;">then</span><br /><span style="color: #008800; font-weight: bold;">  </span><span style="color: #996633;">w</span><span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"https://github.com/$USERNAME?after=$token&amp;tab=repositories&amp;type=$REPO_TAB"</span>;<br />  <span style="color: #007020;">printf</span> <span style="background-color: #fff0f0;">"\n\nGenerating Github link : %s\n"</span> <span style="color: #996633;">$w</span><br />  wget <span style="color: #996633;">$w</span> -O /tmp/github_link_extractor<br />  cat /tmp/github_link_extractor | tr <span style="background-color: #fff0f0;">' '</span> <span style="background-color: #fff0f0;">'\n'</span> | tr <span style="background-color: #fff0f0;">'&gt;'</span> <span style="background-color: #fff0f0;">'\n'</span> | grep -i <span style="background-color: #fff0f0;">"href=[^&gt;]"</span> | cut -d <span style="background-color: #fff0f0;">'"'</span> -f 2 | uniq | sort | grep -e <span style="background-color: #fff0f0;">"/$USERNAME/.*"</span> | xargs -n 1 -I% <span style="color: #007020;">echo</span> <span style="background-color: #fff0f0;">"https://github.com%"</span> &gt;&gt; <span style="color: #996633;">$OUTPUT_F</span> ;<br /><br />         <span style="color: #996633;">token</span><span style="color: #333333;">=</span><span style="color: #008800; font-weight: bold;">$(</span>cat /tmp/github_link_extractor | tr <span style="background-color: #fff0f0;">" "</span> <span style="background-color: #fff0f0;">"\n"</span> |grep -e <span style="background-color: #fff0f0;">"href="</span>| tr <span style="background-color: #fff0f0;">"&gt;"</span> <span style="background-color: #fff0f0;">"\n"</span> | grep -e <span style="background-color: #fff0f0;">"after"</span> | cut -d<span style="background-color: #fff0f0;">"="</span> -f3 | cut -d<span style="background-color: #fff0f0;">"&amp;"</span> -f 1<span style="color: #008800; font-weight: bold;">)</span>;<br /><br />  <span style="color: #007020;">echo</span> <span style="color: #996633;">$token</span>;<br />  <span style="color: #007020;">echo</span> <span style="color: #008800; font-weight: bold;">$((</span>n--<span style="color: #008800; font-weight: bold;">))</span>;<br /> <span style="color: #008800; font-weight: bold;">fi</span>;<br /><br /><span style="color: #008800; font-weight: bold;">done</span><br /></pre></div><br /><h4 style="text-align: left;">Usages :</h4><br /><pre>./Github_Link_Parser.sh github_user_name source links.txt</pre><br /><br />For More Updated Example, <a href="https://github.com/surajsinghbisht054/ConquerBash">Check Github Here</a> <br /><br /><h3 style="text-align: center;">&nbsp;</h3></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2019/01/18/generate-ascii-table-using-bash.html" data-toggle="tooltip" data-placement="top" title="Generate ASCII Table Using Bash Programming">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2019/01/18/create-simple-tic-tac-toe-game-in-pure.html" data-toggle="tooltip" data-placement="top" title="Create Simple Tic Tac Toe Game In Pure C Language.">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

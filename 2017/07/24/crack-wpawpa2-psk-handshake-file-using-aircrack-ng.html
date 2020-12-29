@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Crack WPA/WPA2-PSK Handshake File Using Aircrack-ng and Kali Linux - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Hackers,In This Post, I Am Going To Show You How To Crack WPA/WPA2-PSK Handshake file Using Aircrack-ng Suite.Friends, I Am Assuming That You Have Al...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/07/24/crack-wpawpa2-psk-handshake-file-using-aircrack-ng.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Crack WPA/WPA2-PSK Handshake File Using Aircrack-ng and Kali Linux</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on July 24, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   3 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div class="separator" style="clear: both; text-align: left;">Namaste Hackers,</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-rCTye1XZJX0/WO22xz8St1I/AAAAAAAABEs/mnFAz7ue9ioj8jFmNACRTB4Kz_4HyXgbgCPcBGAYYCw/s1600/509161-binary-boats-code-hacking-hands-screens-tweezers.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="900" data-original-width="1600" height="360" src="https://3.bp.blogspot.com/-rCTye1XZJX0/WO22xz8St1I/AAAAAAAABEs/mnFAz7ue9ioj8jFmNACRTB4Kz_4HyXgbgCPcBGAYYCw/s640/509161-binary-boats-code-hacking-hands-screens-tweezers.jpg" width="640" /></a></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">In This Post, I Am Going To Show You How To Crack WPA/WPA2-PSK Handshake file Using Aircrack-ng Suite.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">Friends, I Am Assuming That You Have Already Captured 4 Way Handshake File To Try Our Brute Force Tutorial. If not, Then <a href="http://www.bitforestinfo.com/2017/07/capture-wpawpa2-psk-4-way-handshake-using-kali-linux-and-aircrack-ng.html" target="_blank">Check This Tutorial To Capture 4 Way Handshake File</a>&nbsp;.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><div class="separator" style="clear: both; text-align: left;">So, Let's Start Our Tutorial.</div><div class="separator" style="clear: both; text-align: left;"><br /></div><h4 style="clear: both; text-align: left;">Setup &nbsp;1.</h4><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both;">To Ensure 4 Way Handshake Packets Availability In Captured File. We Will Use Aircrack-ng.</div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both;">Open Separate Terminal And Type :&nbsp;</div><div class="separator" style="clear: both;"><br /></div><div style="background: rgb(238, 238, 221); border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 16.25px;">:~<span style="color: forestgreen;"># sudo </span><span style="color: forestgreen;">aircrack-ng [wpa_file.cap]</span></pre></div><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-R0cVmQpc1ZU/WXYLP-XhHfI/AAAAAAAABTI/6tHSuZigmjAWgT2gthT-_mfhpiteb0FCQCPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-07-24%2B16-15-58.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="591" data-original-width="948" height="398" src="https://4.bp.blogspot.com/-R0cVmQpc1ZU/WXYLP-XhHfI/AAAAAAAABTI/6tHSuZigmjAWgT2gthT-_mfhpiteb0FCQCPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-07-24%2B16-15-58.png" width="640" /></a></div><br /><h4 style="text-align: left;">Setup 2.</h4><br />Now, We Will Again Use Aircrack-ng To Try All Passwords From Provided Dictionary To Crack Handshake File Encryption.<br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both;">Type :&nbsp;</div><div class="separator" style="clear: both;"><br /></div><div style="background: rgb(238, 238, 221); border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 16.25px;">:~<span style="color: forestgreen;"># sudo </span><span style="color: forestgreen;">aircrack-ng [wpa_file.cap] -w [dictonery_file_path]</span></pre></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-yaH85FhqJDc/WXYLPlHOTvI/AAAAAAAABTE/1Y4Kzpy7iP070-uQY0qcV1IN39rRl5v3ACPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-07-24%2B16-18-46.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="591" data-original-width="948" height="398" src="https://1.bp.blogspot.com/-yaH85FhqJDc/WXYLPlHOTvI/AAAAAAAABTE/1Y4Kzpy7iP070-uQY0qcV1IN39rRl5v3ACPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-07-24%2B16-18-46.png" width="640" /></a></div><br /><div style="text-align: left;">To Create Password Dictionary Using Crunch In Kali Linux.. <a href="http://www.bitforestinfo.com/2017/01/how-to-create-wordlists-dictionary.html" target="_blank">Check Here</a></div><div style="text-align: left;"><br /></div><h4 style="text-align: left;">Setup 3.</h4>&nbsp;Wait... wait.... and wait. &nbsp;let aircrack-ng to try all passwords from provided dictionary to crack handshake file encryption.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-_y22F-mXlDE/WXYLQqMxQ8I/AAAAAAAABTM/w20HEAgq8pI-sXw2W-bWFE2U807Cw3U2QCPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-07-24%2B16-18-52.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="591" data-original-width="948" height="398" src="https://1.bp.blogspot.com/-_y22F-mXlDE/WXYLQqMxQ8I/AAAAAAAABTM/w20HEAgq8pI-sXw2W-bWFE2U807Cw3U2QCPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-07-24%2B16-18-52.png" width="640" /></a></div><br /><div class="separator" style="clear: both; text-align: center;"></div>Other Related Tutorials.<br /><br /><a href="http://www.bitforestinfo.com/2017/07/fast-wpawpa2-psk-handshake-cracking.html" target="_blank">Cracking Handshake With Cowpatty And Genpmk (fastest way)</a><br /><div class="separator" style="clear: both;"><a href="http://www.bitforestinfo.com/2017/07/piping-crunch-with-aircrack-ng-kali.html" target="_blank">Piping Crunch With Aircrack-ng</a></div><div class="separator" style="clear: both;"><br /></div><br />Done!<br /><br /><br />Written By:<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/07/24/capture-wpawpa2-psk-4-way-handshake-using-kali-linux-and-aircrack-ng.html" data-toggle="tooltip" data-placement="top" title="Capture WPA/WPA2-PSK 4 Way Handshake Using Kali Linux And Aircrack-ng">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/07/24/how-to-hack-wi-fi-password-using.html" data-toggle="tooltip" data-placement="top" title="How To Hack WI-FI Password Using Aircrack-ng And Kali Linux">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

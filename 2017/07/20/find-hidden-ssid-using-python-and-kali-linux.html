@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Find Hidden SSID Using Python and Kali Linux - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,Today, I am Going To Show You How To Find Hidden Wireless SSID Using Python in Kali Linux?But First, If You are a New Visitor in my blog then...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/07/20/find-hidden-ssid-using-python-and-kali-linux.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Find Hidden SSID Using Python and Kali Linux</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on July 20, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   4 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-dspUmttlxb0/WW3Dse6SLQI/AAAAAAAABOo/J8rWBH9xv1gMfB2dXE9SOtvMngqQocv6wCPcBGAYYCw/s1600/Wireless-Router.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1032" data-original-width="1032" height="640" src="https://4.bp.blogspot.com/-dspUmttlxb0/WW3Dse6SLQI/AAAAAAAABOo/J8rWBH9xv1gMfB2dXE9SOtvMngqQocv6wCPcBGAYYCw/s640/Wireless-Router.png" width="640" /></a></div><div class="separator" style="clear: both; text-align: center;"></div><br /><br />Today, I am Going To Show You How To Find Hidden Wireless SSID Using Python in Kali Linux?<br />But First, If You are a New Visitor in my blog then, i will suggest you to take a look our blog index.<br /><br /><br />So, Let's Start Our Tutorial With Some Basic Knowledge Of Hidden SSID.<br /><br /><br />Normally, all access points send out their SSIDs and Other Information in the&nbsp;<a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">Beacon</a><br /><a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">frames</a>. This&nbsp;<a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">Beacon Frames</a>&nbsp;allows clients in the network range to discover them easily. Hidden SSID is a special configuration where the access point does not broadcast its SSID in the&nbsp;<a href="http://www.bitforestinfo.com/2017/07/what-is-beacon-frame-ieee-80211.html" target="_blank">Beacon frames</a>. Why? because with the help of these settings. only previous clients which know the SSID of the access point can connect to it. In simple way this special configuration hides access point network from new clients who don't know about real SSID.<br />But the interesting fact is this, this configuration does not provide good security. So,<br />Basically, to bypass this security here, in this tutorial, we will try to capture MAC address of Hidden access points and after that with the help of access point MAC Address, we will use a very simple trick to get real SSID from previous connected client.<br /><br />Now Let's start our tutorial but first make sure your wireless card supports monitor mode. if yes, then enable your wireless card monitor mode.<br /><br />and yes! you can also use Wireshark for this process. <a href="http://www.bitforestinfo.com/2017/07/find-hidden-wireless-ssid-using-wireshark-and-kali-linux.html" target="_blank">click here for tutorial with wireshark</a><br /><h4 style="text-align: left;">Setup 1.</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Enable Wireless Card Interface Monitor Mode.<a href="http://www.bitforestinfo.com/2017/06/2-easiest-way-to-enable-wireless-lan-monitor-mode-in-ubuntu-or-linux-using-airmon-ng.html" target="_blank">&nbsp;more info</a><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-9CTFa-lz26Y/WXDIrz9ZGAI/AAAAAAAABPE/BRsrWIPCIFAWIyFe0YXG91w0icIeC3dwwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-20%2B14-17-52.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="393" data-original-width="984" height="254" src="https://1.bp.blogspot.com/-9CTFa-lz26Y/WXDIrz9ZGAI/AAAAAAAABPE/BRsrWIPCIFAWIyFe0YXG91w0icIeC3dwwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-20%2B14-17-52.png" width="640" /></a></div><br />From This Terminal You Just need to remind monitor mode interface name.<br /><br /><b>for example:</b><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i>mon0</i><br /><h4 style="text-align: left;"><br />Setup 2.&nbsp;</h4><div>Now, We Need To Capture Beacon Frames and for this you can Download My Custom Python Script that is created For Capturing Beacon Frames. <a href="https://github.com/surajsinghbisht054/wireless_scripts/blob/master/getwifiinfo.py" target="_blank">Click here</a></div><div><br /></div><div>and run this Script using Terminal:</div><div><br /></div><div>Type:</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i>sudo python getwifiinfo.py mon0</i></div><div><br /></div><div>&nbsp;</div><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-cpWbsUNoros/WXDIruevmzI/AAAAAAAABO8/BqVK_SaaXwM6_qJjJ02fwxR4faGjlGKvACPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-07-20%2B14-34-14.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="475" data-original-width="820" height="370" src="https://4.bp.blogspot.com/-cpWbsUNoros/WXDIruevmzI/AAAAAAAABO8/BqVK_SaaXwM6_qJjJ02fwxR4faGjlGKvACPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-07-20%2B14-34-14.png" width="640" /></a></div><div><br /></div><div><br /></div><div><br /></div><div>As you can see in above screen shot, Captured Packet Output Without SSID is a hidden access point beacon frame. So, You Just need to note Packet BSSID for future Procedure.</div><div><br /></div><div>Note: For Future Procedure You Need To Run Separate Terminal For Each Separate Command/Script.&nbsp;</div><div><br /></div><div><br /></div><h4 style="text-align: left;">Setup 3.</h4><div><br /></div><div>Now, We need another script, that can capture other various management frames for retrieving real SSID of Access point By tricking its current authenticated clients and for this process, you can again download my another custom script from <a href="https://github.com/surajsinghbisht054/wireless_scripts/blob/master/captureclients.py" target="_blank">here</a></div><div><br /></div><div>Now, Open New Terminal and Type:</div><div><br /></div><div><i>sudo python captureclients.py mon0</i></div><div><br /></div><div><br /></div><div><br /></div><h4 style="text-align: left;">Setup 4.</h4><div><br /></div><div>To Send De-authentication, We will Use Aireplay-ng Tool.<br /><br /><b>Type:</b><br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i>&nbsp;aireplay-ng -0 5 -a mac_address interface_name</i><br /><br />The -0 option is for choosing a Deauthentication attack, and 5 is the number of Deauthentication packets to send. Finally, -a specifies the MAC address of the access point you want to target.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /></div><div><br /></div><h4 style="text-align: left;">Setup 5.&nbsp;</h4><div><br /></div><div>Keep Your Eyes On captureclients.py Script Terminal</div><div><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-QMW8KmG6ngg/WXDIs8PWHeI/AAAAAAAABPM/_ZPceFgKnR0KxPXDdWWGRbPRT_3pnuTkgCPcBGAYYCw/s1600/Screenshot%2Bfrom%2B2017-07-20%2B14-40-31.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="385" data-original-width="1065" height="230" src="https://1.bp.blogspot.com/-QMW8KmG6ngg/WXDIs8PWHeI/AAAAAAAABPM/_ZPceFgKnR0KxPXDdWWGRbPRT_3pnuTkgCPcBGAYYCw/s640/Screenshot%2Bfrom%2B2017-07-20%2B14-40-31.png" width="640" /></a></div><div><br /></div><div>Boom! as you can see in above screen shot. we got it. &nbsp;Our Script has successfully captured Prob-Request And Prob-Answer Packet that contains real SSID and here, our real SSID is Thisisme.</div><div><br /></div><div><br /></div><div>Done!&nbsp;</div><div><br /></div><div><a href="http://www.bitforestinfo.com/2017/07/find-hidden-wireless-ssid-using-wireshark-and-kali-linux.html" target="_blank">click here for tutorial with&nbsp;wireshark</a></div><div><br /></div><div><br /></div><div>Written By:</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SSB</div><div><br /></div><div><br /></div></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/07/20/find-hidden-wireless-ssid-using-wireshark-and-kali-linux.html" data-toggle="tooltip" data-placement="top" title="Find Hidden Wireless SSID Using Wireshark and Kali Linux">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/07/22/how-to-install-macchanger-in-ubuntu.html" data-toggle="tooltip" data-placement="top" title="How to Install Macchanger in Ubuntu">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

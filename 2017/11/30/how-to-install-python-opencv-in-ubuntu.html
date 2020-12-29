@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How to install Python OpenCV in Ubuntu - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Hackers,Today, In This Post, I am going to showing you the Easiest method to Install Python OpenCV Library In Ubuntu.So, let&#39;s Quickly Start Our Tuto...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/11/30/how-to-install-python-opencv-in-ubuntu.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How to install Python OpenCV in Ubuntu</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on November 30, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   6 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Hackers,<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-tFMSesERCdE/Wh98jbMzeFI/AAAAAAAABgE/q4tTOGxEzsoa1LEAWVLYKenVDqqOIbCmQCLcBGAs/s1600/1-main.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="349" data-original-width="356" height="626" src="https://4.bp.blogspot.com/-tFMSesERCdE/Wh98jbMzeFI/AAAAAAAABgE/q4tTOGxEzsoa1LEAWVLYKenVDqqOIbCmQCLcBGAs/s640/1-main.png" width="640" /></a></div><span id="goog_184364095"></span><span id="goog_184364096"></span><br /><br />Today, In This Post, I am going to showing you the Easiest method to Install Python OpenCV Library In Ubuntu.<br /><br />So, let's Quickly Start Our Tutorials,<br /><br />First, Take a Look at The System Requirements To Install OpenCV.<br /><br />1. Python 2.7x<br />2. Numpy<br />3. Matplotlab (Optional but Useful).<br />4. Other Libs (Don't we will cover it)<br /><br /><h4 style="text-align: left;">Follow Below Steps To Quickly Install Python OpenCV in Ubuntu Or Debian.</h4><br />1. Update Your Ubuntu Or Debian<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># 1. UPDATE</span><br /><br />sudo apt-get -y update<br />sudo apt-get -y upgrade<br />sudo apt-get -y dist-upgrade<br />sudo apt-get -y autoremove<br /></pre></div><br />2. Now, Ready To Install Dependence Tools<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Build tools:</span><br />sudo apt-get install -y build-essential cmake<br /></pre></div><br />3. Install GUI For OpenCV Windows.<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># GUI </span><br />sudo apt-get install -y qt5-default libvtk6-dev<br /></pre></div><br />4. Install Media Libs<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Media I/O:</span><br />sudo apt-get install -y zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev libopenexr-dev libgdal-dev<br /></pre></div><br />5. Install Video Libs<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Video I/O:</span><br />sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev<br /></pre></div><br />6. Install Other Useful Libs<br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Parallelism and linear algebra libraries:</span><br />sudo apt-get install -y libtbb-dev libeigen3-dev<br /><br /></pre></div><br />7. Install Python Required Tools<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Python:</span><br />sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy<br /></pre></div><br />8. Install Documentation<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># Documentation:</span><br />sudo apt-get install -y doxygen<br /><br /></pre></div><br />9. Finally, Install OpenCV. here, I am installing current stable version '3.2.0.zip'. So, you Can Change it as Your Requirement.<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;"># 3. INSTALL Python OPENCV</span><br />sudo apt-get install -y unzip wget<br />wget https://github.com/opencv/opencv/archive/3.2.0.zip<br />unzip 3.2.0.zip<br />rm 3.2.0.zip<br />mv opencv-3.2.0 OpenCV<br />cd OpenCV<br />mkdir build<br />cd build<br />cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON -DENABLE_PRECOMPILED_HEADERS=OFF ..<br />make -j4<br />sudo make install<br />sudo ldconfig<br /></pre></div><br />Done!<br /><br />Now, OpenCV is Ready To Use.<br /><br />Wait... Wait . Want An Example To Check OpenCv&nbsp;Module. hmm,<br /><br />Then, Run Below Python Script Codes. This Script Will Show You WebCam Live Video In a Window.<br /><br /><!-- HTML generated using hilite.me --><b>LiveWebCam.py</b><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#!/usr/bin/python</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">cv2</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">numpy</span> <span style="color: green; font-weight: bold;">as</span> <span style="color: blue; font-weight: bold;">np</span><br /><br /><br /><span style="color: #408080; font-style: italic;"># Initialise WebCam</span><br />cap <span style="color: #666666;">=</span> cv2<span style="color: #666666;">.</span>VideoCapture(<span style="color: #666666;">0</span>)<br /><br /><span style="color: #408080; font-style: italic;"># Loop</span><br /><span style="color: green; font-weight: bold;">while</span> <span style="color: green;">True</span>:<br /> <span style="color: #408080; font-style: italic;"># Capture Frame One By One</span><br /> ret, frame <span style="color: #666666;">=</span> cap<span style="color: #666666;">.</span>read()<br /><br /> <span style="color: #408080; font-style: italic;"># Display Frame In Window</span><br /> cv2<span style="color: #666666;">.</span>imshow(<span style="color: #ba2121;">'Original'</span>, frame)<br /><br /> <span style="color: #408080; font-style: italic;"># Wait For Keyboard input</span><br /> <span style="color: green; font-weight: bold;">if</span> cv2<span style="color: #666666;">.</span>waitKey(<span style="color: #666666;">1</span>) <span style="color: #666666;">&amp;</span> <span style="color: #666666;">0xFF</span> <span style="color: #666666;">==</span> <span style="color: green;">ord</span>(<span style="color: #ba2121;">'q'</span>):<br />  <span style="color: green; font-weight: bold;">break</span><br /><span style="color: #408080; font-style: italic;"># Close Webcam</span><br />cap<span style="color: #666666;">.</span>release()<br /><br /><span style="color: #408080; font-style: italic;"># Destroy All Windows</span><br />cv2<span style="color: #666666;">.</span>destroyAllWindows()<br /></pre></div><br />I Hope, It's Working Fine.<br /><br />Have A Nice Day.<br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SSB</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/11/30/what-is-python-opencv-module.html" data-toggle="tooltip" data-placement="top" title="What is Python OpenCV Module?">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/11/30/automatic-script-to-install-opencv-in.html" data-toggle="tooltip" data-placement="top" title="Automatic Script To Install OpenCV in Ubuntu Or Debian">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

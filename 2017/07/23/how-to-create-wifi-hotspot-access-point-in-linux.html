@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How to Create Wifi Hotspot / Access Point In Ubuntu - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,In This Post, I am Going To Show You A Simple Way To Create A Wifi Hotspot For Sharing Internet Connections with Other WiFi Clients Using Ubu...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/07/23/how-to-create-wifi-hotspot-access-point-in-linux.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How to Create Wifi Hotspot / Access Point In Ubuntu</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on July 23, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   3 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-yYeu1nvOnao/WW3DtYwUgRI/AAAAAAAABP8/OXj9NGTNMgg9G6Fg5qtMU2KoWT07rkODgCPcBGAYYCw/s1600/%25C2%25A3%2B150%2BMILLONES%2BPARA%2BLAS%2BCARRETERAS%2BINTELIGENTES.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="693" data-original-width="800" height="554" src="https://2.bp.blogspot.com/-yYeu1nvOnao/WW3DtYwUgRI/AAAAAAAABP8/OXj9NGTNMgg9G6Fg5qtMU2KoWT07rkODgCPcBGAYYCw/s640/%25C2%25A3%2B150%2BMILLONES%2BPARA%2BLAS%2BCARRETERAS%2BINTELIGENTES.png" width="640" /></a></div><br /><br />In This Post, I am Going To Show You A Simple Way To Create A Wifi Hotspot For Sharing Internet Connections with Other WiFi Clients Using Ubuntu.<br /><br />So, Let's Quickly Start Our Tutorial But First, Make Sure Your Wireless Card Supports Access Point Mode.<br /><h4 style="text-align: left;"><br />Wireless Card Verification</h4><br />To Verify Your Wireless Card Supported Interface, Open Your Terminal and Type:<br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">:~# iw list<br /></pre></div><br /><br />And Check AP Interface Shown In its Output as my wireless card showing in below screenshot.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-Nn60krpdO0w/WXRyCnfJORI/AAAAAAAABQE/EYJ-Lm69XAELlqUGfOAek8U-iEHdfkC4wCLcBGAs/s1600/Screenshot%2Bfrom%2B2017-07-23%2B15-16-06.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="736" data-original-width="1224" height="384" src="https://1.bp.blogspot.com/-Nn60krpdO0w/WXRyCnfJORI/AAAAAAAABQE/EYJ-Lm69XAELlqUGfOAek8U-iEHdfkC4wCLcBGAs/s640/Screenshot%2Bfrom%2B2017-07-23%2B15-16-06.png" width="640" /></a></div><br />If Your Wireless Card Also Showing AP as my terminal showing, then keep going<br /><br /><h4 style="text-align: left;">Setup 1.</h4><br />Click On <b>Network Icon</b> located at the upper left side on desktop and then Click On <b>Edit Connection Option</b><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-Me49HRdxZLY/WXRyGPBfncI/AAAAAAAABQU/la6v3pe4EKM9x9ZustvfJW8WpZ4495RjwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B14-52-58.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="474" data-original-width="360" height="640" src="https://2.bp.blogspot.com/-Me49HRdxZLY/WXRyGPBfncI/AAAAAAAABQU/la6v3pe4EKM9x9ZustvfJW8WpZ4495RjwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B14-52-58.png" width="484" /></a></div><br />This Option Will Open Network Connection Dialog Box<br /><br /><h4 style="text-align: left;">Setup 2.&nbsp;</h4><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Now, a <b>Network Connection Dialog</b> Box Will appear, Then Click On <b>Add Button</b><br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-1EqSmAvFBSY/WXRyFvuV1nI/AAAAAAAABQg/B4fapLpVNfAj9WB9of9iOkOkBHraHvhNQCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B13-16-15.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="405" data-original-width="492" height="524" src="https://1.bp.blogspot.com/-1EqSmAvFBSY/WXRyFvuV1nI/AAAAAAAABQg/B4fapLpVNfAj9WB9of9iOkOkBHraHvhNQCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B13-16-15.png" width="640" /></a></div><br /><br /><br /><h4 style="text-align: left;">Setup 3.&nbsp;</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Here, Choose <b>Wi-Fi </b>as Connection Type<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-9gBSauGb6rI/WXRyFRen6yI/AAAAAAAABQg/9oX9Be2AHokBhLcrty0IWSH0cCrbVtACgCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B13-16-26.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="468" data-original-width="616" height="484" src="https://3.bp.blogspot.com/-9gBSauGb6rI/WXRyFRen6yI/AAAAAAAABQg/9oX9Be2AHokBhLcrty0IWSH0cCrbVtACgCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B13-16-26.png" width="640" /></a></div><br /><br /><br /><h4 style="text-align: left;">Setup 4.&nbsp;</h4><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Here, Fill All Fields as i filled given in below screenshot.<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-YJZtNprSTUQ/WXRyFRgJu9I/AAAAAAAABQg/V6cwr8U94wED5rQQb7bX05p6vJA8SPsWwCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B13-17-14.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="533" data-original-width="604" height="563" src="https://2.bp.blogspot.com/-YJZtNprSTUQ/WXRyFRgJu9I/AAAAAAAABQg/V6cwr8U94wED5rQQb7bX05p6vJA8SPsWwCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B13-17-14.png" width="640" /></a></div><br /><br /><br />Connection Name = "Configuration Label"<br /><br /><i><b>SSID = "Your Hotspot Name"</b></i><br /><i><b><br /></b></i><i><b>Mode = "Choose Hotspot Mode"</b></i><br /><i><b><br /></b></i><i><b>Band = "Choose Auto"</b></i><br /><i><b><br /></b></i><i><b>Device = "Select Your Wireless Card"</b></i><br /><br /><br /><h4 style="text-align: left;">Setup 5.&nbsp;</h4><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Choose Security Type And Enter Password<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-oBHSsR7OfZg/WXRyGMex-TI/AAAAAAAABQg/4FVIsX2giVE9NofTDdkqjbywAyV2vYogQCEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B13-17-34.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="545" data-original-width="579" height="602" src="https://2.bp.blogspot.com/-oBHSsR7OfZg/WXRyGMex-TI/AAAAAAAABQg/4FVIsX2giVE9NofTDdkqjbywAyV2vYogQCEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B13-17-34.png" width="640" /></a></div><br /><br /><b><i><br /></i></b><b><i>Security = "Security Protocol"</i></b><br /><b><i><br /></i></b><b><i>Key = "Password"</i></b><br /><br /><h4 style="text-align: left;">Setup 6.</h4>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Now, Our Hotspot Settings are Ready To use.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-DN0Xc5KHp0k/WXRyGVJC9OI/AAAAAAAABQg/KdM3qT4D5KU13N0k4O2vLl4Ga4uQHEdpACEwYBhgL/s1600/Screenshot%2Bfrom%2B2017-07-23%2B14-53-10.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="435" data-original-width="501" height="554" src="https://1.bp.blogspot.com/-DN0Xc5KHp0k/WXRyGVJC9OI/AAAAAAAABQg/KdM3qT4D5KU13N0k4O2vLl4Ga4uQHEdpACEwYBhgL/s640/Screenshot%2Bfrom%2B2017-07-23%2B14-53-10.png" width="640" /></a></div>Now, To Run Hotspot Open Network Icon and Their Click On Hotspot Option Shown In WiFi Network List.<br /><br /><br />Done!<br /><br />Written By:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SSB</div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/07/23/basic-understanding-about-wireless-encryption-wep-wpa-wpa2.html" data-toggle="tooltip" data-placement="top" title="Basic Understanding About Wireless Encryption WEP, WPA and WPA2">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/07/23/how-to-install-mypaint-in-ubuntu.html" data-toggle="tooltip" data-placement="top" title="how to install mypaint in ubuntu">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

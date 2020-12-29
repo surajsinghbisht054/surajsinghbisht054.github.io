@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How to Create Text Editor Using Python and Tkinter - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nb...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/01/09/how-to-create-text-editor-using-python.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How to Create Text Editor Using Python and Tkinter</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Yashwant bisht</a>
+              on January 09, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   3 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">Hello friends,</span></h2><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-oUIAzOAo5S8/WGD8_ATKuDI/AAAAAAAAAhI/UMhGKw6_QGQcSPfROhD2qC1UwZW09-2jQCPcB/s1600/python.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="256" src="https://4.bp.blogspot.com/-oUIAzOAo5S8/WGD8_ATKuDI/AAAAAAAAAhI/UMhGKw6_QGQcSPfROhD2qC1UwZW09-2jQCPcB/s640/python.png" width="640" /></a></div><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Today, I&nbsp;am going to show you how we can create a Text Editor using Python and Tkinter Module.&nbsp;</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;"><br /></span> <span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">I named this text editor as <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="366a41be-e97f-4da8-8c79-38aa2ce8646e" id="f1cdd664-a2ef-4c16-839e-5703ba2765af">pyEditor</gs>. You can use this <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="29b4109c-b653-474f-89f3-20f88a8f79bc" id="6a2ec3c8-b586-42d0-a641-2e321106540e">pyEditor</gs> for creating <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="29b4109c-b653-474f-89f3-20f88a8f79bc" id="482e703c-679a-4f46-b3c5-0ba78a158fea">python script</gs> or any other programming script. <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="9f8ecb11-848f-4ea5-ac79-c9b8d7276c45" id="e6a83252-8938-40ff-a061-5c7f22670bf4">or</gs> you can also modify this script as <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="9f8ecb11-848f-4ea5-ac79-c9b8d7276c45" id="3ec612f8-e798-476c-be80-f65535e4dc4a">your</gs> need.&nbsp;</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">In this editor, I tried best to create a user-friendly editor and for practice purpose, this pyEditor is a good example for beginners.</span><br /><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">Now, some features of this <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="1e23de5b-6254-4519-8c43-625a25cc66d4" id="14f2b4c3-1ddf-4f29-ae73-f654c818460e">pyEditor</gs>.</span><br /><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">1. Completely Based On Tkinter and Some <gs class="GINGER_SOFTWARE_mark" ginger_software_uiphraseguid="7d0b8494-7c93-4faf-a0ae-23da15658094" id="81df874e-9aac-43cd-85c9-5d9cf25a2af4">inbuilt </gs>Python Module</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">2. Cross-platform supported</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">3. Easy to use</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">4. Lightweight</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">5. Good look and Easy in Customizations</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">6. Easy for Modifications&nbsp;</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">7. Key-Board Shortcut Supported&nbsp;</span><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">8. Font Selection panel..etc</span><br /><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" src="https://2.bp.blogspot.com/-hd3qcEyxwlM/WHOThq1YfSI/AAAAAAAAADs/_wTCLnKH54U3Pt2MUd7R1Ct8JuAv0Z6hACEw/s1600/screenshots-300x77.png" /></div><br /><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" height="358" src="https://4.bp.blogspot.com/-Oo9B7p5yGqo/V6V1IsNBKQI/AAAAAAAAAMA/-5CF5HSCFlY73THi3oFfpEr2sbNJQTaoQCLcB/s640/Screenshot%2Bfrom%2B2016-08-06%2B10-33-24.png" width="640" /></div><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" height="358" src="https://3.bp.blogspot.com/-NwCC7hBh_Zc/V6V1JlBo_-I/AAAAAAAAAMI/uApxos6k5XADi3sDOyBNVX-svhUCQ1h8wCLcB/s640/Screenshot%2Bfrom%2B2016-08-06%2B10-33-57.png" width="640" /></div><br /><div class="separator" style="clear: both; text-align: center;"><img border="0" height="358" src="https://1.bp.blogspot.com/-4uWqAZQUX6A/V6V1JYzutzI/AAAAAAAAAME/SgA9cSSbvrEtr4mqqMVARnkT_jr2w900QCLcB/s640/Screenshot%2Bfrom%2B2016-08-06%2B10-34-08.png" width="640" /></div><br /><br /><h4 style="text-align: left;"><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;"><b>Note:-&nbsp;</b><span style="color: #444444;"><span style="color: #444444;"> <span style="font-weight: normal;"><span style="color: #444444;"><span style="color: red;">I Created This pyEditor for Practice and Educational Purpose Only.That's why its free and open source. So, Feel Free Doing Modifications and Customization.</span></span></span></span></span></span></h4><div class="separator" style="clear: both; text-align: center;"><u><span style="font-size: small;"><span style="font-family: &quot;arial&quot; , &quot;helvetica&quot; , sans-serif;"><a href="http://www.mediafire.com/download/gqh7ux6eqxxone8/Python_Editor%28bitforestinfo.blogspot.in%29.zip"><img alt="http://www.mediafire.com/download/gqh7ux6eqxxone8/Python_Editor%28bitforestinfo.blogspot.in%29.zip" border="0" src="https://3.bp.blogspot.com/-h6yaJyTXRPY/WHOThrkRdII/AAAAAAAAADs/yHlL045WPe4SmdDDq6vElvTjdDIkgZsKwCEw/s1600/download-now-button_1.png" /></a></span></span></u></div><br /><br /><span style="font-family: &quot;times&quot; , &quot;times new roman&quot; , serif;">For any type suggestion or help<br />feel free to contact me<br />Email: surajsinghbisht054@gmail.com</span></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/09/how-to-create-tcp-port-scanner-using.html" data-toggle="tooltip" data-placement="top" title="Create fastest Tcp Port Scanner Using Python">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/01/09/how-to-create-chatting-program-or.html" data-toggle="tooltip" data-placement="top" title="Simple Chatting App Using Python and Tkinter">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

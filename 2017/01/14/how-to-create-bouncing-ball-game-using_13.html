@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How To Create Bouncing Ball Game Using Python (Mouse) - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Today, We will Discuss About How we Can Create...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/01/14/how-to-create-bouncing-ball-game-using_13.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How To Create Bouncing Ball Game Using Python (Mouse)</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on January 14, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   10 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Hello Friends,</span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Today, We will Discuss About How we Can Create Bouncing Ball Game Using Python Mouse Version.</span><span style="background-color: white; color: #737373; font-family: inherit; font-size: 14.85px;">&nbsp;<span style="font-size: 14.85px;">Friends, I Know My Some Python Examples Are looks like Very Hard For Beginners but Friends, Believe Me My All Example Are Easy For Understand. They looks Hard Because I Am Using OOP (Object Orient Programming). So, If Want To Be Expert Then don't Lose Your Courage or guts.</span></span><br /><span style="background-color: white; color: #737373; font-family: inherit; font-size: 14.85px;"><br style="font-size: 14.85px;" /><span style="font-size: 14.85px;">So, Let's Talk About This Example</span></span><br /><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="font-family: inherit;"><br style="font-size: 14.85px;" /><span style="font-size: 14.85px;">First, Screen Shots:</span></span></div><div class="separator" style="clear: both; text-align: center;"><a href="https://3.bp.blogspot.com/-xkPPP0DbuLw/WHnNuXu7W4I/AAAAAAAAAs8/WRUq1BNEiykuBtGEYNOVDB4qrBuxgd6lACPcB/s1600/Screenshot%2Bfrom%2B2017-01-14%2B12-33-04.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="354" src="https://3.bp.blogspot.com/-xkPPP0DbuLw/WHnNuXu7W4I/AAAAAAAAAs8/WRUq1BNEiykuBtGEYNOVDB4qrBuxgd6lACPcB/s640/Screenshot%2Bfrom%2B2017-01-14%2B12-33-04.png" width="640" /></a></div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="font-family: inherit;"><span style="font-size: 14.85px;"><br /></span></span></div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;"><span style="font-family: inherit;"><span style="font-size: 14.85px;"><br /></span></span><span style="font-family: inherit;"><span style="font-size: 14.85px;">Example Code:</span></span></div><!-- HTML generated using hilite.me --><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">  1<br />  2<br />  3<br />  4<br />  5<br />  6<br />  7<br />  8<br />  9<br /> 10<br /> 11<br /> 12<br /> 13<br /> 14<br /> 15<br /> 16<br /> 17<br /> 18<br /> 19<br /> 20<br /> 21<br /> 22<br /> 23<br /> 24<br /> 25<br /> 26<br /> 27<br /> 28<br /> 29<br /> 30<br /> 31<br /> 32<br /> 33<br /> 34<br /> 35<br /> 36<br /> 37<br /> 38<br /> 39<br /> 40<br /> 41<br /> 42<br /> 43<br /> 44<br /> 45<br /> 46<br /> 47<br /> 48<br /> 49<br /> 50<br /> 51<br /> 52<br /> 53<br /> 54<br /> 55<br /> 56<br /> 57<br /> 58<br /> 59<br /> 60<br /> 61<br /> 62<br /> 63<br /> 64<br /> 65<br /> 66<br /> 67<br /> 68<br /> 69<br /> 70<br /> 71<br /> 72<br /> 73<br /> 74<br /> 75<br /> 76<br /> 77<br /> 78<br /> 79<br /> 80<br /> 81<br /> 82<br /> 83<br /> 84<br /> 85<br /> 86<br /> 87<br /> 88<br /> 89<br /> 90<br /> 91<br /> 92<br /> 93<br /> 94<br /> 95<br /> 96<br /> 97<br /> 98<br /> 99<br />100<br />101<br />102<br />103<br />104<br />105<br />106</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#!/usr/bin/python</span><br /><br /><span style="color: #408080; font-style: italic;"># ---------------- READ ME ---------------------------------------------</span><br /><span style="color: #408080; font-style: italic;"># This Script is Created Only For Practise And Educational Purpose Only</span><br /><span style="color: #408080; font-style: italic;"># This is an Example Of Tkinter Canvas Graphics</span><br /><span style="color: #408080; font-style: italic;"># This Script Is Created For http://bitforestinfo.blogspot.in</span><br /><span style="color: #408080; font-style: italic;"># This Script is Written By</span><br />__author__<span style="color: #666666;">=</span><span style="color: #ba2121;">'''</span><br /><br /><span style="color: #ba2121;">######################################################</span><br /><span style="color: #ba2121;">                By S.S.B Group                          </span><br /><span style="color: #ba2121;">######################################################</span><br /><br /><span style="color: #ba2121;">    Suraj Singh</span><br /><span style="color: #ba2121;">    Admin</span><br /><span style="color: #ba2121;">    S.S.B Group</span><br /><span style="color: #ba2121;">    surajsinghbisht054@gmail.com</span><br /><span style="color: #ba2121;">    http://bitforestinfo.blogspot.in/</span><br /><br /><span style="color: #ba2121;">    Note: We Feel Proud To Be Indian</span><br /><span style="color: #ba2121;">######################################################</span><br /><span style="color: #ba2121;">'''</span><br /><span style="color: green; font-weight: bold;">print</span> __author__<br /><span style="color: #408080; font-style: italic;"># ----------------------------------------------------------------------</span><br /><br /><span style="color: green; font-weight: bold;">try</span>:<br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">Tkinter</span><br /><span style="color: green; font-weight: bold;">except</span>:<br />    <span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">tkinter</span> <span style="color: green; font-weight: bold;">as</span> <span style="color: blue; font-weight: bold;">Tkinter</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">time</span><br />BALL_SPEED<span style="color: #666666;">=5</span><br /><br /><span style="color: green; font-weight: bold;">class</span> <span style="color: blue; font-weight: bold;">GameCanvas</span>(Tkinter<span style="color: #666666;">.</span>Canvas):<br />    <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">__init__</span>(<span style="color: green;">self</span>, <span style="color: #666666;">*</span>args, <span style="color: #666666;">**</span>kwargs):<br />        Tkinter<span style="color: #666666;">.</span>Canvas<span style="color: #666666;">.</span>__init__(<span style="color: green;">self</span>, <span style="color: #666666;">*</span>args, <span style="color: #666666;">**</span>kwargs)<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>create_bouncing_ball()<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>create_moving_bat()<br />        <br />    <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">create_moving_bat</span>(<span style="color: green;">self</span>):<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>bat<span style="color: #666666;">=</span>Tkinter<span style="color: #666666;">.</span>Canvas<span style="color: #666666;">.</span>create_rectangle(<span style="color: green;">self</span>,<span style="color: #666666;">0</span>,<span style="color: #666666;">570</span>,<span style="color: #666666;">100</span>,<span style="color: #666666;">580</span>, fill<span style="color: #666666;">=</span><span style="color: #ba2121;">'lightslateblue'</span>)<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>bind(<span style="color: #ba2121;">'&lt;Motion&gt;'</span>, <span style="color: green;">self</span><span style="color: #666666;">.</span>update_bat_moves)<br />        <span style="color: green; font-weight: bold;">return</span><br />    <br />    <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">update_bat_moves</span>(<span style="color: green;">self</span>, event<span style="color: #666666;">=</span><span style="color: green;">None</span>):<br />        x<span style="color: #666666;">=</span>event<span style="color: #666666;">.</span>x<br />        x1,y1,x2,y2<span style="color: #666666;">=</span><span style="color: green;">self</span><span style="color: #666666;">.</span>coords(<span style="color: green;">self</span><span style="color: #666666;">.</span>bat)<br />        gap<span style="color: #666666;">=</span>(x2<span style="color: #666666;">-</span>x1)<span style="color: #666666;">/2</span><br />        center<span style="color: #666666;">=</span>x1<span style="color: #666666;">+</span>gap<br />        move<span style="color: #666666;">=</span>x<span style="color: #666666;">-</span>center<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>bat,move,<span style="color: #666666;">0</span>)<br />        <span style="color: green; font-weight: bold;">return</span><br />        <br />    <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">create_bouncing_ball</span>(<span style="color: green;">self</span>):<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>ball<span style="color: #666666;">=</span>Tkinter<span style="color: #666666;">.</span>Canvas<span style="color: #666666;">.</span>create_oval(<span style="color: green;">self</span>, <span style="color: #666666;">0</span>,<span style="color: #666666;">0</span>,<span style="color: #666666;">20</span>,<span style="color: #666666;">20</span>, fill<span style="color: #666666;">=</span><span style="color: #ba2121;">'cornflowerblue'</span>)<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>x<span style="color: #666666;">=</span>BALL_SPEED<br />        <span style="color: green;">self</span><span style="color: #666666;">.</span>y<span style="color: #666666;">=</span>BALL_SPEED<br />        <span style="color: green; font-weight: bold;">return</span><br />    <br />    <span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">update_board</span>(<span style="color: green;">self</span>):<br />        width<span style="color: #666666;">=</span><span style="color: green;">self</span><span style="color: #666666;">.</span>winfo_width()<br />        height<span style="color: #666666;">=</span><span style="color: green;">self</span><span style="color: #666666;">.</span>winfo_height()<br />        x1,y1,x2,y2<span style="color: #666666;">=</span><span style="color: green;">self</span><span style="color: #666666;">.</span>coords(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball)<br />        hit<span style="color: #666666;">=</span><span style="color: green;">len</span>(<span style="color: green;">self</span><span style="color: #666666;">.</span>find_overlapping(x1,y1,x2,y2))<br />        <span style="color: green; font-weight: bold;">if</span> hit<span style="color: #666666;">&gt;=2</span>:<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>y<span style="color: #666666;">=-</span>BALL_SPEED<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)<br />        <span style="color: green; font-weight: bold;">elif</span> x1<span style="color: #666666;">&lt;0</span>:<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>x<span style="color: #666666;">=</span>BALL_SPEED<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)<br />        <span style="color: green; font-weight: bold;">elif</span> x2<span style="color: #666666;">&gt;</span>width:<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>x<span style="color: #666666;">=-</span>BALL_SPEED<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)<br />        <span style="color: green; font-weight: bold;">elif</span> y1<span style="color: #666666;">&lt;0</span>:<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>y<span style="color: #666666;">=</span>BALL_SPEED<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)<br />        <span style="color: green; font-weight: bold;">elif</span> y2<span style="color: #666666;">&gt;</span>height:<br />            x<span style="color: #666666;">=</span>width<span style="color: #666666;">/2</span><br />            y<span style="color: #666666;">=</span>height<span style="color: #666666;">/2</span><br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>create_text(x,y, text<span style="color: #666666;">=</span><span style="color: #ba2121;">'Game Over'</span>, font<span style="color: #666666;">=</span>(<span style="color: #ba2121;">'arial 50 bold'</span>), fill<span style="color: #666666;">=</span><span style="color: #ba2121;">'red'</span>)<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>y<span style="color: #666666;">=-</span>BALL_SPEED<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)            <br />        <span style="color: green; font-weight: bold;">else</span>:<br />            <span style="color: green;">self</span><span style="color: #666666;">.</span>move(<span style="color: green;">self</span><span style="color: #666666;">.</span>ball,<span style="color: green;">self</span><span style="color: #666666;">.</span>x,<span style="color: green;">self</span><span style="color: #666666;">.</span>y)<br />        <span style="color: green; font-weight: bold;">return</span><br /><br /><br /><br /><br /><br /><span style="color: #408080; font-style: italic;"># Gui Handler</span><br /><span style="color: green; font-weight: bold;">def</span> <span style="color: blue;">main</span>():<br />    root<span style="color: #666666;">=</span>Tkinter<span style="color: #666666;">.</span>Tk()<br />    root<span style="color: #666666;">.</span>minsize(<span style="color: #666666;">800</span>,<span style="color: #666666;">600</span>)<br />    root<span style="color: #666666;">.</span>maxsize(<span style="color: #666666;">800</span>,<span style="color: #666666;">600</span>)<br />    board<span style="color: #666666;">=</span>GameCanvas(root, bg<span style="color: #666666;">=</span><span style="color: #ba2121;">'lavender'</span>)<br />    board<span style="color: #666666;">.</span>pack(expand<span style="color: #666666;">=</span><span style="color: #ba2121;">'yes'</span>, fill<span style="color: #666666;">=</span><span style="color: #ba2121;">'both'</span>)<br />    <span style="color: #408080; font-style: italic;"># Program Loop</span><br />    <span style="color: green; font-weight: bold;">while</span> <span style="color: green;">True</span>:<br />        root<span style="color: #666666;">.</span>update()<br />        root<span style="color: #666666;">.</span>update_idletasks()<br />        board<span style="color: #666666;">.</span>update_board()<br />        time<span style="color: #666666;">.</span>sleep(<span style="color: #666666;">0.01</span>)<br /><br /><span style="color: #408080; font-style: italic;"># main Trigger</span><br /><span style="color: green; font-weight: bold;">if</span> __name__<span style="color: #666666;">==</span><span style="color: #ba2121;">'__main__'</span>:<br />    main()<br /></pre></td></tr></tbody></table></div><br />if Anyone Wants To Download <a href="https://github.com/surajsinghbisht054/BouncingBallGameWithMouse" target="_blank">Click Here</a><br /><br /><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><br class="Apple-interchange-newline" style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">thanks for visiting my blog.</span><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">For any question or Suggestion or help</span><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;">S.S.B</span><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Email: &nbsp;surajsinghbisht054@gmail.com</span><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Or post Comment.</span><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">please feel free to contact me.</span></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/14/how-to-create-bouncing-ball-game-using.html" data-toggle="tooltip" data-placement="top" title="How To Create Bouncing Ball Game Using Python (Keyboard)">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/01/14/how-to-createsetup-virtual-machine-on.html" data-toggle="tooltip" data-placement="top" title="How to Create/Setup Virtual Machine on Vmware Workstation">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

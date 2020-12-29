@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    How To Create website crawler for email harvesting Using python &amp; urllib2 module - Web Scraping - part 12 - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Hello Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;This is our 12th part of web scraping tutorial...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/2017/02/01/how-to-create-website-crawler-for-email.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>How To Create website crawler for email harvesting Using python & urllib2 module - Web Scraping - part 12</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on February 01, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   11 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;">Hello Friends,</span><br /><br /><div class="separator" style="background-color: white; clear: both; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-weight: bold; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="https://2.bp.blogspot.com/-hLrDyAdNeUQ/WMQGl1LbVOI/AAAAAAAAA5k/d4HuTq9dV0cyw2LmnLA88q1lNBPBWiwuwCPcB/s1600/web-scraping-python-e1476083137710.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="474" src="https://2.bp.blogspot.com/-hLrDyAdNeUQ/WMQGl1LbVOI/AAAAAAAAA5k/d4HuTq9dV0cyw2LmnLA88q1lNBPBWiwuwCPcB/s640/web-scraping-python-e1476083137710.png" width="640" /></a></div><br style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-weight: bold;" /><h3 style="text-align: left;"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;This is our 12th part of web scraping tutorials. and in this tutorial, I am gonna to show you how to create python script for website crawling and for email harvesting. For this purpose, we will use python built-in modules only. but first, if you are new visitor then first check our index or For 11th Part&nbsp;<a href="http://bitforestinfo.blogspot.com/2017/01/how-to-create-way2sms-sms-sending_30.html" style="color: #80c2d4; text-decoration: none;" target="_blank">Click Here</a>.&nbsp;</span></h3><span style="background-color: white; color: #333333; font-family: &quot;helvetica neue&quot; , &quot;helvetica&quot; , &quot;arial&quot; , sans-serif; font-size: 1.1em; font-weight: bold; white-space: pre-wrap;"><br /></span><b style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Now, Let's Talk About Today's Topic.</b><br /><br />Friends,<br /><br />In this tutorials, I am going to &nbsp;Show You How To Create Python Website Crawler that can save all HTML data of webpages in a temporary file. and then, create another python script for finding all emails addresses from a temporary file.<br />so, here we will create these 2 scripts.<br /><br /><h3 style="text-align: left;">1. &nbsp;crawler .py<br />2. &nbsp;email_filter .py</h3><br style="background-color: white; font-family: &quot;Droid Sans Mono&quot;; font-size: 15.84px; font-weight: bold;" /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;">So, Let's Start.</span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;"><br /></span></span><span style="background-color: white; font-family: &quot;droid sans mono&quot;; font-size: 15.84px; font-weight: bold;"></span><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;">Here, I am Sharing My Demo Codes But If You Want More Better Example Then, You Can Modify these codes yourself or Download This Script From My GitHub repository (link given at the end of these codes ).</span></span><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;"><br /></span></span><h3 style="text-align: left;"><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;">1. crawler.py</span></span></h3><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;"><br /></span></span> <br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;">#!/usr/bin/python</span><br /><span style="color: #008800; font-style: italic;"># ---------------- READ ME ---------------------------------------------</span><br /><span style="color: #008800; font-style: italic;"># This Script is Created Only For Practise And Educational Purpose Only</span><br /><span style="color: #008800; font-style: italic;"># This Script Is Created For https://bitforestinfo.blogspot.in</span><br /><span style="color: #008800; font-style: italic;"># This Script is Written By</span><br />__author__=<span style="color: blue;">'''</span><br /><br /><span style="color: blue;">######################################################</span><br /><span style="color: blue;">                By S.S.B Group                          </span><br /><span style="color: blue;">######################################################</span><br /><br /><span style="color: blue;">    Suraj Singh</span><br /><span style="color: blue;">    Admin</span><br /><span style="color: blue;">    S.S.B Group</span><br /><span style="color: blue;">    surajsinghbisht054@gmail.com</span><br /><span style="color: blue;">    https://bitforestinfo.blogspot.in/</span><br /><br /><span style="color: blue;">    Note: We Feel Proud To Be Indian</span><br /><span style="color: blue;">######################################################</span><br /><span style="color: blue;">'''</span><br /><span style="color: #008800; font-style: italic;"># Import Module</span><br /><span style="color: navy; font-weight: bold;">import</span> urllib2<br /><span style="color: navy; font-weight: bold;">import</span> re<br /><br /><span style="color: #008800; font-style: italic;"># Configuration</span><br />html_dump = <span style="color: blue;">"tempdump"</span>  <span style="color: #008800; font-style: italic;"># Temp File Name</span><br /><br /><span style="color: #008800; font-style: italic;"># Function For Extracting Html Link</span><br /><span style="color: navy; font-weight: bold;">def</span> link(html_data):<br />    <span style="color: #008800; font-style: italic;"># Filtering Url links</span><br />    <span style="color: navy; font-weight: bold;">print</span> <span style="color: blue;">"[*] Extracting Html Links ..."</span><br />    pattern = re.compile(<span style="color: blue;">'(&lt;a .*?&gt;)'</span>)<br />    a_tag_captured = pattern.findall(html_data)<br />    <span style="color: navy; font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> a_tag_captured:<br />        href_raw=i[str(i).find(<span style="color: blue;">'href'</span>):]<br />        href=href_raw[:href_raw.find(<span style="color: blue;">' '</span>)]<br />        <span style="color: navy; font-weight: bold;">yield</span> href[<span style="color: blue;">6</span>:-<span style="color: blue;">1</span>]<br />    <span style="color: navy; font-weight: bold;">return</span><br /><br /><span style="color: #008800; font-style: italic;"># Function For Downloading Html</span><br /><span style="color: navy; font-weight: bold;">def</span> main(url):<br />    <span style="color: navy; font-weight: bold;">try</span>:<br />        <span style="color: navy; font-weight: bold;">print</span> <span style="color: blue;">"[*] Downloading Html Codes ... "</span>,<br />        header={<span style="color: blue;">'User-Agent'</span>:<span style="color: blue;">'Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.8.0'</span>}<br />        req=urllib2.Request(url, headers=header)<br />        page = urllib2.urlopen(req).read()<br />    <span style="color: navy; font-weight: bold;">except</span> Exception <span style="color: navy; font-weight: bold;">as</span> e:<br />        page=<span style="color: blue;">'None'</span><br />    <span style="color: navy; font-weight: bold;">return</span> page<br />temp = open(html_dump, <span style="color: blue;">'a'</span>)     <span style="color: #008800; font-style: italic;"># Open Temp File</span><br /><br /><span style="color: navy; font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> link(main(<span style="color: blue;">'https://bitforestinfo.blogspot.com'</span>)):   <span style="color: #008800; font-style: italic;"># enter you website address in place of https://bitforestinfo.blogspot.com  </span><br /> temp.write(main(i))        <span style="color: #008800; font-style: italic;"># Write Data On File</span><br /><br />temp.close()                    <span style="color: #008800; font-style: italic;"># Closing File</span><br /></pre></td></tr></tbody></table></div><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;"><br /></span></span><br /><h3 style="text-align: left;">2. email_filter.py</h3><br /><br /><div style="background: #ffffff; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-style: italic;">#!/usr/bin/python</span><br /><span style="color: #008800; font-style: italic;"># ---------------- READ ME ---------------------------------------------</span><br /><span style="color: #008800; font-style: italic;"># This Script is Created Only For Practise And Educational Purpose Only</span><br /><span style="color: #008800; font-style: italic;"># This Script Is Created For https://bitforestinfo.blogspot.in</span><br /><span style="color: #008800; font-style: italic;"># This Script is Written By</span><br />__author__=<span style="color: blue;">'''</span><br /><br /><span style="color: blue;">######################################################</span><br /><span style="color: blue;">                By S.S.B Group                          </span><br /><span style="color: blue;">######################################################</span><br /><br /><span style="color: blue;">    Suraj Singh</span><br /><span style="color: blue;">    Admin</span><br /><span style="color: blue;">    S.S.B Group</span><br /><span style="color: blue;">    surajsinghbisht054@gmail.com</span><br /><span style="color: blue;">    https://bitforestinfo.blogspot.in/</span><br /><br /><span style="color: blue;">    Note: We Feel Proud To Be Indian</span><br /><span style="color: blue;">######################################################</span><br /><span style="color: blue;">'''</span><br /><span style="color: #008800; font-style: italic;"># Import Module</span><br /><span style="color: navy; font-weight: bold;">import</span> re<br /><br /><span style="color: #008800; font-style: italic;"># Configuration</span><br />html_dump = <span style="color: blue;">"tempdump"</span>    <span style="color: #008800; font-style: italic;"># Temp File Name</span><br />temp_file = open(html_dump, <span style="color: blue;">'r'</span>) <span style="color: #008800; font-style: italic;"># Open File</span><br />data = temp_file.read()    <span style="color: #008800; font-style: italic;"># Read Data</span><br />temp_file.close()     <span style="color: #008800; font-style: italic;"># Close File</span><br /><br /><span style="color: #008800; font-style: italic;"># Function For Extracting Email Address</span><br /><span style="color: navy; font-weight: bold;">def</span> email(data):<br />    <span style="color: #008800; font-style: italic;"># Filtering Url links</span><br />    pattern = re.compile(<span style="color: blue;">'[\w\-][\w\-\.]+@[\w\-][\w\-\.]+[a-zA-Z]{1,4}'</span>, re.MULTILINE)<br />    captured = pattern.findall(data)<br />    <span style="color: navy; font-weight: bold;">return</span> captured<br /><br />email_list = []     <span style="color: #008800; font-style: italic;"># LIst For Collecting Emails</span><br /><br /><span style="color: #008800; font-style: italic;"># Collecting Emails</span><br /><span style="color: navy; font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> email(data):<br /> <span style="color: navy; font-weight: bold;">if</span> i <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> email_list:<br />  email_list.append(i)<br />  <br /><span style="color: #008800; font-style: italic;"># Print Collected Emails</span><br /><span style="color: navy; font-weight: bold;">print</span> email_list<br /></pre></td></tr></tbody></table></div><br />Note: Save Both Script In Same Directory<br /><br />Usages:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; first &nbsp; &nbsp;: &nbsp; python crawler.py<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; second : &nbsp; python email_filter.py<br /><br /><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 15.84px;"><span style="color: red;"><span style="font-size: small;">Warning</span></span><span style="color: red; font-size: xx-small;">&nbsp;</span><span style="font-size: 14.85px;">:&nbsp;<b><u>I am Creating This Tutorial Only For Practise and Educational Purpose. I will not Take any type of responsibility about any illegal activities.</u></b></span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><br /><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">For Downloading, Raw Script&nbsp;</span><a href="https://github.com/surajsinghbisht054/email_harvester" style="color: #80c2d4; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; text-decoration: none;" target="_blank">Click Here</a></span></span><br /><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-weight: bold;"><br /></div><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;">For More Update, Visit Our Regularly.&nbsp;</span><br /><span style="font-size: 14.85px;"><span style="font-family: &quot;cherry cream soda&quot;;">And Subscribe Our Blog,&nbsp;</span></span></div><span style="background-color: white; color: #737373; font-family: &quot;cherry cream soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-size: 14.85px;"><span style="font-size: 14.85px;"><span style="font-size: 14.85px;"><span style="font-size: 14.85px;"></span></span><span style="color: black; font-family: &quot;times new roman&quot; , &quot;times&quot; , &quot;freeserif&quot; , serif; font-size: 15.84px;"></span></span><span style="color: black; font-family: &quot;droid sans mono&quot;; font-size: 15.84px;"></span></span></span><br style="color: black; font-family: &quot;Droid Sans Mono&quot;; font-size: 15.84px;" /><span style="background-color: white; font-family: &quot;droid sans mono&quot;; font-size: 15.84px; font-weight: bold;"></span> <br /><div style="background-color: white; color: #737373; font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px; font-weight: bold;"><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">Follow Us and share it.</span><br /><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;">For Any Type of Suggestion Or Help</span><br /><span style="font-family: &quot;cherry cream soda&quot;; font-size: 14.85px;"><span style="font-size: 14.85px;">Contact me:</span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">S.S.B</span><br style="font-family: &quot;Cherry Cream Soda&quot;; font-size: 14.85px;" /><span style="font-size: 14.85px;">surajsinghbisht054@gmail.com</span></span></div></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/2017/01/30/how-to-create-way2sms-sms-sending_30.html" data-toggle="tooltip" data-placement="top" title="How To Create Way2sms Sms Sending Script Using python urllib2 module -  | python web scraping | python example - part 11">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/2017/02/05/how-to-scrap-html-forms-using-python_5.html" data-toggle="tooltip" data-placement="top" title="How To Scrap Html Forms Using Python Mechanize Module (Complete Mechanize Tutorial) -  | python web scraping | python example - part 13">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/SBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/StartBootstrap">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>
