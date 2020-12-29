@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    how to use python fnmatch module - Bitforestinfo
+    
+  </title>
+
+  <meta name="description" content="Namaste Friends,&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;In This Tutorial, I am going to tell you abo...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.bitforestinfo.com/blog/05/21/how-to-use-python-fnmatch-module-python.html">
+  <link rel="alternate" type="application/rss+xml" title="Bitforestinfo" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bitforestinfo</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+  <header class="masthead">
+    
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>how to use python fnmatch module</h1>
+            
+            <span class="meta">Posted by
+              <a href="#">Suraj Singh</a>
+              on May 21, 2017 &middot; <span class="reading-time" title="Estimated read time">
+  
+   13 mins  read </span>
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">Namaste Friends,<br /><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAAVF4A1EB6NFLSaidRFOEhwCPcB/s1600/python.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="274" src="https://4.bp.blogspot.com/-g79HDRM---E/WJyyCctqLwI/AAAAAAAAAvY/T4iCOZ3cgrAAVF4A1EB6NFLSaidRFOEhwCPcB/s640/python.png" width="640" /></a></div><br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;In This Tutorial, I am going to tell you about, what is python fnmatch module? and how to use python fnmatch module?<br /><br /><h3 style="text-align: center;">Python Fnmatch Module Tutorial</h3><br /><h4 style="text-align: left;">Q 1. What is fnmatch module?</h4><br /><b>Ans</b>. Python fnmatch module is a python standard library comes with python. This Module Allow user to compare file &amp; Folder names With Unix Shell-Style Pattern. With This Module, A User Can Easily Compare File and Folder Names With Specific Pattern.<br /><br />So, let's Start Our Practical Tutorial.<br /><br /><br /><br /><!--This HTML Code Is Generate By SSB_Converter (IPYthon Notebook Converter) Contact : surajsinghbisht054@gmail.com--><br /><span style="color: blue;">Input : [1] &nbsp;</span></div><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># ==================================================</span><br /><span style="color: #408080; font-style: italic;">#          PYTHON fnmatch MODULE TUTORIAL</span><br /><span style="color: #408080; font-style: italic;"># ==================================================</span><br /><span style="color: #408080; font-style: italic;"># </span><br /><span style="color: #408080; font-style: italic;"># author   : suraj singh bisht</span><br /><span style="color: #408080; font-style: italic;"># contact  : SSB</span><br /><span style="color: #408080; font-style: italic;">#            surajsinghbisht054@gmail.com</span><br /><span style="color: #408080; font-style: italic;">#            https://bitforestinfo.blogspot.com</span><br /><span style="color: #408080; font-style: italic;">#            </span><br /><span style="color: #408080; font-style: italic;"># Here, For This Tutorial</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># I am using</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Operating System : Ubuntu 16.04</span><br /><span style="color: #408080; font-style: italic;"># Python Version   : python 2.7.12</span><br /><span style="color: #408080; font-style: italic;"># Editor           : ipython notebook</span><br /><span style="color: #408080; font-style: italic;">#</span><br /></pre></div><br /><span style="color: blue;">Output : [1] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <br /></pre></div><br /><span style="color: blue;">Input : [2] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Import Module</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">fnmatch</span><br /><span style="color: green; font-weight: bold;">import</span> <span style="color: blue; font-weight: bold;">os</span><br /></pre></div><br /><span style="color: blue;">Output : [2] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <br /></pre></div><br /><span style="color: blue;">Input : [3] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># fnmatch Module allow user to compare file and folders</span><br /><span style="color: #408080; font-style: italic;"># names with given specific pattern.</span><br /><span style="color: #408080; font-style: italic;"># fnmatch module supports Unix shell-style Patterns For</span><br /><span style="color: #408080; font-style: italic;"># Comparing File And Folders Names.</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># In Short, This Module Allow You to Search File and Folders</span><br /><span style="color: #408080; font-style: italic;"># Name is Specific patterns.</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># So, Let Me show you A Example.</span><br /><span style="color: #408080; font-style: italic;"># But First, We needs Some Files To Test Glob Module</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> [<span style="color: #ba2121;">'file1.txt'</span>,<span style="color: #ba2121;">'file2.doc'</span>,<span style="color: #ba2121;">'file3.py'</span>,<span style="color: #ba2121;">'file4.extension'</span>,<span style="color: #ba2121;">'123456.c'</span>,<span style="color: #ba2121;">'Test123.txt'</span>]:<br />    f <span style="color: #666666;">=</span> <span style="color: green;">open</span>(i,<span style="color: #ba2121;">'w'</span>)<br />    f<span style="color: #666666;">.</span>close()<br /><span style="color: #408080; font-style: italic;"># Now, we Are Ready To Test Glob Module.</span><br /><span style="color: #408080; font-style: italic;"># So, let's Start</span><br /><span style="color: #408080; font-style: italic;"># In This Example, I will try To find any text file that's </span><br /><span style="color: #408080; font-style: italic;"># Contains .txt Extension.</span><br /><span style="color: #408080; font-style: italic;">#</span><br /></pre></div><br /><span style="color: blue;">Output : [3] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <br /></pre></div><br /><span style="color: blue;">Input : [4] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#######################</span><br /><span style="color: #408080; font-style: italic;"># Refrence Of Pattern #</span><br /><span style="color: #408080; font-style: italic;">#######################</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;"># Pattern|     Meaning                  |</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;">#  *     | Match Every Character        |</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;">#  ?     | Match Any Single Character   |</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;"># [seq]  | Any Character From Sequence  |</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;"># [!seq] |Any Character Not In Sequence |</span><br /><span style="color: #408080; font-style: italic;">#---------------------------------------</span><br /><span style="color: #408080; font-style: italic;">#</span><br /></pre></div><br /><span style="color: blue;">Output : [4] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <br /></pre></div><br /><span style="color: blue;">Input : [5] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Here,First I Am Showing Simple usages Of Os.listdir function.</span><br /><span style="color: #408080; font-style: italic;"># os.listdir() function provide us to list of file and folders present</span><br /><span style="color: #408080; font-style: italic;"># In any specific path given as argument.</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"printing All Files And Folders, Present In Current Directory : "</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> os<span style="color: #666666;">.</span>listdir(<span style="color: #ba2121;">"."</span>):<br />    <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">" ==&gt;  "</span>,i<br /></pre></div><br /><span style="color: blue;">Output : [5] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #cccccc;">printing</span> <span style="color: #cccccc;">All</span> <span style="color: #cccccc;">Files</span> <span style="color: #cccccc;">And</span> <span style="color: #cccccc;">Folders,</span> <span style="color: #cccccc;">Present</span> <span style="color: #cccccc;">In</span> <span style="color: #cccccc;">Current</span> <span style="color: #cccccc;">Directory</span> <span style="color: #cccccc;">:</span> <br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file3</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">py</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #3399cc;">.</span><span style="color: #cccccc;">ipynb_checkpoints</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file4</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">extension</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cd00cd;">123456.</span><span style="color: #cccccc;">c</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">fnmatch_part_1</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">ipynb</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">Test123</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file1</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file2</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">doc</span><br /></pre></div><br /><span style="color: blue;">Input : [6] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Now, let's Try to find file that contain '.txt' extension</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><br /><span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> os<span style="color: #666666;">.</span>listdir(<span style="color: #ba2121;">"."</span>):<br />    <span style="color: green; font-weight: bold;">if</span> fnmatch<span style="color: #666666;">.</span>fnmatch(i, <span style="color: #ba2121;">'*.txt'</span>):<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">" Txt File ==&gt;  "</span>,i<br /></pre></div><br /><span style="color: blue;">Output : [6] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"> <span style="color: #cccccc;">Txt</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">Test123</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /> <span style="color: #cccccc;">Txt</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file1</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /></pre></div><br /><span style="color: blue;">Input : [7] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># As You can See In Our previous Example, we Successfully find</span><br /><span style="color: #408080; font-style: italic;"># txt file, present in our current directory.</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># Now,Let's try More Situations:</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: green; font-weight: bold;">for</span> i <span style="color: #aa22ff; font-weight: bold;">in</span> os<span style="color: #666666;">.</span>listdir(<span style="color: #ba2121;">"."</span>):<br />    <span style="color: green; font-weight: bold;">if</span> fnmatch<span style="color: #666666;">.</span>fnmatch(i, <span style="color: #ba2121;">'*.txt'</span>):<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;"> Txt File ==&gt;  "</span>,i<br />    <br />    <br />    <span style="color: green; font-weight: bold;">elif</span> fnmatch<span style="color: #666666;">.</span>fnmatch(i, <span style="color: #ba2121;">'*.c'</span>):<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;"> C Codes ==&gt;  "</span>,i<br />    <br />    <br />    <span style="color: green; font-weight: bold;">elif</span> fnmatch<span style="color: #666666;">.</span>fnmatch(i, <span style="color: #ba2121;">'*.py'</span>):<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;"> Python Script ==&gt;  "</span>,i<br />    <br />    <br />    <span style="color: green; font-weight: bold;">elif</span> fnmatch<span style="color: #666666;">.</span>fnmatch(i, <span style="color: #ba2121;">'*.doc'</span>):<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;"> Doc File ==&gt;  "</span>,i<br />    <br />    <span style="color: green; font-weight: bold;">else</span>:<br />        <span style="color: green; font-weight: bold;">print</span> <span style="color: #ba2121;">"</span><span style="color: #bb6622; font-weight: bold;">\n</span><span style="color: #ba2121;"> Unknown File ==&gt;  "</span>,i<br />    <br /></pre></div><br /><span style="color: blue;">Output : [7] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"> <span style="color: #cccccc;">Python</span> <span style="color: #cccccc;">Script</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file3</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">py</span><br /><br /> <span style="color: #cccccc;">Unknown</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #3399cc;">.</span><span style="color: #cccccc;">ipynb_checkpoints</span><br /><br /> <span style="color: #cccccc;">Unknown</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file4</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">extension</span><br /><br /> <span style="color: #cccccc;">C</span> <span style="color: #cccccc;">Codes</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cd00cd;">123456.</span><span style="color: #cccccc;">c</span><br /><br /> <span style="color: #cccccc;">Unknown</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">fnmatch_part_1</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">ipynb</span><br /><br /> <span style="color: #cccccc;">Txt</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">Test123</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /><br /> <span style="color: #cccccc;">Txt</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file1</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">txt</span><br /><br /> <span style="color: #cccccc;">Doc</span> <span style="color: #cccccc;">File</span> <span style="color: #3399cc;">==&gt;</span>   <span style="color: #cccccc;">file2</span><span style="color: #3399cc;">.</span><span style="color: #cccccc;">doc</span><br /></pre></div><br /><span style="color: blue;">Input : [8] &nbsp;</span><br /><br /><div style="background: #f8f8f8; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #408080; font-style: italic;"># This Tutorial Ends Here,</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;"># For Reference:</span><br /><span style="color: #408080; font-style: italic;"># </span><br /><span style="color: #408080; font-style: italic;">#              Python Official Documentation</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#            https://docs.python.org/3/library/fnmatch.html#module-fnmatch</span><br /><span style="color: #408080; font-style: italic;">#</span><br /><span style="color: #408080; font-style: italic;">#</span><br /></pre></div><br /><span style="color: blue;">Output : [8] &nbsp;</span><br /><br /><div style="background: #000000; border-width: 0.1em 0.1em 0.1em 0.8em; border: solid gray; overflow: auto; padding: 0.2em 0.6em; width: auto;"><pre style="line-height: 125%; margin: 0;">  <br /></pre></div><br /><br /><br />Written By<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;SSB<br /><br /><br /></div>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/blog/05/20/what-is-nessus-scanner-and-why-nessus-is-best-for-beginners.html" data-toggle="tooltip" data-placement="top" title="What Is Nessus? And Why Nessus Is best for Beginners?">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+          <a class="btn btn-primary float-right" href="/blog/05/21/how-to-use-python-glob-module-python-glob-module-complete-tutorial.html" data-toggle="tooltip" data-placement="top" title="how to use python glob module? ">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:surajsinghbisht054@gmail.com">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/surajsinghbisht054">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90652126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90652126-1');
+</script>
+
+
+
+</body>
+
+</html>
