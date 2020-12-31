@@ -143,7 +143,7 @@ system | linux distro | linux distribution">Next<span class="d-none d-md-inline"
           
           
         </ul>
-        <p class="copyright text-muted">Copyright &copy; Suraj 2020</p>
+        <p class="copyright text-muted">Copyright &copy; Suraj 2021</p>
       </div>
     </div>
   </div>
@@ -173,8 +173,68 @@ system | linux distro | linux distribution">Next<span class="d-none d-md-inline"
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-587f0b8ea673946e"></script>
+<script src="/assets/vendor/toaster/jquery.toast.min.js"></script>
+<link rel="stylesheet" href="/assets/vendor/toaster/jquery.toast.min.css">
+
+  <!-- Message input -->
+<div class="modal" tabindex="-1" role="dialog" id="feedbackmodal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Feedback Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Feedback</p>
+        <form action="https://formspree.io/f/mdoppjbq" method="POST">
+        <div class="form-outline">
+        <textarea class="form-control" id="form4Example3" name="message" rows="4"></textarea>
+        <input type="hidden" name="url" id="recordUrl" />
+        </div>
+        <input type="submit" value="Send" class="pull-right">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function ask_for_feedback(){
+$('#recordUrl').val(window.location);
+$.toast({
+    text: 'You can share your feedback, anonymously. <a href="#" data-toggle="modal" data-target="#feedbackmodal">Click here</a>',
+    heading: 'Feedback', // Optional heading to be shown on the toast
+    icon: 'info', // Type of toast icon
+    hideAfter: false,
+    stack: 3, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+    position:  'bottom-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+});
+}
+
+setTimeout(function(){
+$.toast({
+    text: "Hi!, There We love our readers!",
+    hideAfter: false,
+    heading: 'Welcome', // Optional heading to be shown on the toast
+    stack: 3, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+    position:  'bottom-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+});
+
+}, 1000*30)
 
 
+setTimeout(ask_for_feedback, 1000*60*5)
+setTimeout(function(){
+$.toast({
+    hideAfter: false,
+    text: "Would you like to publish your article here? If Yes, Contact me",
+    heading: 'hey!', // Optional heading to be shown on the toast
+    stack: 3, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+    position:  'bottom-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+});}, 1000*60*15)
+</script>
 </body>
 
 </html>
