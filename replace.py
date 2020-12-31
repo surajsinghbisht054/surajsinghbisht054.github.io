@@ -11,3 +11,4 @@ for p in l:
   out = open('_posts/'+p, 'w')
   out.write('\n'.join(con))
   out.close()
+
